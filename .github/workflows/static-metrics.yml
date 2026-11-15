@@ -1,0 +1,114 @@
+name: Métricas estáticas
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref_karate:
+        description: "Branch, tag ou SHA do repositório do Karate"
+        default: "main"
+      ref_restassured:
+        description: "Branch, tag ou SHA do repositório do REST Assured"
+        default: "main"
+      ref_cypress:
+        description: "Branch, tag ou SHA do repositório do Cypress"
+        default: "main"
+
+permissions:
+  contents: read
+
+env:
+  # >>> EDITE AQUI: usuário/repositório de cada projeto <<<
+  REPO_KARATE: lipesilvapr/Karate-Automation-Exercise
+  REPO_RESTASSURED: lipesilvapr/RestAssured-Automation-Exercise
+  REPO_CYPRESS: lipesilvapr/Cypress-Automation-Exercise
+
+jobs:
+  static:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      # este repositório (scripts)
+      - uses: actions/checkout@v4
+
+      # os três projetos medidos
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.REPO_KARATE }}
+          ref: ${{ inputs.ref_karate }}
+          path: targets/karate
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.REPO_RESTASSURED }}
+          ref: ${{ inputs.ref_restassured }}
+          path: targets/restassured
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.REPO_CYPRESS }}
+          ref: ${{ inputs.ref_cypress }}
+          path: targets/cypress
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar cloc
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq cloc
+
+      - name: Preparar pasta de saída
+        run: mkdir -p out
+
+      - name: Classpath do Karate
+        run: mvn -B -q -f targets/karate/pom.xml dependency:build-classpath -Dmdep.outputFile="$GITHUB_WORKSPACE/out/karate_classpath.txt"
+
+      - name: Classpath do REST Assured
+        run: mvn -B -q -f targets/restassured/pom.xml dependency:build-classpath -Dmdep.outputFile="$GITHUB_WORKSPACE/out/restassured_classpath.txt"
+
+      - name: Dependências do Cypress (sem baixar o binário)
+        working-directory: targets/cypress
+        env:
+          CYPRESS_INSTALL_BINARY: "0"
+        run: npm ci --ignore-scripts
+
+      - name: Duplicação de código (jscpd)
+        continue-on-error: true
+        run: |
+          run_jscpd() {
+            name="$1"; dir="$2"; path="$3"
+            mkdir -p "out/jscpd/$name"
+            ( cd "targets/$dir" && npx --yes jscpd "$path" --min-tokens 50 --min-lines 5 \
+                --reporters json --output "$GITHUB_WORKSPACE/out/jscpd/$name" \
+                --formats-exts "gherkin:feature" --silent ) \
+            || ( cd "targets/$dir" && npx --yes jscpd "$path" --min-tokens 50 --min-lines 5 \
+                --reporters json --output "$GITHUB_WORKSPACE/out/jscpd/$name" --silent ) \
+            || echo "jscpd falhou para $name"
+          }
+          run_jscpd karate karate src
+          run_jscpd restassured restassured src
+          run_jscpd cypress cypress cypress
+
+      - name: Versões das ferramentas
+        run: |
+          {
+            echo "ImageOS=$ImageOS ImageVersion=$ImageVersion"
+            echo "== cloc";  cloc --version
+            echo "== node";  node -v
+            echo "== npm";   npm -v
+            echo "== java";  java -version 2>&1 | head -1
+            echo "== mvn";   mvn -v | head -1
+            echo "== python"; python3 --version
+            echo "== jscpd"; npx --yes jscpd --version || true
+          } > out/tools.txt
+          cat out/tools.txt
+
+      - name: Calcular métricas estáticas
+        run: python3 scripts/static_metrics.py --targets targets --out out
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: static-metrics
+          path: out

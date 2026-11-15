@@ -1,0 +1,5 @@
+projeto,camada,pontos_de_assercao,cenarios,pontos_por_cenario
+karate,api,48,14,3.43
+karate,ui,12,10,1.2
+restassured,api,34,14,2.43
+cypress,ui,12,10,1.2

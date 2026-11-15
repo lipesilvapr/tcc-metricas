@@ -1,0 +1,6 @@
+projeto,tipo,literais_unicos,ocorrencias_total,ocorrencias_em_teste,pct_em_teste,ocorrencias_por_literal
+karate,seletor,34,45,36,80.0,1.32
+karate,endpoint,8,13,11,84.6,1.62
+restassured,endpoint,8,12,0,0.0,1.5
+cypress,seletor,32,34,0,0.0,1.06
+cypress,endpoint,2,2,0,0.0,1.0

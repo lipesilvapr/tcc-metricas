@@ -1,0 +1,4 @@
+projeto,commit_sha,data_commit,arquivos_versionados
+karate,b0fba21bd6611a4d0e6f0d0ef76db0c777b4a6a9,2026-11-14T18:08:54-03:00,24
+restassured,ac02d419cf0976432b3b503e4f5abc02126c1bbd,2026-11-15T11:39:53-03:00,32
+cypress,62bf89748670bcd6896ae700de6dde24104e4474,2026-11-14T18:07:39-03:00,21

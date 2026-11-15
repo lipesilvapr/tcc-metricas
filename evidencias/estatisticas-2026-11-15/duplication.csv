@@ -1,0 +1,4 @@
+projeto,formatos_analisados,linhas,linhas_duplicadas,percentual,clones
+karate,"gherkin,java,javascript,json,markup",579,0,0.0,0
+restassured,"java,properties",777,48,6.177606177606178,4
+cypress,"javascript,json",378,0,0.0,0

@@ -1,0 +1,4 @@
+projeto,dependencias_diretas,dependencias_totais,tamanho_mb,observacao
+karate,1,89,126.0,"classpath de teste (jars), sem plugins do Maven"
+restassured,7,58,31.67,"classpath de teste (jars), sem plugins do Maven"
+cypress,5,254,75.67,"pacotes npm instalados, sem o binário do Cypress"

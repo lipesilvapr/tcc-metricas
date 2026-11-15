@@ -1,0 +1,15 @@
+ImageOS=ubuntu24 ImageVersion=20261111.370.1
+== cloc
+1.98
+== node
+v20.20.2
+== npm
+10.8.2
+== java
+openjdk version "17.0.21" 2026-10-20
+== mvn
+Apache Maven 3.10.0 (c43a36b8d67be7e0805a411bc0898af1a51f5472)
+== python
+Python 3.12.3
+== jscpd
+jscpd 5.4.3

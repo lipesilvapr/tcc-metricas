@@ -1,0 +1,47 @@
+name: Medir execução de testes
+description: Executa o comando de teste e registra tempo, CPU, memória e resultados por teste (JUnit XML).
+
+inputs:
+  projeto:
+    description: "karate, restassured ou cypress"
+    required: true
+  camada:
+    description: "api ou ui"
+    required: true
+  command:
+    description: "Comando que executa os testes"
+    required: true
+  junit-glob:
+    description: "Padrões dos arquivos JUnit XML (um por linha)"
+    required: true
+  expected-tests:
+    description: "Número de testes esperado (opcional, só gera aviso)"
+    required: false
+    default: ""
+  cache:
+    description: "Cache ligado ou desligado (apenas registro)"
+    required: false
+    default: "unknown"
+
+runs:
+  using: composite
+  steps:
+    - name: Executar e medir
+      shell: bash
+      env:
+        M_PROJETO: ${{ inputs.projeto }}
+        M_CAMADA: ${{ inputs.camada }}
+        M_COMMAND: ${{ inputs.command }}
+        M_JUNIT_GLOB: ${{ inputs.junit-glob }}
+        M_EXPECTED: ${{ inputs.expected-tests }}
+        M_CACHE: ${{ inputs.cache }}
+        M_OUT: ${{ runner.temp }}/run-metrics
+      run: python3 "${{ github.action_path }}/measure.py"
+
+    - name: Publicar métricas da execução
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: run-metrics-${{ inputs.projeto }}-${{ inputs.camada }}-${{ github.run_attempt }}
+        path: ${{ runner.temp }}/run-metrics
+        if-no-files-found: warn

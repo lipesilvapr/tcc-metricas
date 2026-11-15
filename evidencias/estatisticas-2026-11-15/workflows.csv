@@ -1,0 +1,4 @@
+projeto,arquivo,linhas_nao_vazias,jobs,passos
+karate,.github/workflows/tests.yml,55,2,10
+restassured,.github/workflows/api-tests.yml,40,1,7
+cypress,.github/workflows/ui-tests.yml,43,1,6

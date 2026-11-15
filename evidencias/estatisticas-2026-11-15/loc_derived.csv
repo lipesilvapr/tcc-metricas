@@ -1,0 +1,9 @@
+projeto,visao,criterio,loc_teste,loc_suporte,loc_configuracao,loc_build_ci,loc_total_sem_docs,loc_fixo,cenarios,loc_teste_por_cenario,loc_total_por_cenario
+karate,API,exclusivo,179,14,0,0,193,14,14,12.79,13.79
+karate,API,com_compartilhado,179,90,65,115,449,270,14,12.79,32.07
+karate,UI,exclusivo,91,46,0,0,137,46,10,9.1,13.7
+karate,UI,com_compartilhado,91,122,65,115,393,302,10,9.1,39.3
+restassured,API,exclusivo,233,378,10,145,766,533,14,16.64,54.71
+restassured,API,com_compartilhado,233,378,10,145,766,533,14,16.64,54.71
+cypress,UI,exclusivo,102,190,36,65,393,291,10,10.2,39.3
+cypress,UI,com_compartilhado,102,190,36,65,393,291,10,10.2,39.3

@@ -1,0 +1,197 @@
+{
+  "duplicates": [
+    {
+      "firstFile": {
+        "end": 17,
+        "endLoc": {
+          "column": 5,
+          "line": 17,
+          "position": 675
+        },
+        "name": "test/java/com/automationexercise/api/tests/brands/BrandsApiTest.java",
+        "start": 4,
+        "startLoc": {
+          "column": 54,
+          "line": 4,
+          "position": 137
+        }
+      },
+      "format": "java",
+      "fragment": "import com.automationexercise.api.model.BrandsResponse;\nimport com.automationexercise.api.support.ApiResponses;\nimport com.automationexercise.api.support.Messages;\nimport com.automationexercise.api.tests.BaseApiTest;\nimport io.restassured.response.Response;\nimport org.junit.jupiter.api.DisplayName;\nimport org.junit.jupiter.api.Tag;\nimport org.junit.jupiter.api.Test;\n\nimport static com.automationexercise.api.support.ApiAssertions.assertApiMessage;\nimport static com.automationexercise.api.support.ApiAssertions.assertHttpOk;\nimport static org.assertj.core.api.Assertions.assertThat;\n\n@Tag(\"brands\")",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 14,
+      "secondFile": {
+        "end": 18,
+        "endLoc": {
+          "column": 5,
+          "line": 18,
+          "position": 710
+        },
+        "name": "test/java/com/automationexercise/api/tests/products/ProductsApiTest.java",
+        "start": 5,
+        "startLoc": {
+          "column": 56,
+          "line": 5,
+          "position": 172
+        }
+      },
+      "tokens": 121
+    },
+    {
+      "firstFile": {
+        "end": 17,
+        "endLoc": {
+          "column": 1,
+          "line": 17,
+          "position": 671
+        },
+        "name": "test/java/com/automationexercise/api/tests/brands/BrandsApiTest.java",
+        "start": 7,
+        "startLoc": {
+          "column": 51,
+          "line": 7,
+          "position": 298
+        }
+      },
+      "format": "java",
+      "fragment": "import com.automationexercise.api.tests.BaseApiTest;\nimport io.restassured.response.Response;\nimport org.junit.jupiter.api.DisplayName;\nimport org.junit.jupiter.api.Tag;\nimport org.junit.jupiter.api.Test;\n\nimport static com.automationexercise.api.support.ApiAssertions.assertApiMessage;\nimport static com.automationexercise.api.support.ApiAssertions.assertHttpOk;\nimport static org.assertj.core.api.Assertions.assertThat;\n\n@Tag(\"brands\")",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 11,
+      "secondFile": {
+        "end": 19,
+        "endLoc": {
+          "column": 1,
+          "line": 19,
+          "position": 749
+        },
+        "name": "test/java/com/automationexercise/api/tests/user/UserLifecycleApiTest.java",
+        "start": 9,
+        "startLoc": {
+          "column": 50,
+          "line": 9,
+          "position": 376
+        }
+      },
+      "tokens": 86
+    },
+    {
+      "firstFile": {
+        "end": 14,
+        "endLoc": {
+          "column": 6,
+          "line": 14,
+          "position": 494
+        },
+        "name": "test/java/com/automationexercise/api/tests/products/ProductsApiTest.java",
+        "start": 1,
+        "startLoc": {
+          "column": 0,
+          "line": 1,
+          "position": 0
+        }
+      },
+      "format": "java",
+      "fragment": "package com.automationexercise.api.tests.products;\n\nimport io.qameta.allure.Feature;\nimport io.qameta.allure.Story;\nimport com.automationexercise.api.model.ProductsResponse;\nimport com.automationexercise.api.support.ApiResponses;\nimport com.automationexercise.api.support.Messages;\nimport com.automationexercise.api.tests.BaseApiTest;\nimport io.restassured.response.Response;\nimport org.junit.jupiter.api.DisplayName;\nimport org.junit.jupiter.api.Tag;\nimport org.junit.jupiter.api.Test;\n\nimport static com.automationexercise.api.support.ApiAssertions.assertApiMessage;",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 14,
+      "secondFile": {
+        "end": 13,
+        "endLoc": {
+          "column": 6,
+          "line": 13,
+          "position": 493
+        },
+        "name": "test/java/com/automationexercise/api/tests/products/SearchProductApiTest.java",
+        "start": 1,
+        "startLoc": {
+          "column": 0,
+          "line": 1,
+          "position": 0
+        }
+      },
+      "tokens": 116
+    },
+    {
+      "firstFile": {
+        "end": 20,
+        "endLoc": {
+          "column": 7,
+          "line": 20,
+          "position": 750
+        },
+        "name": "test/java/com/automationexercise/api/tests/products/ProductsApiTest.java",
+        "start": 12,
+        "startLoc": {
+          "column": 33,
+          "line": 12,
+          "position": 485
+        }
+      },
+      "format": "java",
+      "fragment": "import org.junit.jupiter.api.Test;\n\nimport static com.automationexercise.api.support.ApiAssertions.assertApiMessage;\nimport static com.automationexercise.api.support.ApiAssertions.assertHttpOk;\nimport static org.assertj.core.api.Assertions.assertThat;\n\n@Tag(\"products\")\n@Feature(\"Produtos\")\n@Story(\"Listagem\")",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 9,
+      "secondFile": {
+        "end": 22,
+        "endLoc": {
+          "column": 7,
+          "line": 22,
+          "position": 855
+        },
+        "name": "test/java/com/automationexercise/api/tests/products/SearchProductApiTest.java",
+        "start": 14,
+        "startLoc": {
+          "column": 52,
+          "line": 14,
+          "position": 590
+        }
+      },
+      "tokens": 56
+    }
+  ],
+  "statistics": {
+    "detectionDate": "2026-11-15T14:46:56.165Z",
+    "formats": {
+      "java": {
+        "clones": 4,
+        "duplicatedLines": 48,
+        "duplicatedTokens": 379,
+        "lines": 770,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 6.233766233766234,
+        "percentageTokens": 6.090310139803953,
+        "sources": 21,
+        "tokens": 6223
+      },
+      "properties": {
+        "clones": 0,
+        "duplicatedLines": 0,
+        "duplicatedTokens": 0,
+        "lines": 7,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 0.0,
+        "percentageTokens": 0.0,
+        "sources": 1,
+        "tokens": 91
+      }
+    },
+    "total": {
+      "clones": 4,
+      "duplicatedLines": 48,
+      "duplicatedTokens": 379,
+      "lines": 777,
+      "newClones": 0,
+      "newDuplicatedLines": 0,
+      "percentage": 6.177606177606178,
+      "percentageTokens": 6.002534051314539,
+      "sources": 22,
+      "tokens": 6314
+    }
+  }
+}

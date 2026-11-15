@@ -1,0 +1,85 @@
+projeto,tipo,literal,ocorrencias_em_teste,ocorrencias_em_suporte
+karate,seletor,#id_gender1,1,0
+karate,seletor,#search_product,1,0
+karate,seletor,#submit_search,1,0
+karate,seletor,.fc-cta-consent,0,1
+karate,seletor,.features_items .product-image-wrapper,3,0
+karate,seletor,.features_items h2.title,2,0
+karate,seletor,"//a[contains(.,'Logged in as')]",4,0
+karate,seletor,a[data-qa='continue-button'],1,0
+karate,seletor,a[href='/login'],1,1
+karate,seletor,button[data-qa='create-account'],1,0
+karate,seletor,button[data-qa='login-button'],0,1
+karate,seletor,button[data-qa='signup-button'],0,1
+karate,seletor,form[action='/login'],0,1
+karate,seletor,form[action='/login'] p,2,0
+karate,seletor,form[action='/signup'] p,2,0
+karate,seletor,h2[data-qa='account-created'],2,0
+karate,seletor,input[data-qa='address'],1,0
+karate,seletor,input[data-qa='address2'],1,0
+karate,seletor,input[data-qa='city'],1,0
+karate,seletor,input[data-qa='company'],1,0
+karate,seletor,input[data-qa='first_name'],1,0
+karate,seletor,input[data-qa='last_name'],1,0
+karate,seletor,input[data-qa='login-email'],0,1
+karate,seletor,input[data-qa='login-password'],0,1
+karate,seletor,input[data-qa='mobile_number'],1,0
+karate,seletor,input[data-qa='password'],2,0
+karate,seletor,input[data-qa='signup-email'],0,1
+karate,seletor,input[data-qa='signup-name'],0,1
+karate,seletor,input[data-qa='state'],1,0
+karate,seletor,input[data-qa='zipcode'],1,0
+karate,seletor,select[data-qa='country'],1,0
+karate,seletor,select[data-qa='days'],1,0
+karate,seletor,select[data-qa='months'],1,0
+karate,seletor,select[data-qa='years'],1,0
+karate,endpoint,brandsList,1,0
+karate,endpoint,createAccount,1,1
+karate,endpoint,deleteAccount,1,1
+karate,endpoint,getUserDetailByEmail,3,0
+karate,endpoint,productsList,2,0
+karate,endpoint,searchProduct,1,0
+karate,endpoint,updateAccount,1,0
+karate,endpoint,verifyLogin,1,0
+restassured,endpoint,brandsList,0,2
+restassured,endpoint,createAccount,0,1
+restassured,endpoint,deleteAccount,0,1
+restassured,endpoint,getUserDetailByEmail,0,1
+restassured,endpoint,productsList,0,2
+restassured,endpoint,searchProduct,0,2
+restassured,endpoint,updateAccount,0,1
+restassured,endpoint,verifyLogin,0,2
+cypress,seletor,#search_product,0,1
+cypress,seletor,#submit_search,0,1
+cypress,seletor,.features_items .product-image-wrapper,0,2
+cypress,seletor,.features_items h2.title,0,1
+cypress,seletor,[data-qa='account-created'],0,1
+cypress,seletor,[data-qa='address'],0,1
+cypress,seletor,[data-qa='address2'],0,1
+cypress,seletor,[data-qa='city'],0,1
+cypress,seletor,[data-qa='company'],0,1
+cypress,seletor,[data-qa='continue-button'],0,1
+cypress,seletor,[data-qa='country'],0,1
+cypress,seletor,[data-qa='create-account'],0,1
+cypress,seletor,[data-qa='days'],0,1
+cypress,seletor,[data-qa='first_name'],0,1
+cypress,seletor,[data-qa='last_name'],0,1
+cypress,seletor,[data-qa='login-button'],0,1
+cypress,seletor,[data-qa='login-email'],0,1
+cypress,seletor,[data-qa='login-password'],0,1
+cypress,seletor,[data-qa='mobile_number'],0,1
+cypress,seletor,[data-qa='months'],0,1
+cypress,seletor,[data-qa='password'],0,2
+cypress,seletor,[data-qa='signup-button'],0,1
+cypress,seletor,[data-qa='signup-email'],0,1
+cypress,seletor,[data-qa='signup-name'],0,1
+cypress,seletor,[data-qa='state'],0,1
+cypress,seletor,[data-qa='years'],0,1
+cypress,seletor,[data-qa='zipcode'],0,1
+cypress,seletor,a[href='/login'],0,1
+cypress,seletor,a[href='/products'],0,1
+cypress,seletor,form[action='/login'],0,1
+cypress,seletor,form[action='/login'] p,0,1
+cypress,seletor,form[action='/signup'] p,0,1
+cypress,endpoint,createAccount,0,1
+cypress,endpoint,deleteAccount,0,1

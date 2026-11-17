@@ -3,7 +3,8 @@
 
 Configurado por variáveis de ambiente (preenchidas pela action `measure`):
   M_PROJETO, M_CAMADA, M_COMMAND, M_JUNIT_GLOB (padrões separados por quebra de linha ou vírgula),
-  M_EXPECTED (nº de testes esperado, opcional), M_CACHE (cache ligado/desligado, só registro), M_OUT (pasta de saída)
+  M_EXPECTED (nº de testes esperado, opcional), M_CACHE (cache ligado/desligado, só registro),
+  M_THREADS (nº de threads, só registro), M_OUT (pasta de saída)
 
 Saídas em M_OUT:
   <projeto>-<camada>-metrics.json   resumo da execução
@@ -145,6 +146,7 @@ def main():
         "inicio_utc": started.isoformat(),
         "duracao_s": round(duration, 3),
         "cache": env.get("M_CACHE", ""),
+        "threads": env.get("M_THREADS", ""),
         "recursos": {
             "intervalo_s": INTERVAL,
             "amostras": len(samples),
@@ -207,7 +209,7 @@ def main():
           f"| esperado | {expected} (confere: {result['contagem_confere']}) |",
           f"| CPU média / pico | {r['cpu_media_pct']} % / {r['cpu_pico_pct']} % |",
           f"| memória pico (acima da linha de base) | {r['mem_pico_delta_mb']} MB |",
-          f"| cache | {result['cache']} |",
+          f"| cache / threads | {result['cache']} / {result['threads']} |",
           f"| código de saída | {proc.returncode} |", ""]
     print("\n".join(md))
     gh = env.get("GITHUB_STEP_SUMMARY")

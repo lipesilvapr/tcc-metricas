@@ -22,6 +22,10 @@ inputs:
     description: "Cache ligado ou desligado (apenas registro)"
     required: false
     default: "unknown"
+  threads:
+    description: "Número de threads usado na execução (apenas registro)"
+    required: false
+    default: ""
 
 runs:
   using: composite
@@ -35,6 +39,7 @@ runs:
         M_JUNIT_GLOB: ${{ inputs.junit-glob }}
         M_EXPECTED: ${{ inputs.expected-tests }}
         M_CACHE: ${{ inputs.cache }}
+        M_THREADS: ${{ inputs.threads }}
         M_OUT: ${{ runner.temp }}/run-metrics
       run: python3 "${{ github.action_path }}/measure.py"
 

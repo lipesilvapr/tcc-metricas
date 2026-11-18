@@ -29,8 +29,8 @@ OWNER = "lipesilvapr"
 DEFAULT_REF = "estudo-v2"  # tag (ou branch) que será executada
 
 TOOLS = {
-    "karate-api": {"repo": f"{OWNER}/Karate-Autoamtion-Exercise", "workflow": "tests.yml", "camada": "api"},
-    "karate-ui": {"repo": f"{OWNER}/Karate-Autoamtion-Exercise", "workflow": "tests.yml", "camada": "ui"},
+    "karate-api": {"repo": f"{OWNER}/Karate-Automation-Exercise", "workflow": "tests.yml", "camada": "api"},
+    "karate-ui": {"repo": f"{OWNER}/Karate-Automation-Exercise", "workflow": "tests.yml", "camada": "ui"},
     "restassured": {"repo": f"{OWNER}/restassured-automation-exercise", "workflow": "api-tests.yml", "camada": "api"},
     "cypress": {"repo": f"{OWNER}/cypress-automation-exercise", "workflow": "ui-tests.yml", "camada": "ui"},
 }

@@ -1,0 +1,15 @@
+projeto,camada,run_id,run_attempt,classname,teste,status,tempo_s,mensagem
+restassured,api,44306255726,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,1.378,
+restassured,api,44306255726,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,1.309,
+restassured,api,44306255726,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,2.1,
+restassured,api,44306255726,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,1.165,
+restassured,api,44306255726,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,4.62,
+restassured,api,44306255726,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,1.373,
+restassured,api,44306255726,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,1.335,
+restassured,api,44306255726,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,1.5,
+restassured,api,44306255726,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,falhou,1.892,"[HTTP status. Corpo: <html><head><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h2>This website is under heavy load (queue full)</h2><p>We're sorry, too many people "
+restassured,api,44306255726,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,11.411,
+restassured,api,44306255726,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,3.326,
+restassured,api,44306255726,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,falhou,1.773,"[HTTP status. Corpo: <html><head><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h2>This website is under heavy load (queue full)</h2><p>We're sorry, too many people "
+restassured,api,44306255726,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,5.112,
+restassured,api,44306255726,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,4.482,

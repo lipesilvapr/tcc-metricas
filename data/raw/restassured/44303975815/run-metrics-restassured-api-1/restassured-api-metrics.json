@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "projeto": "restassured",
+  "camada": "api",
+  "comando": "if [ \"4\" = \"1\" ]; then\n  mvn -B test -Djunit.jupiter.execution.parallel.enabled=false\nelse\n  mvn -B test -Djunit.jupiter.execution.parallel.enabled=true \\\n    -Djunit.jupiter.execution.parallel.config.fixed.parallelism=4\nfi\n",
+  "codigo_saida": 0,
+  "inicio_utc": "2026-11-18T12:27:12.563315+00:00",
+  "duracao_s": 22.441,
+  "cache": "true",
+  "threads": "4",
+  "recursos": {
+    "intervalo_s": 1.0,
+    "amostras": 22,
+    "mem_baseline_mb": 964.0,
+    "mem_pico_mb": 1593.6,
+    "mem_pico_delta_mb": 629.6,
+    "cpu_media_pct": 28.8,
+    "cpu_pico_pct": 85.6
+  },
+  "testes": {
+    "total": 14,
+    "passou": 14,
+    "falhou": 0,
+    "ignorado": 0,
+    "tempo_soma_s": 45.234
+  },
+  "testes_esperados": 14,
+  "contagem_confere": true,
+  "arquivos_junit": 5,
+  "ambiente": {
+    "image_os": "ubuntu24",
+    "image_version": "20261111.127.1",
+    "runner_os": "Linux",
+    "runner_arch": "X64",
+    "runner_name": "GitHub Actions 1000000076",
+    "cpu_modelo": "Intel(R) Xeon(R) 6975P-C",
+    "cpu_n": 4,
+    "mem_total_mb": 15701.6
+  },
+  "github": {
+    "repositorio": "lipesilvapr/RestAssured-Automation-Exercise",
+    "run_id": "44303975815",
+    "run_attempt": "1",
+    "run_number": "19",
+    "evento": "workflow_dispatch",
+    "workflow": "API Tests",
+    "job": "api-tests",
+    "commit": "37baf41107a75ea9dab263b75e4a017c520dfccf",
+    "ref": "estudo-v2"
+  }
+}

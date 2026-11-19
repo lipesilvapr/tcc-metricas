@@ -1,0 +1,15 @@
+projeto,camada,run_id,run_attempt,classname,teste,status,tempo_s,mensagem
+restassured,api,44300853629,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,3.818,
+restassured,api,44300853629,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,3.825,
+restassured,api,44300853629,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,1.495,
+restassured,api,44300853629,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,4.454,
+restassured,api,44300853629,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,1.651,
+restassured,api,44300853629,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,1.666,
+restassured,api,44300853629,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,5.469,
+restassured,api,44300853629,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,6.715,
+restassured,api,44300853629,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,1.707,
+restassured,api,44300853629,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,1.172,
+restassured,api,44300853629,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,3.597,
+restassured,api,44300853629,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,falhou,1.6,"[HTTP status. Corpo: <html><head><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h2>This website is under heavy load (queue full)</h2><p>We're sorry, too many people "
+restassured,api,44300853629,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,falhou,6.289,"[HTTP status. Corpo: <html><head><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h2>This website is under heavy load (queue full)</h2><p>We're sorry, too many people "
+restassured,api,44300853629,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,falhou,3.08,"[HTTP status. Corpo: <html><head><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h2>This website is under heavy load (queue full)</h2><p>We're sorry, too many people "

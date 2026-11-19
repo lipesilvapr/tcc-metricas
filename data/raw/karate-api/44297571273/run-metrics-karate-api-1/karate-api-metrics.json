@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "projeto": "karate",
+  "camada": "api",
+  "comando": "mvn -B test -Dtest=ApiTest -Dapi.threads=4",
+  "codigo_saida": 0,
+  "inicio_utc": "2026-11-18T11:45:46.584346+00:00",
+  "duracao_s": 15.704,
+  "cache": "true",
+  "threads": "4",
+  "recursos": {
+    "intervalo_s": 1.0,
+    "amostras": 15,
+    "mem_baseline_mb": 1034.6,
+    "mem_pico_mb": 1464.9,
+    "mem_pico_delta_mb": 430.3,
+    "cpu_media_pct": 32.3,
+    "cpu_pico_pct": 79.3
+  },
+  "testes": {
+    "total": 14,
+    "passou": 14,
+    "falhou": 0,
+    "ignorado": 0,
+    "tempo_soma_s": 27.18
+  },
+  "testes_esperados": 14,
+  "contagem_confere": true,
+  "arquivos_junit": 5,
+  "ambiente": {
+    "image_os": "ubuntu24",
+    "image_version": "20261111.370.1",
+    "runner_os": "Linux",
+    "runner_arch": "X64",
+    "runner_name": "GitHub Actions 1000000055",
+    "cpu_modelo": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "cpu_n": 4,
+    "mem_total_mb": 15982.9
+  },
+  "github": {
+    "repositorio": "lipesilvapr/Karate-Automation-Exercise",
+    "run_id": "44297571273",
+    "run_attempt": "1",
+    "run_number": "18",
+    "evento": "workflow_dispatch",
+    "workflow": "Karate Tests",
+    "job": "api",
+    "commit": "634a0d401e20799474be5b26c76d33eac3db95c6",
+    "ref": "estudo-v2"
+  }
+}

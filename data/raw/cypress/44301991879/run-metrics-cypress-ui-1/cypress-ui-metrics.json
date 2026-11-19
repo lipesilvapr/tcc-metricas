@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "projeto": "cypress",
+  "camada": "ui",
+  "comando": "npx cypress run --browser chrome --config retries=0 \\\n  --reporter junit --reporter-options \"mochaFile=cypress/results/junit-[hash].xml,toConsole=false\"\n",
+  "codigo_saida": 1,
+  "inicio_utc": "2026-11-18T12:14:36.086873+00:00",
+  "duracao_s": 206.066,
+  "cache": "true",
+  "threads": "1",
+  "recursos": {
+    "intervalo_s": 1.0,
+    "amostras": 205,
+    "mem_baseline_mb": 1317.7,
+    "mem_pico_mb": 1865.4,
+    "mem_pico_delta_mb": 547.7,
+    "cpu_media_pct": 10.6,
+    "cpu_pico_pct": 61.9
+  },
+  "testes": {
+    "total": 10,
+    "passou": 9,
+    "falhou": 1,
+    "ignorado": 0,
+    "tempo_soma_s": 104.629
+  },
+  "testes_esperados": 10,
+  "contagem_confere": true,
+  "arquivos_junit": 4,
+  "ambiente": {
+    "image_os": "ubuntu24",
+    "image_version": "20261111.370.1",
+    "runner_os": "Linux",
+    "runner_arch": "X64",
+    "runner_name": "GitHub Actions 1000000070",
+    "cpu_modelo": "AMD EPYC 7763 64-Core Processor",
+    "cpu_n": 4,
+    "mem_total_mb": 15983.9
+  },
+  "github": {
+    "repositorio": "lipesilvapr/Cypress-Automation-Exercise",
+    "run_id": "44301991879",
+    "run_attempt": "1",
+    "run_number": "13",
+    "evento": "workflow_dispatch",
+    "workflow": "UI Tests (Cypress)",
+    "job": "cypress",
+    "commit": "cfc4d7a7a2fa965f3316130650c9507527d9eea0",
+    "ref": "estudo-v2"
+  }
+}

@@ -1,0 +1,11 @@
+projeto,camada,run_id,run_attempt,classname,teste,status,tempo_s,mensagem
+karate,ui,44295047573,1,features.ui.auth.login,Login com credenciais válidas,falhou,22.24378,"status code was: 503, expected: 200, response time in milliseconds: 310, url: https://automationexercise.com/api/createAccount, response:  <html><head><meta name='viewport' content='width=device-width"
+karate,ui,44295047573,1,features.ui.auth.login,Login inválido - usuario inexistente,falhou,28.112649,"js failed: >>>> 01: waitFor(""form[action='/login'] p"") <<<< org.graalvm.polyglot.PolyglotException: waitUntil (js): failed after 10 retries and 20052 milliseconds - com.intuit.karate.driver.DriverOpti"
+karate,ui,44295047573,1,features.ui.auth.login,Login inválido - senha qualquer,passou,9.291709,
+karate,ui,44295047573,1,features.ui.auth.signup,Cadastro completo com sucesso,passou,19.678669,
+karate,ui,44295047573,1,features.ui.auth.signup,Cadastro com email já existente,falhou,2.633002,"js failed: >>>> 01: click(""a[href='/login']"") <<<< org.graalvm.polyglot.PolyglotException: js eval failed twice:document.querySelector(""a[href='/login']"").click(), error: [type: MAP, value: {type=obje"
+karate,ui,44295047573,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,4.547929,
+karate,ui,44295047573,1,features.ui.products.products,Página de produtos lista itens,passou,6.235799,
+karate,ui,44295047573,1,features.ui.products.products,"Buscar produto por ""top""",passou,8.551656,
+karate,ui,44295047573,1,features.ui.products.products,"Buscar produto por ""jean""",passou,8.520882,
+karate,ui,44295047573,1,features.ui.products.products,"Buscar produto por ""dress""",passou,7.761321,

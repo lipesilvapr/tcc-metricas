@@ -1,0 +1,15 @@
+projeto,camada,run_id,run_attempt,classname,teste,status,tempo_s,mensagem
+restassured,api,44300375023,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,1.355,
+restassured,api,44300375023,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,1.293,
+restassured,api,44300375023,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,1.189,
+restassured,api,44300375023,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,1.482,
+restassured,api,44300375023,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,4.127,
+restassured,api,44300375023,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,1.993,
+restassured,api,44300375023,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],falhou,0.296,"[HTTP status. Corpo: <html><head><meta name='viewport' content='width=device-width, initial-scale=1'></head><body><h2>This website is under heavy load (queue full)</h2><p>We're sorry, too many people "
+restassured,api,44300375023,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,1.34,
+restassured,api,44300375023,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,2.714,
+restassured,api,44300375023,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,10.033,
+restassured,api,44300375023,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,3.242,
+restassured,api,44300375023,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,5.007,
+restassured,api,44300375023,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,3.049,
+restassured,api,44300375023,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,3.807,

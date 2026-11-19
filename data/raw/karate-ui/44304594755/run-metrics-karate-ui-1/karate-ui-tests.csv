@@ -1,0 +1,11 @@
+projeto,camada,run_id,run_attempt,classname,teste,status,tempo_s,mensagem
+karate,ui,44304594755,1,features.ui.auth.login,Login com credenciais válidas,passou,24.901298,
+karate,ui,44304594755,1,features.ui.auth.login,Login inválido - usuario inexistente,passou,9.850762,
+karate,ui,44304594755,1,features.ui.auth.login,Login inválido - senha qualquer,passou,8.61247,
+karate,ui,44304594755,1,features.ui.auth.signup,Cadastro completo com sucesso,passou,15.771186,
+karate,ui,44304594755,1,features.ui.auth.signup,Cadastro com email já existente,passou,7.334456,
+karate,ui,44304594755,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,5.934914,
+karate,ui,44304594755,1,features.ui.products.products,Página de produtos lista itens,passou,5.803428,
+karate,ui,44304594755,1,features.ui.products.products,"Buscar produto por ""top""",passou,5.03963,
+karate,ui,44304594755,1,features.ui.products.products,"Buscar produto por ""jean""",passou,7.382364,
+karate,ui,44304594755,1,features.ui.products.products,"Buscar produto por ""dress""",passou,7.321664,

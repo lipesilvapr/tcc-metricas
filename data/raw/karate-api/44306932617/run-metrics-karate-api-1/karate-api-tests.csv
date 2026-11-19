@@ -1,0 +1,15 @@
+projeto,camada,run_id,run_attempt,classname,teste,status,tempo_s,mensagem
+karate,api,44306932617,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,1.691406,
+karate,api,44306932617,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,1.815094,
+karate,api,44306932617,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,1.307697,
+karate,api,44306932617,1,features.api.products.products-list,POST /productsList não é suportado,passou,1.181559,
+karate,api,44306932617,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,1.944213,
+karate,api,44306932617,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,2.07963,
+karate,api,44306932617,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,1.403852,
+karate,api,44306932617,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,1.488321,
+karate,api,44306932617,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,10.984819,
+karate,api,44306932617,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,falhou,0.12722,"status code was: 503, expected: 200, response time in milliseconds: 113, url: https://automationexercise.com/api/createAccount, response:  <html><head><meta name='viewport' content='width=device-width"
+karate,api,44306932617,1,features.api.user.verify-login,Login válido,falhou,1.7174,"status code was: 503, expected: 200, response time in milliseconds: 174, url: https://automationexercise.com/api/verifyLogin, response:  <html><head><meta name='viewport' content='width=device-width, "
+karate,api,44306932617,1,features.api.user.verify-login,Senha incorreta,passou,3.538136,
+karate,api,44306932617,1,features.api.user.verify-login,Parâmetro email ausente,passou,3.384866,
+karate,api,44306932617,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,3.664559,

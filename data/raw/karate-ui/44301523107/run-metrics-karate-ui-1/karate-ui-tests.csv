@@ -1,0 +1,11 @@
+projeto,camada,run_id,run_attempt,classname,teste,status,tempo_s,mensagem
+karate,ui,44301523107,1,features.ui.auth.login,Login com credenciais válidas,falhou,48.243361,"js failed: >>>> 01: waitFor(""//a[contains(.,'Logged in as')]"") <<<< org.graalvm.polyglot.PolyglotException: waitUntil (js): failed after 10 retries and 22019 milliseconds - com.intuit.karate.driver.Dr"
+karate,ui,44301523107,1,features.ui.auth.login,Login inválido - usuario inexistente,passou,6.643599,
+karate,ui,44301523107,1,features.ui.auth.login,Login inválido - senha qualquer,passou,6.471674,
+karate,ui,44301523107,1,features.ui.auth.signup,Cadastro completo com sucesso,falhou,32.1615,"js failed: >>>> 01: waitFor(""//a[contains(.,'Logged in as')]"") <<<< org.graalvm.polyglot.PolyglotException: waitUntil (js): failed after 10 retries and 20108 milliseconds - com.intuit.karate.driver.Dr"
+karate,ui,44301523107,1,features.ui.auth.signup,Cadastro com email já existente,passou,7.634885,
+karate,ui,44301523107,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,3.521258,
+karate,ui,44301523107,1,features.ui.products.products,Página de produtos lista itens,passou,3.397639,
+karate,ui,44301523107,1,features.ui.products.products,"Buscar produto por ""top""",passou,4.016548,
+karate,ui,44301523107,1,features.ui.products.products,"Buscar produto por ""jean""",passou,6.649822,
+karate,ui,44301523107,1,features.ui.products.products,"Buscar produto por ""dress""",passou,5.198232,

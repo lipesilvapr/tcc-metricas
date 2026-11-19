@@ -1,0 +1,50 @@
+name: Diagnóstico de rede
+
+on:
+  workflow_dispatch:
+    inputs:
+      runner:
+        description: "Imagem do runner (compare 24.04 com 22.04 se quiser)"
+        type: choice
+        options: ["ubuntu-24.04", "ubuntu-22.04"]
+        default: "ubuntu-24.04"
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ${{ inputs.runner }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        n: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sonda de rede
+        run: python3 scripts/probe.py probe --out out
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: probe-${{ matrix.n }}
+          path: out
+
+  resumo:
+    needs: probe
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: probe-*
+          path: probes
+      - name: Comparar os runners
+        run: python3 scripts/probe.py summarize probes
+      - uses: actions/upload-artifact@v4
+        with:
+          name: diagnostico-rede
+          path: probes/probe_all.csv

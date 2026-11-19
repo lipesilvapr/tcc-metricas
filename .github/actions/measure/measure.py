@@ -92,7 +92,7 @@ def parse_junit(patterns):
             if fail is not None or err is not None:
                 node = fail if fail is not None else err
                 status = "falhou"
-                msg = (node.get("message") or (node.text or "")).strip().replace("\n", " ")[:200]
+                msg = (node.get("message") or (node.text or "")).strip().replace("\n", " ")[:600]
             elif tc.find("skipped") is not None:
                 status = "ignorado"
             tests.append({

@@ -26,7 +26,7 @@ from pathlib import Path
 # CONFIGURAÇÃO DO ESTUDO (confira os nomes dos repositórios)
 # --------------------------------------------------------------------------
 OWNER = "lipesilvapr"
-DEFAULT_REF = "estudo-v2"  # tag (ou branch) que será executada
+DEFAULT_REF = "estudo-v3"  # tag (ou branch) que será executada
 
 TOOLS = {
     "karate-api": {"repo": f"{OWNER}/Karate-Automation-Exercise", "workflow": "tests.yml", "camada": "api"},
@@ -307,6 +307,13 @@ def cmd_collect(args):
                 "image_version": a["image_version"], "runner_name": a["runner_name"],
                 "job": g.get("job", ""), "job_conclusao": job.get("conclusion", ""),
                 "job_duracao_s": secs(job.get("started_at", ""), job.get("completed_at", "")) if job else "",
+                "rede_org": m.get("rede", {}).get("org", ""),
+                "site_antes_ok": m.get("site", {}).get("antes", {}).get("ok", ""),
+                "site_antes_http": m.get("site", {}).get("antes", {}).get("http_code", ""),
+                "site_antes_trecho": m.get("site", {}).get("antes", {}).get("trecho", ""),
+                "site_depois_ok": m.get("site", {}).get("depois", {}).get("ok", ""),
+                "site_depois_http": m.get("site", {}).get("depois", {}).get("http_code", ""),
+                "site_depois_trecho": m.get("site", {}).get("depois", {}).get("trecho", ""),
             })
             tpath = mpath.with_name(mpath.name.replace("-metrics.json", "-tests.csv"))
             if tpath.exists():
@@ -328,7 +335,8 @@ def cmd_collect(args):
           "testes_falhou", "testes_ignorado", "testes_esperados", "contagem_confere", "tempo_soma_testes_s",
           "cpu_media_pct", "cpu_pico_pct", "mem_baseline_mb", "mem_pico_mb", "mem_pico_delta_mb", "amostras",
           "cpu_modelo", "cpu_n", "mem_total_mb", "image_version", "runner_name", "job", "job_conclusao",
-          "job_duracao_s"]
+          "job_duracao_s", "rede_org", "site_antes_ok", "site_antes_http", "site_antes_trecho",
+          "site_depois_ok", "site_depois_http", "site_depois_trecho"]
     write_csv(OUT / "measurements.csv", mf, meas)
     tf = ["key", "rep", "config", "tool", "cache", "threads", "projeto", "camada", "run_id", "run_attempt",
           "classname", "teste", "status", "tempo_s", "mensagem"]

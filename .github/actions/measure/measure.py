@@ -4,7 +4,7 @@
 Configurado por variáveis de ambiente (preenchidas pela action `measure`):
   M_PROJETO, M_CAMADA, M_COMMAND, M_JUNIT_GLOB (padrões separados por quebra de linha ou vírgula),
   M_EXPECTED (nº de testes esperado, opcional), M_CACHE (cache ligado/desligado, só registro),
-  M_THREADS (nº de threads, só registro), M_OUT (pasta de saída)
+  M_THREADS (nº de threads, só registro), M_PROBE_URL (sonda do site, opcional), M_OUT (pasta de saída)
 
 Saídas em M_OUT:
   <projeto>-<camada>-metrics.json   resumo da execução
@@ -19,13 +19,16 @@ import datetime
 import glob
 import json
 import os
+import re
 import subprocess
 import sys
+import tempfile
 import threading
 import time
 import xml.etree.ElementTree as ET
 
 INTERVAL = 1.0
+PROBE_URL = os.environ.get("M_PROBE_URL", "https://automationexercise.com/api/productsList")
 
 
 def read_cpu():
@@ -54,6 +57,43 @@ def cpu_model():
     except OSError:
         pass
     return ""
+
+
+def site_probe(url):
+    """Uma requisição simples ao site, fora do tempo medido. ok = HTTP 200 com o JSON da API."""
+    res = {"http_code": "", "tempo_s": None, "ok": False, "trecho": ""}
+    try:
+        with tempfile.TemporaryDirectory() as tmp:
+            body = os.path.join(tmp, "body")
+            t0 = time.perf_counter()
+            p = subprocess.run(["curl", "-s", "--max-time", "15", "-o", body, "-w", "%{http_code}", url],
+                               capture_output=True, text=True, timeout=30)
+            res["tempo_s"] = round(time.perf_counter() - t0, 3)
+            res["http_code"] = p.stdout.strip()
+            text = open(body, encoding="utf-8", errors="replace").read() if os.path.exists(body) else ""
+            try:
+                res["ok"] = res["http_code"] == "200" and "responseCode" in json.loads(text)
+            except Exception:
+                res["ok"] = False
+            if not res["ok"]:
+                plain = re.sub(r"(?is)<(script|style).*?</\1>", " ", text)
+                plain = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", plain)).strip()
+                res["trecho"] = plain[:160]
+    except Exception as exc:  # a sonda nunca pode derrubar a medição
+        res["trecho"] = f"erro na sonda: {exc}"[:160]
+    return res
+
+
+def egress_org():
+    """Organização da rede de saída do runner (ex.: AS8075 Microsoft Corporation)."""
+    try:
+        with tempfile.TemporaryDirectory() as tmp:
+            body = os.path.join(tmp, "body")
+            subprocess.run(["curl", "-s", "--max-time", "10", "-o", body, "https://ipinfo.io/json"],
+                           capture_output=True, timeout=20)
+            return json.load(open(body, encoding="utf-8")).get("org", "")
+    except Exception:
+        return ""
 
 
 class Sampler(threading.Thread):
@@ -114,6 +154,8 @@ def main():
     os.makedirs(out, exist_ok=True)
     prefix = os.path.join(out, f"{projeto}-{camada}")
 
+    site_antes = site_probe(PROBE_URL)
+    rede_org = egress_org()
     baseline_mem, mem_total = read_mem_mb()
     sampler = Sampler()
     sampler.start()
@@ -123,6 +165,7 @@ def main():
     duration = time.perf_counter() - t0
     sampler.stop_event.set()
     sampler.join(timeout=3)
+    site_depois = site_probe(PROBE_URL)
 
     files, tests = parse_junit(patterns)
     samples = sampler.samples
@@ -157,6 +200,8 @@ def main():
             "cpu_pico_pct": max(cpu_vals) if cpu_vals else None,
         },
         "testes": counts,
+        "site": {"url": PROBE_URL, "antes": site_antes, "depois": site_depois},
+        "rede": {"org": rede_org},
         "testes_esperados": expected,
         "contagem_confere": (counts["total"] == expected) if expected is not None else None,
         "arquivos_junit": len(files),
@@ -210,6 +255,8 @@ def main():
           f"| CPU média / pico | {r['cpu_media_pct']} % / {r['cpu_pico_pct']} % |",
           f"| memória pico (acima da linha de base) | {r['mem_pico_delta_mb']} MB |",
           f"| cache / threads | {result['cache']} / {result['threads']} |",
+          f"| site antes / depois (HTTP) | {site_antes['ok']} ({site_antes['http_code']}) / {site_depois['ok']} ({site_depois['http_code']}) |",
+          f"| rede de saída | {rede_org} |",
           f"| código de saída | {proc.returncode} |", ""]
     print("\n".join(md))
     gh = env.get("GITHUB_STEP_SUMMARY")

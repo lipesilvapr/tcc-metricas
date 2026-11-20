@@ -64,3 +64,44 @@ Saídas em `data/`:
 
 Configurações: `A_quente_1` (cache, 1 thread), `B_frio_1` (sem cache, 1 thread), `C_quente_4` (cache, 4 threads, só API).
 A UI roda sempre com 1 thread. Falhas de teste **não são descartadas**: entram nos dados como execuções com testes falhos.
+
+## Diagnóstico de rede (site fora do normal para alguns runners)
+
+Na primeira bateria, 16 das 17 execuções em que todos os testes falharam ocorreram em runners Intel Xeon 6975P-C.
+Para confirmar a causa sem rodar os testes, use o workflow **Diagnóstico de rede**
+(`.github/workflows/diagnostico-rede.yml`, script `scripts/probe.py`):
+
+1. **Actions → Diagnóstico de rede → Run workflow.** Ele abre 12 runners (3 por vez). Cada um faz 24 requisições leves ao site
+   (4 endereços x 2 identificações de cliente x 3 tentativas) e registra código HTTP, tempo, título e trecho da resposta,
+   o modelo da CPU, o runner e a rede de saída.
+2. Ao final, o job `resumo` compara os runners por tipo de CPU e rede de saída (resumo da execução e artefato `diagnostico-rede`).
+
+## Histórico dos dados
+
+- `data/` da primeira bateria (tag `estudo-v2`, 5 repetições) foi commitada como evidência, mas **não serve para comparar as ferramentas**
+  (ambiente instável: respostas 403/503 do site em parte dos runners).
+- Antes de iniciar uma nova bateria, **renomeie `data/` para `data-bateria1/`**. O script identifica as execuções por repetição,
+  configuração e ferramenta (não pela tag) e, se a pasta antiga continuar com o nome `data`, considera tudo "já feito".
+
+## Bateria 2 (imagem `ubuntu-22.04`)
+
+**Por que mudou de imagem.** O diagnóstico de rede mostrou que o rótulo `ubuntu-24.04` cai em runners de duas nuvens.
+Os que saem pela rede da Amazon (CPU Intel Xeon 6975P-C) receberam `403 Forbidden` ou uma página de verificação anti-robô
+em parte das requisições, o que derrubou a primeira bateria. Com `ubuntu-22.04`, os 12 runners do diagnóstico saíram pela rede
+da Microsoft e as 288 requisições foram normais. Os dados do diagnóstico ficam em `evidencias/`.
+
+**Novidades da medição** (`.github/actions/measure/measure.py`):
+- uma sonda ao site antes e depois dos testes (fora do tempo medido): HTTP 200 com o JSON da API;
+- a organização da rede de saída do runner (por exemplo, `AS8075 Microsoft Corporation`);
+- mensagens de falha com até 600 caracteres.
+
+O `collect` grava isso em `measurements.csv` (`rede_org`, `site_antes_ok`, `site_antes_http`, `site_depois_ok`, `site_depois_http`
+e os trechos). Uma execução em que a sonda falhou antes ou depois dos testes é candidata a descarte por **ambiente** e não por
+falha da ferramenta; o critério será fixado antes da análise.
+
+**Ordem para iniciar a bateria 2**
+1. Renomear `data/` para `data-bateria1/` (e commitar).
+2. Trocar `ubuntu-24.04` por `ubuntu-22.04` nos três workflows (4 ocorrências: Karate tem 2, REST Assured 1, Cypress 1).
+3. Criar a tag `estudo-v3` nos três repositórios e rodar a análise estática nela.
+4. Rodar o diagnóstico de rede com `ubuntu-22.04` de novo, imediatamente antes de começar.
+5. `python scripts/battery.py check`, depois o piloto (`run --reps 1 --warmup --limit 4`) e a bateria.

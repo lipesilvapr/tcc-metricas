@@ -1,0 +1,5 @@
+key,rep,config,tool,camada,repo,workflow,ref,cache,threads,dispatched_at,run_id,status,conclusion,url
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,api,lipesilvapr/Karate-Automation-Exercise,tests.yml,estudo-v3,true,1,2026-11-20T15:59:10.118033+00:00,44768686505,completed,success,https://github.com/lipesilvapr/Karate-Automation-Exercise/actions/runs/44768686505
+0|A_quente_1|restassured,0,A_quente_1,restassured,api,lipesilvapr/restassured-automation-exercise,api-tests.yml,estudo-v3,true,1,2026-11-20T16:00:01.707304+00:00,44768826156,completed,success,https://github.com/lipesilvapr/RestAssured-Automation-Exercise/actions/runs/44768826156
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,ui,lipesilvapr/Karate-Automation-Exercise,tests.yml,estudo-v3,true,1,2026-11-20T16:01:10.673366+00:00,44769033251,completed,failure,https://github.com/lipesilvapr/Karate-Automation-Exercise/actions/runs/44769033251
+0|A_quente_1|cypress,0,A_quente_1,cypress,ui,lipesilvapr/cypress-automation-exercise,ui-tests.yml,estudo-v3,true,1,2026-11-20T16:07:25.066110+00:00,44770109925,completed,success,https://github.com/lipesilvapr/Cypress-Automation-Exercise/actions/runs/44770109925

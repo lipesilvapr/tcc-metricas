@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "projeto": "cypress",
+  "camada": "ui",
+  "comando": "npx cypress run --browser chrome --config retries=0 \\\n  --reporter junit --reporter-options \"mochaFile=cypress/results/junit-[hash].xml,toConsole=false\"\n",
+  "codigo_saida": 0,
+  "inicio_utc": "2026-11-20T16:07:29.798417+00:00",
+  "duracao_s": 93.669,
+  "cache": "true",
+  "threads": "1",
+  "recursos": {
+    "intervalo_s": 1.0,
+    "amostras": 93,
+    "mem_baseline_mb": 1271.2,
+    "mem_pico_mb": 1951.6,
+    "mem_pico_delta_mb": 680.4,
+    "cpu_media_pct": 14.6,
+    "cpu_pico_pct": 64.5
+  },
+  "testes": {
+    "total": 10,
+    "passou": 10,
+    "falhou": 0,
+    "ignorado": 0,
+    "tempo_soma_s": 38.026
+  },
+  "site": {
+    "url": "https://automationexercise.com/api/productsList",
+    "antes": {
+      "http_code": "200",
+      "tempo_s": 0.951,
+      "ok": true,
+      "trecho": ""
+    },
+    "depois": {
+      "http_code": "200",
+      "tempo_s": 0.381,
+      "ok": true,
+      "trecho": ""
+    }
+  },
+  "rede": {
+    "org": "AS8075 Microsoft Corporation"
+  },
+  "testes_esperados": 10,
+  "contagem_confere": true,
+  "arquivos_junit": 4,
+  "ambiente": {
+    "image_os": "ubuntu22",
+    "image_version": "20261116.365.1",
+    "runner_os": "Linux",
+    "runner_arch": "X64",
+    "runner_name": "GitHub Actions 1000000144",
+    "cpu_modelo": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "cpu_n": 4,
+    "mem_total_mb": 15987.7
+  },
+  "github": {
+    "repositorio": "lipesilvapr/Cypress-Automation-Exercise",
+    "run_id": "44770109925",
+    "run_attempt": "1",
+    "run_number": "20",
+    "evento": "workflow_dispatch",
+    "workflow": "UI Tests (Cypress)",
+    "job": "cypress",
+    "commit": "dae26426b9c149432c410026f2df7abf81eee4af",
+    "ref": "estudo-v3"
+  }
+}

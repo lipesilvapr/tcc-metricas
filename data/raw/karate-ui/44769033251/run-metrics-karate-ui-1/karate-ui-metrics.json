@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "projeto": "karate",
+  "camada": "ui",
+  "comando": "mvn -B test -Dtest=UiTest -Dci=true -Dui.threads=1",
+  "codigo_saida": 1,
+  "inicio_utc": "2026-11-20T16:01:10.984207+00:00",
+  "duracao_s": 338.478,
+  "cache": "true",
+  "threads": "1",
+  "recursos": {
+    "intervalo_s": 1.0,
+    "amostras": 338,
+    "mem_baseline_mb": 1068.3,
+    "mem_pico_mb": 1773.8,
+    "mem_pico_delta_mb": 705.5,
+    "cpu_media_pct": 5.1,
+    "cpu_pico_pct": 81.1
+  },
+  "testes": {
+    "total": 10,
+    "passou": 8,
+    "falhou": 2,
+    "ignorado": 0,
+    "tempo_soma_s": 333.344
+  },
+  "site": {
+    "url": "https://automationexercise.com/api/productsList",
+    "antes": {
+      "http_code": "200",
+      "tempo_s": 0.4,
+      "ok": true,
+      "trecho": ""
+    },
+    "depois": {
+      "http_code": "200",
+      "tempo_s": 1.218,
+      "ok": true,
+      "trecho": ""
+    }
+  },
+  "rede": {
+    "org": "AS8075 Microsoft Corporation"
+  },
+  "testes_esperados": 10,
+  "contagem_confere": true,
+  "arquivos_junit": 4,
+  "ambiente": {
+    "image_os": "ubuntu22",
+    "image_version": "20261116.365.1",
+    "runner_os": "Linux",
+    "runner_arch": "X64",
+    "runner_name": "GitHub Actions 1000000143",
+    "cpu_modelo": "AMD EPYC 9V45 96-Core Processor",
+    "cpu_n": 4,
+    "mem_total_mb": 15988.7
+  },
+  "github": {
+    "repositorio": "lipesilvapr/Karate-Automation-Exercise",
+    "run_id": "44769033251",
+    "run_attempt": "1",
+    "run_number": "41",
+    "evento": "workflow_dispatch",
+    "workflow": "Karate Tests",
+    "job": "ui",
+    "commit": "740a6b4f658ce5be5e10d65eb2f942d8ff822177",
+    "ref": "estudo-v3"
+  }
+}

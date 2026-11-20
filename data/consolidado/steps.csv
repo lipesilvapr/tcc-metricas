@@ -1,0 +1,49 @@
+key,rep,config,tool,run_id,job,passo_n,passo,conclusao,inicio,fim,duracao_s
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,44768686505,api,1,Set up job,success,2026-11-20T15:58:58Z,2026-11-20T15:59:00Z,2.0
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,44768686505,api,2,Info da máquina,success,2026-11-20T15:59:00Z,2026-11-20T15:59:00Z,0.0
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,44768686505,api,3,Run actions/checkout@v4,success,2026-11-20T15:59:00Z,2026-11-20T15:59:01Z,1.0
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,44768686505,api,4,Run actions/setup-java@v4,success,2026-11-20T15:59:01Z,2026-11-20T15:59:08Z,7.0
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,44768686505,api,5,Preparar dependências e compilar (não medido),success,2026-11-20T15:59:08Z,2026-11-20T15:59:14Z,6.0
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,44768686505,api,6,Executar testes (medido),success,2026-11-20T15:59:14Z,2026-11-20T15:59:33Z,19.0
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,44768686505,api,7,Run actions/upload-artifact@v4,success,2026-11-20T15:59:33Z,2026-11-20T15:59:35Z,2.0
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,44768686505,api,13,Post Run actions/setup-java@v4,success,2026-11-20T15:59:35Z,2026-11-20T15:59:35Z,0.0
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,44768686505,api,14,Post Run actions/checkout@v4,success,2026-11-20T15:59:35Z,2026-11-20T15:59:35Z,0.0
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,44768686505,api,15,Complete job,success,2026-11-20T15:59:35Z,2026-11-20T15:59:35Z,0.0
+0|A_quente_1|restassured,0,A_quente_1,restassured,44768826156,api-tests,1,Set up job,success,2026-11-20T15:59:49Z,2026-11-20T15:59:51Z,2.0
+0|A_quente_1|restassured,0,A_quente_1,restassured,44768826156,api-tests,2,Info da máquina,success,2026-11-20T15:59:51Z,2026-11-20T15:59:51Z,0.0
+0|A_quente_1|restassured,0,A_quente_1,restassured,44768826156,api-tests,3,Run actions/checkout@v4,success,2026-11-20T15:59:51Z,2026-11-20T15:59:51Z,0.0
+0|A_quente_1|restassured,0,A_quente_1,restassured,44768826156,api-tests,4,Run actions/setup-java@v4,success,2026-11-20T15:59:51Z,2026-11-20T15:59:54Z,3.0
+0|A_quente_1|restassured,0,A_quente_1,restassured,44768826156,api-tests,5,Preparar dependências e compilar (não medido),success,2026-11-20T15:59:54Z,2026-11-20T16:00:01Z,7.0
+0|A_quente_1|restassured,0,A_quente_1,restassured,44768826156,api-tests,6,Executar testes (medido),success,2026-11-20T16:00:01Z,2026-11-20T16:00:25Z,24.0
+0|A_quente_1|restassured,0,A_quente_1,restassured,44768826156,api-tests,7,Run actions/upload-artifact@v4,success,2026-11-20T16:00:25Z,2026-11-20T16:00:26Z,1.0
+0|A_quente_1|restassured,0,A_quente_1,restassured,44768826156,api-tests,8,Gerar relatório Allure,success,2026-11-20T16:00:26Z,2026-11-20T16:00:30Z,4.0
+0|A_quente_1|restassured,0,A_quente_1,restassured,44768826156,api-tests,9,Run actions/upload-artifact@v4,success,2026-11-20T16:00:30Z,2026-11-20T16:00:32Z,2.0
+0|A_quente_1|restassured,0,A_quente_1,restassured,44768826156,api-tests,10,Run actions/upload-artifact@v4,success,2026-11-20T16:00:32Z,2026-11-20T16:00:34Z,2.0
+0|A_quente_1|restassured,0,A_quente_1,restassured,44768826156,api-tests,19,Post Run actions/setup-java@v4,success,2026-11-20T16:00:34Z,2026-11-20T16:00:34Z,0.0
+0|A_quente_1|restassured,0,A_quente_1,restassured,44768826156,api-tests,20,Post Run actions/checkout@v4,success,2026-11-20T16:00:34Z,2026-11-20T16:00:34Z,0.0
+0|A_quente_1|restassured,0,A_quente_1,restassured,44768826156,api-tests,21,Complete job,success,2026-11-20T16:00:34Z,2026-11-20T16:00:34Z,0.0
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,44769033251,ui,1,Set up job,success,2026-11-20T16:01:00Z,2026-11-20T16:01:01Z,1.0
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,44769033251,ui,2,Info da máquina,success,2026-11-20T16:01:01Z,2026-11-20T16:01:02Z,1.0
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,44769033251,ui,3,Run actions/checkout@v4,success,2026-11-20T16:01:02Z,2026-11-20T16:01:02Z,0.0
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,44769033251,ui,4,Run actions/setup-java@v4,success,2026-11-20T16:01:02Z,2026-11-20T16:01:04Z,2.0
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,44769033251,ui,5,Preparar dependências e compilar (não medido),success,2026-11-20T16:01:04Z,2026-11-20T16:01:10Z,6.0
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,44769033251,ui,6,Executar testes (medido),failure,2026-11-20T16:01:10Z,2026-11-20T16:06:51Z,341.0
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,44769033251,ui,7,Run actions/upload-artifact@v4,success,2026-11-20T16:06:51Z,2026-11-20T16:06:53Z,2.0
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,44769033251,ui,13,Post Run actions/setup-java@v4,success,2026-11-20T16:06:53Z,2026-11-20T16:06:53Z,0.0
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,44769033251,ui,14,Post Run actions/checkout@v4,success,2026-11-20T16:06:53Z,2026-11-20T16:06:53Z,0.0
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,44769033251,ui,15,Complete job,success,2026-11-20T16:06:53Z,2026-11-20T16:06:53Z,0.0
+0|A_quente_1|cypress,0,A_quente_1,cypress,44770109925,cypress,1,Set up job,success,2026-11-20T16:07:13Z,2026-11-20T16:07:14Z,1.0
+0|A_quente_1|cypress,0,A_quente_1,cypress,44770109925,cypress,2,Info da máquina,success,2026-11-20T16:07:14Z,2026-11-20T16:07:14Z,0.0
+0|A_quente_1|cypress,0,A_quente_1,cypress,44770109925,cypress,3,Run actions/checkout@v4,success,2026-11-20T16:07:14Z,2026-11-20T16:07:15Z,1.0
+0|A_quente_1|cypress,0,A_quente_1,cypress,44770109925,cypress,4,Run actions/setup-node@v4,success,2026-11-20T16:07:15Z,2026-11-20T16:07:22Z,7.0
+0|A_quente_1|cypress,0,A_quente_1,cypress,44770109925,cypress,5,Cache do binário do Cypress,success,2026-11-20T16:07:22Z,2026-11-20T16:07:26Z,4.0
+0|A_quente_1|cypress,0,A_quente_1,cypress,44770109925,cypress,6,Instalar dependências,success,2026-11-20T16:07:26Z,2026-11-20T16:07:28Z,2.0
+0|A_quente_1|cypress,0,A_quente_1,cypress,44770109925,cypress,7,Executar testes (medido),success,2026-11-20T16:07:28Z,2026-11-20T16:09:05Z,97.0
+0|A_quente_1|cypress,0,A_quente_1,cypress,44770109925,cypress,8,Run actions/upload-artifact@v4,success,2026-11-20T16:09:05Z,2026-11-20T16:09:06Z,1.0
+0|A_quente_1|cypress,0,A_quente_1,cypress,44770109925,cypress,9,Gerar relatório Allure,success,2026-11-20T16:09:06Z,2026-11-20T16:09:18Z,12.0
+0|A_quente_1|cypress,0,A_quente_1,cypress,44770109925,cypress,10,Run actions/upload-artifact@v4,success,2026-11-20T16:09:18Z,2026-11-20T16:09:19Z,1.0
+0|A_quente_1|cypress,0,A_quente_1,cypress,44770109925,cypress,11,Run actions/upload-artifact@v4,success,2026-11-20T16:09:19Z,2026-11-20T16:09:20Z,1.0
+0|A_quente_1|cypress,0,A_quente_1,cypress,44770109925,cypress,20,Post Cache do binário do Cypress,success,2026-11-20T16:09:20Z,2026-11-20T16:09:21Z,1.0
+0|A_quente_1|cypress,0,A_quente_1,cypress,44770109925,cypress,21,Post Run actions/setup-node@v4,success,2026-11-20T16:09:21Z,2026-11-20T16:09:21Z,0.0
+0|A_quente_1|cypress,0,A_quente_1,cypress,44770109925,cypress,22,Post Run actions/checkout@v4,success,2026-11-20T16:09:21Z,2026-11-20T16:09:21Z,0.0
+0|A_quente_1|cypress,0,A_quente_1,cypress,44770109925,cypress,23,Complete job,success,2026-11-20T16:09:21Z,2026-11-20T16:09:21Z,0.0

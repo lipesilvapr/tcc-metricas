@@ -8,6 +8,7 @@ Comandos:
   python scripts/battery.py check                    confere login, repositórios, tag e workflows
   python scripts/battery.py plan --reps 10           mostra o plano e uma estimativa de tempo
   python scripts/battery.py run --reps 10 --warmup   dispara e espera (pode ser interrompido e retomado)
+  python scripts/battery.py fill --reps 10           repete as execuções afetadas pelo site (até 3 tentativas)
   python scripts/battery.py collect                  baixa os resultados e gera os CSVs consolidados
 
 Os dados ficam em data/ (dispatch_log.csv, raw/ e consolidado/).
@@ -61,6 +62,14 @@ OUT = DATA / "consolidado"
 LOG = DATA / "dispatch_log.csv"
 POLL = float(os.environ.get("BATTERY_POLL_S", "15"))
 RUN_TIMEOUT_MIN = 60
+
+# Mensagens de falha que indicam problema do ambiente (site) e não do teste. Fixado antes da bateria.
+ENV_PATTERNS = ["403", "forbidden", "503", "heavy load", "queue full", "too many people", "one moment, please",
+                "<!doctype html", "<html", "não foi possível converter o corpo", "(null:number)"]
+
+# Falhas de UI "elemento não encontrado": podem ser a página de erro do site OU um problema real do teste.
+# Ficam como INDETERMINADAS para revisão manual (screenshot no relatório do Karate / Cypress).
+UNCERTAIN_PATTERNS = ["cannot read properties of null", "expected to find element", "timed out retrying", "js failed"]
 
 LOG_FIELDS = ["key", "rep", "config", "tool", "camada", "repo", "workflow", "ref", "cache", "threads",
               "dispatched_at", "run_id", "status", "conclusion", "url"]
@@ -207,6 +216,28 @@ def wait_done(tool, run_id):
         time.sleep(POLL)
 
 
+def execute_task(log, key, rep, cfg, tool, ref):
+    """Dispara (ou retoma) uma execução, espera terminar e grava no log."""
+    t = TOOLS[tool]
+    row = log.get(key)
+    if row and row.get("run_id"):
+        run_id = row["run_id"]
+        say(f"  retomando a execução {run_id}")
+    else:
+        run_id = dispatch(tool, cfg, ref)
+        cfgv = CONFIGS[cfg]
+        row = {"key": key, "rep": rep, "config": cfg, "tool": tool, "camada": t["camada"], "repo": t["repo"],
+               "workflow": t["workflow"], "ref": ref, "cache": cfgv["cache"], "threads": cfgv["threads"],
+               "dispatched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "run_id": run_id,
+               "status": "dispatched", "conclusion": "", "url": ""}
+        log[key] = row
+        write_log(log)
+    res = wait_done(tool, run_id)
+    row.update({"status": res["status"], "conclusion": res.get("conclusion") or "", "url": res.get("url", "")})
+    write_log(log)
+    say(f"  execução {run_id}: {row['conclusion']}  {row['url']}")
+
+
 def cmd_run(args):
     if cmd_check(argparse.Namespace(ref=args.ref)) != 0:
         return 1
@@ -223,25 +254,57 @@ def cmd_run(args):
             say(f"Limite de {args.limit} execuções atingido.")
             break
         started += 1
-        t = TOOLS[tool]
         say(f"[{i}/{len(tasks)}] rep {rep} {cfg} {tool} ...")
-        if row and row.get("run_id"):
-            run_id = row["run_id"]
-            say(f"  retomando a execução {run_id}")
-        else:
-            run_id = dispatch(tool, cfg, args.ref)
-            cfgv = CONFIGS[cfg]
-            row = {"key": key, "rep": rep, "config": cfg, "tool": tool, "camada": t["camada"], "repo": t["repo"],
-                   "workflow": t["workflow"], "ref": args.ref, "cache": cfgv["cache"], "threads": cfgv["threads"],
-                   "dispatched_at": dt.datetime.now(dt.timezone.utc).isoformat(), "run_id": run_id,
-                   "status": "dispatched", "conclusion": "", "url": ""}
-            log[key] = row
-            write_log(log)
-        res = wait_done(tool, run_id)
-        row.update({"status": res["status"], "conclusion": res.get("conclusion") or "", "url": res.get("url", "")})
-        write_log(log)
-        say(f"  execução {run_id}: {row['conclusion']}  {row['url']}")
-    say("Fim. Rode `collect` para baixar e consolidar os resultados.")
+        execute_task(log, key, rep, cfg, tool, args.ref)
+    say("Fim. Rode `collect` para baixar e consolidar os resultados (e `fill` para repetir as execuções afetadas pelo site).")
+    return 0
+
+
+def valid_cells():
+    """Células (rep, config, ferramenta) que já têm uma execução válida (não afetada pelo ambiente)."""
+    path = OUT / "measurements.csv"
+    cells = set()
+    if path.exists():
+        with open(path, newline="", encoding="utf-8") as fh:
+            for r in csv.DictReader(fh):
+                if r["execucao_valida"] == "True":
+                    cells.add((int(r["rep"]), r["config"], r["tool"]))
+    return cells
+
+
+def cmd_fill(args):
+    """Repete as células da bateria que só têm execuções afetadas pelo site, até `--max-attempts` tentativas."""
+    if cmd_check(argparse.Namespace(ref=args.ref)) != 0:
+        return 1
+    only = set(args.only.split(",")) if args.only else None
+    cells = [(rep, cfg, tool) for rep, cfg, tool in build_plan(args.reps, False, only)]
+    for attempt in range(2, args.max_attempts + 1):
+        cmd_collect(argparse.Namespace())
+        valid = valid_cells()
+        log = read_log()
+        missing = []
+        for rep, cfg, tool in cells:
+            base = f"{rep}|{cfg}|{tool}"
+            done = [k for k in log if k == base or k.startswith(base + "|a")]
+            finished = all(log[k]["status"] == "completed" for k in done) if done else False
+            if (rep, cfg, tool) not in valid and finished and len(done) == attempt - 1:
+                missing.append((rep, cfg, tool))
+        if not missing:
+            say(f"Nenhuma célula para repetir na tentativa {attempt}.")
+            break
+        say(f"Tentativa {attempt}: {len(missing)} célula(s) sem execução válida.")
+        for i, (rep, cfg, tool) in enumerate(missing, 1):
+            if args.limit and i > args.limit:
+                say(f"Limite de {args.limit} execuções atingido.")
+                return 0
+            say(f"[{i}/{len(missing)}] repetindo rep {rep} {cfg} {tool} (tentativa {attempt}) ...")
+            execute_task(log, f"{rep}|{cfg}|{tool}|a{attempt}", rep, cfg, tool, args.ref)
+    cmd_collect(argparse.Namespace())
+    valid = valid_cells()
+    still = [c for c in cells if c not in valid]
+    say(f"Células sem nenhuma execução válida: {len(still)} de {len(cells)}")
+    for rep, cfg, tool in still:
+        say(f"  rep {rep} {cfg} {tool}")
     return 0
 
 
@@ -291,6 +354,20 @@ def cmd_collect(args):
             m = json.loads(mpath.read_text(encoding="utf-8"))
             g, r, t, a = m["github"], m["recursos"], m["testes"], m["ambiente"]
             job = next((j for j in jobs if j.get("name") == g.get("job")), {})
+            site = m.get("site", {})
+            tpath = mpath.with_name(mpath.name.replace("-metrics.json", "-tests.csv"))
+            run_tests = []
+            if tpath.exists():
+                with open(tpath, newline="", encoding="utf-8") as fh:
+                    run_tests = list(csv.DictReader(fh))
+            falhas_amb = sum(1 for tr in run_tests if tr["status"] == "falhou"
+                             and any(p in tr["mensagem"].lower() for p in ENV_PATTERNS))
+            falhas_indet = sum(1 for tr in run_tests if tr["status"] == "falhou"
+                               and not any(p in tr["mensagem"].lower() for p in ENV_PATTERNS)
+                               and any(p in tr["mensagem"].lower() for p in UNCERTAIN_PATTERNS))
+            sondas_falhas = (site.get("antes", {}).get("ok") is False or site.get("depois", {}).get("ok") is False
+                             or (site.get("durante", {}).get("falhas") or 0) > 0)
+            ambiente_afetado = bool(sondas_falhas or falhas_amb > 0)
             meas.append({
                 "key": key, "rep": row["rep"], "config": row["config"], "tool": row["tool"],
                 "projeto": m["projeto"], "camada": m["camada"], "repo": g["repositorio"], "run_id": run_id,
@@ -314,14 +391,19 @@ def cmd_collect(args):
                 "site_depois_ok": m.get("site", {}).get("depois", {}).get("ok", ""),
                 "site_depois_http": m.get("site", {}).get("depois", {}).get("http_code", ""),
                 "site_depois_trecho": m.get("site", {}).get("depois", {}).get("trecho", ""),
+                "site_durante_n": site.get("durante", {}).get("n", ""),
+                "site_durante_falhas": site.get("durante", {}).get("falhas", ""),
+                "falhas_ambiente": falhas_amb,
+                "falhas_indeterminadas": falhas_indet,
+                "ambiente_afetado": ambiente_afetado,
+                "execucao_valida": not ambiente_afetado,
             })
-            tpath = mpath.with_name(mpath.name.replace("-metrics.json", "-tests.csv"))
-            if tpath.exists():
-                with open(tpath, newline="", encoding="utf-8") as fh:
-                    for trow in csv.DictReader(fh):
-                        trow.update({"key": key, "rep": row["rep"], "config": row["config"], "tool": row["tool"],
-                                     "cache": m["cache"], "threads": m.get("threads", "")})
-                        tests.append(trow)
+            for trow in run_tests:
+                trow.update({"key": key, "rep": row["rep"], "config": row["config"], "tool": row["tool"],
+                             "cache": m["cache"], "threads": m.get("threads", "")})
+                trow["causa_ambiente"] = (trow["status"] == "falhou"
+                                          and any(p in trow["mensagem"].lower() for p in ENV_PATTERNS))
+                tests.append(trow)
         for j in jobs:
             for s in j.get("steps", []):
                 steps.append({"key": key, "rep": row["rep"], "config": row["config"], "tool": row["tool"],
@@ -336,10 +418,11 @@ def cmd_collect(args):
           "cpu_media_pct", "cpu_pico_pct", "mem_baseline_mb", "mem_pico_mb", "mem_pico_delta_mb", "amostras",
           "cpu_modelo", "cpu_n", "mem_total_mb", "image_version", "runner_name", "job", "job_conclusao",
           "job_duracao_s", "rede_org", "site_antes_ok", "site_antes_http", "site_antes_trecho",
-          "site_depois_ok", "site_depois_http", "site_depois_trecho"]
+          "site_depois_ok", "site_depois_http", "site_depois_trecho", "site_durante_n", "site_durante_falhas",
+          "falhas_ambiente", "falhas_indeterminadas", "ambiente_afetado", "execucao_valida"]
     write_csv(OUT / "measurements.csv", mf, meas)
     tf = ["key", "rep", "config", "tool", "cache", "threads", "projeto", "camada", "run_id", "run_attempt",
-          "classname", "teste", "status", "tempo_s", "mensagem"]
+          "classname", "teste", "status", "tempo_s", "mensagem", "causa_ambiente"]
     write_csv(OUT / "tests.csv", tf, tests)
     write_csv(OUT / "steps.csv", ["key", "rep", "config", "tool", "run_id", "job", "passo_n", "passo", "conclusao",
                                   "inicio", "fim", "duracao_s"], steps)
@@ -357,16 +440,20 @@ def main():
         pass
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
-    for name, fn in (("check", cmd_check), ("plan", cmd_plan), ("run", cmd_run), ("collect", cmd_collect)):
+    for name, fn in (("check", cmd_check), ("plan", cmd_plan), ("run", cmd_run), ("fill", cmd_fill), ("collect", cmd_collect)):
         sp = sub.add_parser(name)
         sp.set_defaults(fn=fn)
-        if name in ("check", "run"):
+        if name in ("check", "run", "fill"):
             sp.add_argument("--ref", default=DEFAULT_REF, help="tag ou branch a executar (padrão: %(default)s)")
-        if name in ("plan", "run"):
+        if name in ("plan", "run", "fill"):
             sp.add_argument("--reps", type=int, default=10)
+        if name in ("plan", "run"):
             sp.add_argument("--warmup", action="store_true", help="uma execução de aquecimento (repetição 0) por ferramenta")
             sp.add_argument("--only", default="", help="lista separada por vírgula: karate-api,restassured,karate-ui,cypress")
-        if name == "run":
+        if name == "fill":
+            sp.add_argument("--max-attempts", type=int, default=3, help="tentativas por célula, contando a primeira")
+            sp.add_argument("--only", default="")
+        if name in ("run", "fill"):
             sp.add_argument("--limit", type=int, default=0, help="executa no máximo N execuções (para testes)")
     args = ap.parse_args()
     sys.exit(args.fn(args))

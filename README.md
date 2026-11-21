@@ -91,7 +91,7 @@ em parte das requisições, o que derrubou a primeira bateria. Com `ubuntu-22.04
 da Microsoft e as 288 requisições foram normais. Os dados do diagnóstico ficam em `evidencias/`.
 
 **Novidades da medição** (`.github/actions/measure/measure.py`):
-- uma sonda ao site antes e depois dos testes (fora do tempo medido): HTTP 200 com o JSON da API;
+- uma sonda ao site (API e página inicial) antes e depois dos testes e **a cada 5 segundos durante**; as requisições são leves e a duração medida não as inclui;
 - a organização da rede de saída do runner (por exemplo, `AS8075 Microsoft Corporation`);
 - mensagens de falha com até 600 caracteres.
 
@@ -105,3 +105,29 @@ falha da ferramenta; o critério será fixado antes da análise.
 3. Criar a tag `estudo-v3` nos três repositórios e rodar a análise estática nela.
 4. Rodar o diagnóstico de rede com `ubuntu-22.04` de novo, imediatamente antes de começar.
 5. `python scripts/battery.py check`, depois o piloto (`run --reps 1 --warmup --limit 4`) e a bateria.
+
+### Critério de validade da execução (fixado antes da bateria 2)
+
+Uma execução é marcada como **afetada pelo ambiente** (`ambiente_afetado = True`, `execucao_valida = False`) se ocorrer qualquer um destes casos:
+
+1. a sonda do site falhou antes, durante ou depois dos testes (resposta diferente de HTTP 200 com o JSON da API e a página inicial);
+2. algum teste falhou com mensagem típica de ambiente: `403`, `forbidden`, `503`, `heavy load`, `queue full`, `too many people`,
+   `one moment, please`, página HTML no lugar do JSON, ou `responseCode` ausente (ver `ENV_PATTERNS` em `scripts/battery.py`).
+
+Falhas de UI do tipo "elemento não encontrado" (`cannot read properties of null`, `expected to find element`, `timed out retrying`)
+**não** entram automaticamente: ficam em `falhas_indeterminadas` para revisão manual do screenshot, porque tanto podem ser a
+página de erro do site (já confirmado em dois casos no piloto da bateria 2) como um problema real do teste.
+A sonda a cada 5 s pode perder uma indisponibilidade curta, então essa coluna existe justamente para não atribuir tudo à ferramenta.
+
+Execuções afetadas **não são apagadas**: ficam nos dados e a taxa delas por ferramenta é um resultado do estudo
+(exposição ao ambiente). Mas ficam fora das medianas de tempo/recursos e da taxa de falhas das ferramentas.
+
+### Repetir as execuções afetadas
+
+```
+python scripts/battery.py fill --reps 5 --max-attempts 3
+```
+
+Para cada célula (repetição, configuração, ferramenta) que ainda não tem uma execução válida, dispara uma nova tentativa (até 3 no total,
+contando a primeira), uma de cada vez. Células que continuarem sem execução válida são listadas no final. As tentativas ficam no
+`dispatch_log.csv` com o sufixo `|a2`, `|a3` na chave.

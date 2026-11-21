@@ -10,6 +10,7 @@ Saídas em M_OUT:
   <projeto>-<camada>-metrics.json   resumo da execução
   <projeto>-<camada>-tests.csv      um registro por teste
   <projeto>-<camada>-samples.csv    amostras de CPU e memória (1 por segundo)
+  <projeto>-<camada>-site.csv       sondas do site durante os testes (1 a cada 5 s)
 
 O código de saída é o do comando, então o job fica vermelho quando algum teste falha.
 Apenas biblioteca padrão do Python; roda em Linux (usa /proc).
@@ -26,8 +27,10 @@ import tempfile
 import threading
 import time
 import xml.etree.ElementTree as ET
+from urllib.parse import urlparse
 
 INTERVAL = 1.0
+MONITOR_INTERVAL = 5.0
 PROBE_URL = os.environ.get("M_PROBE_URL", "https://automationexercise.com/api/productsList")
 
 
@@ -59,26 +62,42 @@ def cpu_model():
     return ""
 
 
+def _get(url, tmp):
+    body = os.path.join(tmp, "body")
+    t0 = time.perf_counter()
+    p = subprocess.run(["curl", "-s", "--max-time", "15", "-o", body, "-w", "%{http_code}", url],
+                       capture_output=True, text=True, timeout=30)
+    text = open(body, encoding="utf-8", errors="replace").read() if os.path.exists(body) else ""
+    return p.stdout.strip(), text, round(time.perf_counter() - t0, 3)
+
+
+def _plain(text):
+    text = re.sub(r"(?is)<(script|style).*?</\1>", " ", text)
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", text)).strip()[:160]
+
+
 def site_probe(url):
-    """Uma requisição simples ao site, fora do tempo medido. ok = HTTP 200 com o JSON da API."""
-    res = {"http_code": "", "tempo_s": None, "ok": False, "trecho": ""}
+    """Duas requisições ao site, fora do tempo medido: a API (JSON com responseCode) e a página inicial.
+    ok = as duas responderam normalmente."""
+    parsed = urlparse(url)
+    page_url = f"{parsed.scheme}://{parsed.netloc}/"
+    res = {"http_code": "", "tempo_s": None, "ok": False, "trecho": "", "pagina_http": "", "pagina_ok": False}
     try:
         with tempfile.TemporaryDirectory() as tmp:
-            body = os.path.join(tmp, "body")
-            t0 = time.perf_counter()
-            p = subprocess.run(["curl", "-s", "--max-time", "15", "-o", body, "-w", "%{http_code}", url],
-                               capture_output=True, text=True, timeout=30)
-            res["tempo_s"] = round(time.perf_counter() - t0, 3)
-            res["http_code"] = p.stdout.strip()
-            text = open(body, encoding="utf-8", errors="replace").read() if os.path.exists(body) else ""
+            code, text, t = _get(url, tmp)
+            res["http_code"], res["tempo_s"] = code, t
             try:
-                res["ok"] = res["http_code"] == "200" and "responseCode" in json.loads(text)
+                api_ok = code == "200" and "responseCode" in json.loads(text)
             except Exception:
-                res["ok"] = False
-            if not res["ok"]:
-                plain = re.sub(r"(?is)<(script|style).*?</\1>", " ", text)
-                plain = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", plain)).strip()
-                res["trecho"] = plain[:160]
+                api_ok = False
+            trecho = "" if api_ok else _plain(text)
+            pcode, ptext, _ = _get(page_url, tmp)
+            res["pagina_http"] = pcode
+            res["pagina_ok"] = pcode == "200" and "automation exercise" in ptext.lower()
+            if not res["pagina_ok"] and not trecho:
+                trecho = _plain(ptext)
+            res["ok"] = bool(api_ok and res["pagina_ok"])
+            res["trecho"] = trecho
     except Exception as exc:  # a sonda nunca pode derrubar a medição
         res["trecho"] = f"erro na sonda: {exc}"[:160]
     return res
@@ -112,6 +131,22 @@ class Sampler(threading.Thread):
             mem, _ = read_mem_mb()
             self.samples.append((round(time.perf_counter() - self.t0, 1), round(cpu, 1), round(mem, 1)))
             prev_total, prev_idle = total, idle
+
+
+class SiteMonitor(threading.Thread):
+    """Sonda o site a cada MONITOR_INTERVAL segundos enquanto os testes rodam."""
+
+    def __init__(self):
+        super().__init__(daemon=True)
+        self.stop_event = threading.Event()
+        self.results = []  # (t_s, ok, api_http, pagina_http, trecho)
+        self.t0 = time.perf_counter()
+
+    def run(self):
+        while not self.stop_event.wait(MONITOR_INTERVAL):
+            r = site_probe(PROBE_URL)
+            self.results.append((round(time.perf_counter() - self.t0, 1), int(r["ok"]), r["http_code"],
+                                 r["pagina_http"], r["trecho"]))
 
 
 def parse_junit(patterns):
@@ -159,13 +194,19 @@ def main():
     baseline_mem, mem_total = read_mem_mb()
     sampler = Sampler()
     sampler.start()
+    monitor = SiteMonitor()
+    monitor.start()
     started = datetime.datetime.now(datetime.timezone.utc)
     t0 = time.perf_counter()
     proc = subprocess.run(["bash", "-c", command])
     duration = time.perf_counter() - t0
     sampler.stop_event.set()
+    monitor.stop_event.set()
     sampler.join(timeout=3)
+    monitor.join(timeout=20)
     site_depois = site_probe(PROBE_URL)
+    durante = monitor.results
+    falhas_durante = [r for r in durante if not r[1]]
 
     files, tests = parse_junit(patterns)
     samples = sampler.samples
@@ -200,7 +241,9 @@ def main():
             "cpu_pico_pct": max(cpu_vals) if cpu_vals else None,
         },
         "testes": counts,
-        "site": {"url": PROBE_URL, "antes": site_antes, "depois": site_depois},
+        "site": {"url": PROBE_URL, "antes": site_antes, "depois": site_depois,
+                 "durante": {"n": len(durante), "falhas": len(falhas_durante),
+                             "primeira_falha_s": falhas_durante[0][0] if falhas_durante else None}},
         "rede": {"org": rede_org},
         "testes_esperados": expected,
         "contagem_confere": (counts["total"] == expected) if expected is not None else None,
@@ -236,6 +279,10 @@ def main():
         for t in tests:
             w.writerow([projeto, camada, result["github"]["run_id"], result["github"]["run_attempt"],
                         t["classname"], t["name"], t["status"], t["time_s"], t["mensagem"]])
+    with open(prefix + "-site.csv", "w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, lineterminator="\n")
+        w.writerow(["t_s", "ok", "api_http", "pagina_http", "trecho"])
+        w.writerows(durante)
     with open(prefix + "-samples.csv", "w", newline="", encoding="utf-8") as fh:
         w = csv.writer(fh, lineterminator="\n")
         w.writerow(["t_s", "cpu_pct", "mem_usada_mb"])
@@ -256,6 +303,7 @@ def main():
           f"| memória pico (acima da linha de base) | {r['mem_pico_delta_mb']} MB |",
           f"| cache / threads | {result['cache']} / {result['threads']} |",
           f"| site antes / depois (HTTP) | {site_antes['ok']} ({site_antes['http_code']}) / {site_depois['ok']} ({site_depois['http_code']}) |",
+          f"| site durante (sondas / falhas) | {len(durante)} / {len(falhas_durante)} |",
           f"| rede de saída | {rede_org} |",
           f"| código de saída | {proc.returncode} |", ""]
     print("\n".join(md))

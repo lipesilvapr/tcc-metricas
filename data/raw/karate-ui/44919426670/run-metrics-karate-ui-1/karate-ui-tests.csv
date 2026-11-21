@@ -1,0 +1,11 @@
+projeto,camada,run_id,run_attempt,classname,teste,status,tempo_s,mensagem
+karate,ui,44919426670,1,features.ui.auth.login,Login com credenciais válidas,passou,28.456672,
+karate,ui,44919426670,1,features.ui.auth.login,Login inválido - usuario inexistente,passou,3.779389,
+karate,ui,44919426670,1,features.ui.auth.login,Login inválido - senha qualquer,falhou,23.054821,"js failed: >>>> 01: waitFor(""form[action='/login']"") <<<< org.graalvm.polyglot.PolyglotException: waitUntil (js): failed after 10 retries and 20140 milliseconds - com.intuit.karate.driver.DriverOptions.retry(DriverOptions.java:517) - com.intuit.karate.driver.DevToolsDriver.waitUntil(DevToolsDriver.java:777) - com.intuit.karate.driver.DriverOptions.waitForAny(DriverOptions.java:700) - com.intuit.karate.driver.Driver.waitFor(Driver.java:237) - <js>.:anonymous(Unnamed:1)  classpath:pages/login-page.feature:7 classpath:features/ui/auth/login.feature:6"
+karate,ui,44919426670,1,features.ui.auth.signup,Cadastro completo com sucesso,passou,7.921126,
+karate,ui,44919426670,1,features.ui.auth.signup,Cadastro com email já existente,passou,5.617786,
+karate,ui,44919426670,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,3.325478,
+karate,ui,44919426670,1,features.ui.products.products,Página de produtos lista itens,passou,2.91885,
+karate,ui,44919426670,1,features.ui.products.products,"Buscar produto por ""top""",passou,3.887894,
+karate,ui,44919426670,1,features.ui.products.products,"Buscar produto por ""jean""",passou,2.925946,
+karate,ui,44919426670,1,features.ui.products.products,"Buscar produto por ""dress""",passou,2.952847,

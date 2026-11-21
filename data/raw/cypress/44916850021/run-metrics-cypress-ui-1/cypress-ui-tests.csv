@@ -1,0 +1,11 @@
+projeto,camada,run_id,run_attempt,classname,teste,status,tempo_s,mensagem
+cypress,ui,44916850021,1,login com credenciais válidas,UI - Login login com credenciais válidas,passou,6.119,
+cypress,ui,44916850021,1,login inválido - usuário inexistente,UI - Login login inválido - usuário inexistente,passou,1.103,
+cypress,ui,44916850021,1,login inválido - senha qualquer,UI - Login login inválido - senha qualquer,passou,2.297,
+cypress,ui,44916850021,1,cadastro completo com sucesso,UI - Cadastro de usuário cadastro completo com sucesso,passou,16.202,
+cypress,ui,44916850021,1,cadastro com email já existente,UI - Cadastro de usuário cadastro com email já existente,passou,3.131,
+cypress,ui,44916850021,1,página de produtos lista itens,UI - Produtos página de produtos lista itens,passou,3.107,
+cypress,ui,44916850021,1,"buscar produto por ""top""","UI - Produtos buscar produto por ""top""",passou,5.476,
+cypress,ui,44916850021,1,"buscar produto por ""jean""","UI - Produtos buscar produto por ""jean""",passou,2.336,
+cypress,ui,44916850021,1,"buscar produto por ""dress""","UI - Produtos buscar produto por ""dress""",passou,2.684,
+cypress,ui,44916850021,1,carrega com título e produtos em destaque,UI - Home page carrega com título e produtos em destaque,passou,4.915,

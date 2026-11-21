@@ -1,0 +1,717 @@
+key,rep,config,tool,cache,threads,projeto,camada,run_id,run_attempt,classname,teste,status,tempo_s,mensagem,causa_ambiente
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,true,1,karate,api,44915793725,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.698796,,False
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,true,1,karate,api,44915793725,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.14288,,False
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,true,1,karate,api,44915793725,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,0.373764,,False
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,true,1,karate,api,44915793725,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.327803,,False
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,true,1,karate,api,44915793725,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.254079,,False
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,true,1,karate,api,44915793725,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.371728,,False
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,true,1,karate,api,44915793725,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.307187,,False
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,true,1,karate,api,44915793725,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.313444,,False
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,true,1,karate,api,44915793725,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,1.292564,,False
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,true,1,karate,api,44915793725,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.394188,,False
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,true,1,karate,api,44915793725,1,features.api.user.verify-login,Login válido,passou,0.481296,,False
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,true,1,karate,api,44915793725,1,features.api.user.verify-login,Senha incorreta,passou,0.29483,,False
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,true,1,karate,api,44915793725,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.281317,,False
+0|A_quente_1|karate-api,0,A_quente_1,karate-api,true,1,karate,api,44915793725,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.551165,,False
+0|A_quente_1|restassured,0,A_quente_1,restassured,true,1,restassured,api,44915866643,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,0.133,,False
+0|A_quente_1|restassured,0,A_quente_1,restassured,true,1,restassured,api,44915866643,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.13,,False
+0|A_quente_1|restassured,0,A_quente_1,restassured,true,1,restassured,api,44915866643,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,3.546,,False
+0|A_quente_1|restassured,0,A_quente_1,restassured,true,1,restassured,api,44915866643,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.283,,False
+0|A_quente_1|restassured,0,A_quente_1,restassured,true,1,restassured,api,44915866643,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,0.177,,False
+0|A_quente_1|restassured,0,A_quente_1,restassured,true,1,restassured,api,44915866643,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.233,,False
+0|A_quente_1|restassured,0,A_quente_1,restassured,true,1,restassured,api,44915866643,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.27,,False
+0|A_quente_1|restassured,0,A_quente_1,restassured,true,1,restassured,api,44915866643,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.279,,False
+0|A_quente_1|restassured,0,A_quente_1,restassured,true,1,restassured,api,44915866643,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,0.625,,False
+0|A_quente_1|restassured,0,A_quente_1,restassured,true,1,restassured,api,44915866643,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,0.849,,False
+0|A_quente_1|restassured,0,A_quente_1,restassured,true,1,restassured,api,44915866643,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,0.467,,False
+0|A_quente_1|restassured,0,A_quente_1,restassured,true,1,restassured,api,44915866643,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,0.466,,False
+0|A_quente_1|restassured,0,A_quente_1,restassured,true,1,restassured,api,44915866643,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,1.147,,False
+0|A_quente_1|restassured,0,A_quente_1,restassured,true,1,restassured,api,44915866643,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.633,,False
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,true,1,karate,ui,44915935566,1,features.ui.auth.login,Login com credenciais válidas,passou,26.184586,,False
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,true,1,karate,ui,44915935566,1,features.ui.auth.login,Login inválido - usuario inexistente,passou,6.185422,,False
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,true,1,karate,ui,44915935566,1,features.ui.auth.login,Login inválido - senha qualquer,passou,3.297275,,False
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,true,1,karate,ui,44915935566,1,features.ui.auth.signup,Cadastro completo com sucesso,passou,7.380097,,False
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,true,1,karate,ui,44915935566,1,features.ui.auth.signup,Cadastro com email já existente,passou,4.10434,,False
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,true,1,karate,ui,44915935566,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,3.021564,,False
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,true,1,karate,ui,44915935566,1,features.ui.products.products,Página de produtos lista itens,passou,2.771503,,False
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,true,1,karate,ui,44915935566,1,features.ui.products.products,"Buscar produto por ""top""",passou,3.363053,,False
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,true,1,karate,ui,44915935566,1,features.ui.products.products,"Buscar produto por ""jean""",passou,2.958451,,False
+0|A_quente_1|karate-ui,0,A_quente_1,karate-ui,true,1,karate,ui,44915935566,1,features.ui.products.products,"Buscar produto por ""dress""",passou,3.26286,,False
+0|A_quente_1|cypress,0,A_quente_1,cypress,true,1,cypress,ui,44916104026,1,página de produtos lista itens,UI - Produtos página de produtos lista itens,passou,1.245,,False
+0|A_quente_1|cypress,0,A_quente_1,cypress,true,1,cypress,ui,44916104026,1,"buscar produto por ""top""","UI - Produtos buscar produto por ""top""",passou,1.991,,False
+0|A_quente_1|cypress,0,A_quente_1,cypress,true,1,cypress,ui,44916104026,1,"buscar produto por ""jean""","UI - Produtos buscar produto por ""jean""",passou,1.558,,False
+0|A_quente_1|cypress,0,A_quente_1,cypress,true,1,cypress,ui,44916104026,1,"buscar produto por ""dress""","UI - Produtos buscar produto por ""dress""",passou,2.104,,False
+0|A_quente_1|cypress,0,A_quente_1,cypress,true,1,cypress,ui,44916104026,1,carrega com título e produtos em destaque,UI - Home page carrega com título e produtos em destaque,passou,1.908,,False
+0|A_quente_1|cypress,0,A_quente_1,cypress,true,1,cypress,ui,44916104026,1,cadastro completo com sucesso,UI - Cadastro de usuário cadastro completo com sucesso,passou,6.897,,False
+0|A_quente_1|cypress,0,A_quente_1,cypress,true,1,cypress,ui,44916104026,1,cadastro com email já existente,UI - Cadastro de usuário cadastro com email já existente,passou,1.805,,False
+0|A_quente_1|cypress,0,A_quente_1,cypress,true,1,cypress,ui,44916104026,1,login com credenciais válidas,UI - Login login com credenciais válidas,passou,3.675,,False
+0|A_quente_1|cypress,0,A_quente_1,cypress,true,1,cypress,ui,44916104026,1,login inválido - usuário inexistente,UI - Login login inválido - usuário inexistente,passou,1.052,,False
+0|A_quente_1|cypress,0,A_quente_1,cypress,true,1,cypress,ui,44916104026,1,login inválido - senha qualquer,UI - Login login inválido - senha qualquer,passou,0.894,,False
+1|A_quente_1|karate-api,1,A_quente_1,karate-api,true,1,karate,api,44916531032,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.518134,,False
+1|A_quente_1|karate-api,1,A_quente_1,karate-api,true,1,karate,api,44916531032,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.37457,,False
+1|A_quente_1|karate-api,1,A_quente_1,karate-api,true,1,karate,api,44916531032,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,0.356254,,False
+1|A_quente_1|karate-api,1,A_quente_1,karate-api,true,1,karate,api,44916531032,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.262884,,False
+1|A_quente_1|karate-api,1,A_quente_1,karate-api,true,1,karate,api,44916531032,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.257936,,False
+1|A_quente_1|karate-api,1,A_quente_1,karate-api,true,1,karate,api,44916531032,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.49323,,False
+1|A_quente_1|karate-api,1,A_quente_1,karate-api,true,1,karate,api,44916531032,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.68903,,False
+1|A_quente_1|karate-api,1,A_quente_1,karate-api,true,1,karate,api,44916531032,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.299115,,False
+1|A_quente_1|karate-api,1,A_quente_1,karate-api,true,1,karate,api,44916531032,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,2.168575,,False
+1|A_quente_1|karate-api,1,A_quente_1,karate-api,true,1,karate,api,44916531032,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.234461,,False
+1|A_quente_1|karate-api,1,A_quente_1,karate-api,true,1,karate,api,44916531032,1,features.api.user.verify-login,Login válido,passou,0.420475,,False
+1|A_quente_1|karate-api,1,A_quente_1,karate-api,true,1,karate,api,44916531032,1,features.api.user.verify-login,Senha incorreta,passou,0.575127,,False
+1|A_quente_1|karate-api,1,A_quente_1,karate-api,true,1,karate,api,44916531032,1,features.api.user.verify-login,Parâmetro email ausente,passou,1.044154,,False
+1|A_quente_1|karate-api,1,A_quente_1,karate-api,true,1,karate,api,44916531032,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,1.293263,,False
+1|A_quente_1|restassured,1,A_quente_1,restassured,true,1,restassured,api,44916617282,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,0.273,,False
+1|A_quente_1|restassured,1,A_quente_1,restassured,true,1,restassured,api,44916617282,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.434,,False
+1|A_quente_1|restassured,1,A_quente_1,restassured,true,1,restassured,api,44916617282,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,3.892,,False
+1|A_quente_1|restassured,1,A_quente_1,restassured,true,1,restassured,api,44916617282,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.407,,False
+1|A_quente_1|restassured,1,A_quente_1,restassured,true,1,restassured,api,44916617282,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,0.216,,False
+1|A_quente_1|restassured,1,A_quente_1,restassured,true,1,restassured,api,44916617282,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.452,,False
+1|A_quente_1|restassured,1,A_quente_1,restassured,true,1,restassured,api,44916617282,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.225,,False
+1|A_quente_1|restassured,1,A_quente_1,restassured,true,1,restassured,api,44916617282,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.272,,False
+1|A_quente_1|restassured,1,A_quente_1,restassured,true,1,restassured,api,44916617282,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,0.75,,False
+1|A_quente_1|restassured,1,A_quente_1,restassured,true,1,restassured,api,44916617282,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,1.741,,False
+1|A_quente_1|restassured,1,A_quente_1,restassured,true,1,restassured,api,44916617282,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,1.175,,False
+1|A_quente_1|restassured,1,A_quente_1,restassured,true,1,restassured,api,44916617282,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,0.597,,False
+1|A_quente_1|restassured,1,A_quente_1,restassured,true,1,restassured,api,44916617282,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,0.743,,False
+1|A_quente_1|restassured,1,A_quente_1,restassured,true,1,restassured,api,44916617282,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.864,,False
+1|A_quente_1|karate-ui,1,A_quente_1,karate-ui,true,1,karate,ui,44916705656,1,features.ui.auth.login,Login com credenciais válidas,passou,15.345017,,False
+1|A_quente_1|karate-ui,1,A_quente_1,karate-ui,true,1,karate,ui,44916705656,1,features.ui.auth.login,Login inválido - usuario inexistente,passou,5.48868,,False
+1|A_quente_1|karate-ui,1,A_quente_1,karate-ui,true,1,karate,ui,44916705656,1,features.ui.auth.login,Login inválido - senha qualquer,passou,6.553903,,False
+1|A_quente_1|karate-ui,1,A_quente_1,karate-ui,true,1,karate,ui,44916705656,1,features.ui.auth.signup,Cadastro completo com sucesso,passou,11.0303,,False
+1|A_quente_1|karate-ui,1,A_quente_1,karate-ui,true,1,karate,ui,44916705656,1,features.ui.auth.signup,Cadastro com email já existente,passou,3.842092,,False
+1|A_quente_1|karate-ui,1,A_quente_1,karate-ui,true,1,karate,ui,44916705656,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,2.681683,,False
+1|A_quente_1|karate-ui,1,A_quente_1,karate-ui,true,1,karate,ui,44916705656,1,features.ui.products.products,Página de produtos lista itens,passou,2.838514,,False
+1|A_quente_1|karate-ui,1,A_quente_1,karate-ui,true,1,karate,ui,44916705656,1,features.ui.products.products,"Buscar produto por ""top""",passou,3.014445,,False
+1|A_quente_1|karate-ui,1,A_quente_1,karate-ui,true,1,karate,ui,44916705656,1,features.ui.products.products,"Buscar produto por ""jean""",passou,3.078735,,False
+1|A_quente_1|karate-ui,1,A_quente_1,karate-ui,true,1,karate,ui,44916705656,1,features.ui.products.products,"Buscar produto por ""dress""",passou,4.259193,,False
+1|A_quente_1|cypress,1,A_quente_1,cypress,true,1,cypress,ui,44916850021,1,login com credenciais válidas,UI - Login login com credenciais válidas,passou,6.119,,False
+1|A_quente_1|cypress,1,A_quente_1,cypress,true,1,cypress,ui,44916850021,1,login inválido - usuário inexistente,UI - Login login inválido - usuário inexistente,passou,1.103,,False
+1|A_quente_1|cypress,1,A_quente_1,cypress,true,1,cypress,ui,44916850021,1,login inválido - senha qualquer,UI - Login login inválido - senha qualquer,passou,2.297,,False
+1|A_quente_1|cypress,1,A_quente_1,cypress,true,1,cypress,ui,44916850021,1,cadastro completo com sucesso,UI - Cadastro de usuário cadastro completo com sucesso,passou,16.202,,False
+1|A_quente_1|cypress,1,A_quente_1,cypress,true,1,cypress,ui,44916850021,1,cadastro com email já existente,UI - Cadastro de usuário cadastro com email já existente,passou,3.131,,False
+1|A_quente_1|cypress,1,A_quente_1,cypress,true,1,cypress,ui,44916850021,1,página de produtos lista itens,UI - Produtos página de produtos lista itens,passou,3.107,,False
+1|A_quente_1|cypress,1,A_quente_1,cypress,true,1,cypress,ui,44916850021,1,"buscar produto por ""top""","UI - Produtos buscar produto por ""top""",passou,5.476,,False
+1|A_quente_1|cypress,1,A_quente_1,cypress,true,1,cypress,ui,44916850021,1,"buscar produto por ""jean""","UI - Produtos buscar produto por ""jean""",passou,2.336,,False
+1|A_quente_1|cypress,1,A_quente_1,cypress,true,1,cypress,ui,44916850021,1,"buscar produto por ""dress""","UI - Produtos buscar produto por ""dress""",passou,2.684,,False
+1|A_quente_1|cypress,1,A_quente_1,cypress,true,1,cypress,ui,44916850021,1,carrega com título e produtos em destaque,UI - Home page carrega com título e produtos em destaque,passou,4.915,,False
+1|B_frio_1|karate-api,1,B_frio_1,karate-api,false,1,karate,api,44917031355,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.685744,,False
+1|B_frio_1|karate-api,1,B_frio_1,karate-api,false,1,karate,api,44917031355,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.250109,,False
+1|B_frio_1|karate-api,1,B_frio_1,karate-api,false,1,karate,api,44917031355,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,0.380507,,False
+1|B_frio_1|karate-api,1,B_frio_1,karate-api,false,1,karate,api,44917031355,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.155922,,False
+1|B_frio_1|karate-api,1,B_frio_1,karate-api,false,1,karate,api,44917031355,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.240643,,False
+1|B_frio_1|karate-api,1,B_frio_1,karate-api,false,1,karate,api,44917031355,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.119804,,False
+1|B_frio_1|karate-api,1,B_frio_1,karate-api,false,1,karate,api,44917031355,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.116964,,False
+1|B_frio_1|karate-api,1,B_frio_1,karate-api,false,1,karate,api,44917031355,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.222502,,False
+1|B_frio_1|karate-api,1,B_frio_1,karate-api,false,1,karate,api,44917031355,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,1.203271,,False
+1|B_frio_1|karate-api,1,B_frio_1,karate-api,false,1,karate,api,44917031355,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.330864,,False
+1|B_frio_1|karate-api,1,B_frio_1,karate-api,false,1,karate,api,44917031355,1,features.api.user.verify-login,Login válido,passou,0.725332,,False
+1|B_frio_1|karate-api,1,B_frio_1,karate-api,false,1,karate,api,44917031355,1,features.api.user.verify-login,Senha incorreta,passou,0.259686,,False
+1|B_frio_1|karate-api,1,B_frio_1,karate-api,false,1,karate,api,44917031355,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.253051,,False
+1|B_frio_1|karate-api,1,B_frio_1,karate-api,false,1,karate,api,44917031355,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.247992,,False
+1|B_frio_1|restassured,1,B_frio_1,restassured,false,1,restassured,api,44917106649,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,0.27,,False
+1|B_frio_1|restassured,1,B_frio_1,restassured,false,1,restassured,api,44917106649,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.419,,False
+1|B_frio_1|restassured,1,B_frio_1,restassured,false,1,restassured,api,44917106649,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,3.884,,False
+1|B_frio_1|restassured,1,B_frio_1,restassured,false,1,restassured,api,44917106649,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.382,,False
+1|B_frio_1|restassured,1,B_frio_1,restassured,false,1,restassured,api,44917106649,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,0.423,,False
+1|B_frio_1|restassured,1,B_frio_1,restassured,false,1,restassured,api,44917106649,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.288,,False
+1|B_frio_1|restassured,1,B_frio_1,restassured,false,1,restassured,api,44917106649,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.767,,False
+1|B_frio_1|restassured,1,B_frio_1,restassured,false,1,restassured,api,44917106649,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.218,,False
+1|B_frio_1|restassured,1,B_frio_1,restassured,false,1,restassured,api,44917106649,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,0.87,,False
+1|B_frio_1|restassured,1,B_frio_1,restassured,false,1,restassured,api,44917106649,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,1.843,,False
+1|B_frio_1|restassured,1,B_frio_1,restassured,false,1,restassured,api,44917106649,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,1.564,,False
+1|B_frio_1|restassured,1,B_frio_1,restassured,false,1,restassured,api,44917106649,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,0.604,,False
+1|B_frio_1|restassured,1,B_frio_1,restassured,false,1,restassured,api,44917106649,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,0.544,,False
+1|B_frio_1|restassured,1,B_frio_1,restassured,false,1,restassured,api,44917106649,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.42,,False
+1|B_frio_1|karate-ui,1,B_frio_1,karate-ui,false,1,karate,ui,44917205883,1,features.ui.auth.login,Login com credenciais válidas,passou,14.863472,,False
+1|B_frio_1|karate-ui,1,B_frio_1,karate-ui,false,1,karate,ui,44917205883,1,features.ui.auth.login,Login inválido - usuario inexistente,passou,5.562763,,False
+1|B_frio_1|karate-ui,1,B_frio_1,karate-ui,false,1,karate,ui,44917205883,1,features.ui.auth.login,Login inválido - senha qualquer,passou,5.589194,,False
+1|B_frio_1|karate-ui,1,B_frio_1,karate-ui,false,1,karate,ui,44917205883,1,features.ui.auth.signup,Cadastro completo com sucesso,passou,6.918694,,False
+1|B_frio_1|karate-ui,1,B_frio_1,karate-ui,false,1,karate,ui,44917205883,1,features.ui.auth.signup,Cadastro com email já existente,passou,4.684897,,False
+1|B_frio_1|karate-ui,1,B_frio_1,karate-ui,false,1,karate,ui,44917205883,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,2.871335,,False
+1|B_frio_1|karate-ui,1,B_frio_1,karate-ui,false,1,karate,ui,44917205883,1,features.ui.products.products,Página de produtos lista itens,passou,2.911123,,False
+1|B_frio_1|karate-ui,1,B_frio_1,karate-ui,false,1,karate,ui,44917205883,1,features.ui.products.products,"Buscar produto por ""top""",passou,3.110669,,False
+1|B_frio_1|karate-ui,1,B_frio_1,karate-ui,false,1,karate,ui,44917205883,1,features.ui.products.products,"Buscar produto por ""jean""",passou,3.804563,,False
+1|B_frio_1|karate-ui,1,B_frio_1,karate-ui,false,1,karate,ui,44917205883,1,features.ui.products.products,"Buscar produto por ""dress""",passou,3.387536,,False
+1|B_frio_1|cypress,1,B_frio_1,cypress,false,1,cypress,ui,44917359757,1,página de produtos lista itens,UI - Produtos página de produtos lista itens,passou,1.165,,False
+1|B_frio_1|cypress,1,B_frio_1,cypress,false,1,cypress,ui,44917359757,1,"buscar produto por ""top""","UI - Produtos buscar produto por ""top""",passou,1.833,,False
+1|B_frio_1|cypress,1,B_frio_1,cypress,false,1,cypress,ui,44917359757,1,"buscar produto por ""jean""","UI - Produtos buscar produto por ""jean""",passou,1.577,,False
+1|B_frio_1|cypress,1,B_frio_1,cypress,false,1,cypress,ui,44917359757,1,"buscar produto por ""dress""","UI - Produtos buscar produto por ""dress""",passou,1.619,,False
+1|B_frio_1|cypress,1,B_frio_1,cypress,false,1,cypress,ui,44917359757,1,cadastro completo com sucesso,UI - Cadastro de usuário cadastro completo com sucesso,passou,9.21,,False
+1|B_frio_1|cypress,1,B_frio_1,cypress,false,1,cypress,ui,44917359757,1,cadastro com email já existente,UI - Cadastro de usuário cadastro com email já existente,passou,1.408,,False
+1|B_frio_1|cypress,1,B_frio_1,cypress,false,1,cypress,ui,44917359757,1,login com credenciais válidas,UI - Login login com credenciais válidas,passou,5.267,,False
+1|B_frio_1|cypress,1,B_frio_1,cypress,false,1,cypress,ui,44917359757,1,login inválido - usuário inexistente,UI - Login login inválido - usuário inexistente,passou,1.104,,False
+1|B_frio_1|cypress,1,B_frio_1,cypress,false,1,cypress,ui,44917359757,1,login inválido - senha qualquer,UI - Login login inválido - senha qualquer,passou,0.884,,False
+1|B_frio_1|cypress,1,B_frio_1,cypress,false,1,cypress,ui,44917359757,1,carrega com título e produtos em destaque,UI - Home page carrega com título e produtos em destaque,passou,0.954,,False
+1|C_quente_4|karate-api,1,C_quente_4,karate-api,true,4,karate,api,44917509997,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.605485,,False
+1|C_quente_4|karate-api,1,C_quente_4,karate-api,true,4,karate,api,44917509997,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.746411,,False
+1|C_quente_4|karate-api,1,C_quente_4,karate-api,true,4,karate,api,44917509997,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,1.058484,,False
+1|C_quente_4|karate-api,1,C_quente_4,karate-api,true,4,karate,api,44917509997,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.732982,,False
+1|C_quente_4|karate-api,1,C_quente_4,karate-api,true,4,karate,api,44917509997,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.515193,,False
+1|C_quente_4|karate-api,1,C_quente_4,karate-api,true,4,karate,api,44917509997,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.391908,,False
+1|C_quente_4|karate-api,1,C_quente_4,karate-api,true,4,karate,api,44917509997,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.375117,,False
+1|C_quente_4|karate-api,1,C_quente_4,karate-api,true,4,karate,api,44917509997,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.210582,,False
+1|C_quente_4|karate-api,1,C_quente_4,karate-api,true,4,karate,api,44917509997,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,1.10935,,False
+1|C_quente_4|karate-api,1,C_quente_4,karate-api,true,4,karate,api,44917509997,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.395409,,False
+1|C_quente_4|karate-api,1,C_quente_4,karate-api,true,4,karate,api,44917509997,1,features.api.user.verify-login,Login válido,passou,0.353225,,False
+1|C_quente_4|karate-api,1,C_quente_4,karate-api,true,4,karate,api,44917509997,1,features.api.user.verify-login,Senha incorreta,passou,0.33671,,False
+1|C_quente_4|karate-api,1,C_quente_4,karate-api,true,4,karate,api,44917509997,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.356714,,False
+1|C_quente_4|karate-api,1,C_quente_4,karate-api,true,4,karate,api,44917509997,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.314367,,False
+1|C_quente_4|restassured,1,C_quente_4,restassured,true,4,restassured,api,44917584814,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.405,,False
+1|C_quente_4|restassured,1,C_quente_4,restassured,true,4,restassured,api,44917584814,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,4.255,,False
+1|C_quente_4|restassured,1,C_quente_4,restassured,true,4,restassured,api,44917584814,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,4.255,,False
+1|C_quente_4|restassured,1,C_quente_4,restassured,true,4,restassured,api,44917584814,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,4.278,,False
+1|C_quente_4|restassured,1,C_quente_4,restassured,true,4,restassured,api,44917584814,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.236,,False
+1|C_quente_4|restassured,1,C_quente_4,restassured,true,4,restassured,api,44917584814,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,5.053,,False
+1|C_quente_4|restassured,1,C_quente_4,restassured,true,4,restassured,api,44917584814,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,3.639,,False
+1|C_quente_4|restassured,1,C_quente_4,restassured,true,4,restassured,api,44917584814,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.76,,False
+1|C_quente_4|restassured,1,C_quente_4,restassured,true,4,restassured,api,44917584814,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.376,,False
+1|C_quente_4|restassured,1,C_quente_4,restassured,true,4,restassured,api,44917584814,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.207,,False
+1|C_quente_4|restassured,1,C_quente_4,restassured,true,4,restassured,api,44917584814,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,1.039,,False
+1|C_quente_4|restassured,1,C_quente_4,restassured,true,4,restassured,api,44917584814,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,1.455,,False
+1|C_quente_4|restassured,1,C_quente_4,restassured,true,4,restassured,api,44917584814,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,1.076,,False
+1|C_quente_4|restassured,1,C_quente_4,restassured,true,4,restassured,api,44917584814,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.703,,False
+2|A_quente_1|cypress,2,A_quente_1,cypress,true,1,cypress,ui,44917685361,1,carrega com título e produtos em destaque,UI - Home page carrega com título e produtos em destaque,passou,1.608,,False
+2|A_quente_1|cypress,2,A_quente_1,cypress,true,1,cypress,ui,44917685361,1,cadastro completo com sucesso,UI - Cadastro de usuário cadastro completo com sucesso,passou,8.383,,False
+2|A_quente_1|cypress,2,A_quente_1,cypress,true,1,cypress,ui,44917685361,1,cadastro com email já existente,UI - Cadastro de usuário cadastro com email já existente,passou,1.714,,False
+2|A_quente_1|cypress,2,A_quente_1,cypress,true,1,cypress,ui,44917685361,1,página de produtos lista itens,UI - Produtos página de produtos lista itens,passou,1.655,,False
+2|A_quente_1|cypress,2,A_quente_1,cypress,true,1,cypress,ui,44917685361,1,"buscar produto por ""top""","UI - Produtos buscar produto por ""top""",passou,2.205,,False
+2|A_quente_1|cypress,2,A_quente_1,cypress,true,1,cypress,ui,44917685361,1,"buscar produto por ""jean""","UI - Produtos buscar produto por ""jean""",passou,1.74,,False
+2|A_quente_1|cypress,2,A_quente_1,cypress,true,1,cypress,ui,44917685361,1,"buscar produto por ""dress""","UI - Produtos buscar produto por ""dress""",passou,2.453,,False
+2|A_quente_1|cypress,2,A_quente_1,cypress,true,1,cypress,ui,44917685361,1,login com credenciais válidas,UI - Login login com credenciais válidas,passou,6.692,,False
+2|A_quente_1|cypress,2,A_quente_1,cypress,true,1,cypress,ui,44917685361,1,login inválido - usuário inexistente,UI - Login login inválido - usuário inexistente,passou,1.306,,False
+2|A_quente_1|cypress,2,A_quente_1,cypress,true,1,cypress,ui,44917685361,1,login inválido - senha qualquer,UI - Login login inválido - senha qualquer,passou,2.346,,False
+2|A_quente_1|karate-ui,2,A_quente_1,karate-ui,true,1,karate,ui,44917836303,1,features.ui.auth.login,Login com credenciais válidas,falhou,26.548198,"js failed: >>>> 01: waitFor(""//a[contains(.,'Logged in as')]"") <<<< org.graalvm.polyglot.PolyglotException: waitUntil (js): failed after 10 retries and 20026 milliseconds - com.intuit.karate.driver.DriverOptions.retry(DriverOptions.java:517) - com.intuit.karate.driver.DevToolsDriver.waitUntil(DevToolsDriver.java:777) - com.intuit.karate.driver.DriverOptions.waitForAny(DriverOptions.java:700) - com.intuit.karate.driver.Driver.waitFor(Driver.java:237) - <js>.:anonymous(Unnamed:1)  classpath:features/ui/auth/login.feature:17",False
+2|A_quente_1|karate-ui,2,A_quente_1,karate-ui,true,1,karate,ui,44917836303,1,features.ui.auth.login,Login inválido - usuario inexistente,passou,3.880404,,False
+2|A_quente_1|karate-ui,2,A_quente_1,karate-ui,true,1,karate,ui,44917836303,1,features.ui.auth.login,Login inválido - senha qualquer,passou,3.417729,,False
+2|A_quente_1|karate-ui,2,A_quente_1,karate-ui,true,1,karate,ui,44917836303,1,features.ui.auth.signup,Cadastro completo com sucesso,passou,6.691703,,False
+2|A_quente_1|karate-ui,2,A_quente_1,karate-ui,true,1,karate,ui,44917836303,1,features.ui.auth.signup,Cadastro com email já existente,passou,3.708851,,False
+2|A_quente_1|karate-ui,2,A_quente_1,karate-ui,true,1,karate,ui,44917836303,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,3.57623,,False
+2|A_quente_1|karate-ui,2,A_quente_1,karate-ui,true,1,karate,ui,44917836303,1,features.ui.products.products,Página de produtos lista itens,passou,3.593305,,False
+2|A_quente_1|karate-ui,2,A_quente_1,karate-ui,true,1,karate,ui,44917836303,1,features.ui.products.products,"Buscar produto por ""top""",passou,3.320425,,False
+2|A_quente_1|karate-ui,2,A_quente_1,karate-ui,true,1,karate,ui,44917836303,1,features.ui.products.products,"Buscar produto por ""jean""",passou,3.885612,,False
+2|A_quente_1|karate-ui,2,A_quente_1,karate-ui,true,1,karate,ui,44917836303,1,features.ui.products.products,"Buscar produto por ""dress""",passou,3.265533,,False
+2|A_quente_1|restassured,2,A_quente_1,restassured,true,1,restassured,api,44917984511,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,0.497,,False
+2|A_quente_1|restassured,2,A_quente_1,restassured,true,1,restassured,api,44917984511,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.326,,False
+2|A_quente_1|restassured,2,A_quente_1,restassured,true,1,restassured,api,44917984511,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,4.435,,False
+2|A_quente_1|restassured,2,A_quente_1,restassured,true,1,restassured,api,44917984511,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.218,,False
+2|A_quente_1|restassured,2,A_quente_1,restassured,true,1,restassured,api,44917984511,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,0.273,,False
+2|A_quente_1|restassured,2,A_quente_1,restassured,true,1,restassured,api,44917984511,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.338,,False
+2|A_quente_1|restassured,2,A_quente_1,restassured,true,1,restassured,api,44917984511,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.539,,False
+2|A_quente_1|restassured,2,A_quente_1,restassured,true,1,restassured,api,44917984511,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.375,,False
+2|A_quente_1|restassured,2,A_quente_1,restassured,true,1,restassured,api,44917984511,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,0.458,,False
+2|A_quente_1|restassured,2,A_quente_1,restassured,true,1,restassured,api,44917984511,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,1.092,,False
+2|A_quente_1|restassured,2,A_quente_1,restassured,true,1,restassured,api,44917984511,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,1.022,,False
+2|A_quente_1|restassured,2,A_quente_1,restassured,true,1,restassured,api,44917984511,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,0.563,,False
+2|A_quente_1|restassured,2,A_quente_1,restassured,true,1,restassured,api,44917984511,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,0.762,,False
+2|A_quente_1|restassured,2,A_quente_1,restassured,true,1,restassured,api,44917984511,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.439,,False
+2|A_quente_1|karate-api,2,A_quente_1,karate-api,true,1,karate,api,44918082472,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.457561,,False
+2|A_quente_1|karate-api,2,A_quente_1,karate-api,true,1,karate,api,44918082472,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.363195,,False
+2|A_quente_1|karate-api,2,A_quente_1,karate-api,true,1,karate,api,44918082472,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,0.220416,,False
+2|A_quente_1|karate-api,2,A_quente_1,karate-api,true,1,karate,api,44918082472,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.191632,,False
+2|A_quente_1|karate-api,2,A_quente_1,karate-api,true,1,karate,api,44918082472,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.211312,,False
+2|A_quente_1|karate-api,2,A_quente_1,karate-api,true,1,karate,api,44918082472,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.152058,,False
+2|A_quente_1|karate-api,2,A_quente_1,karate-api,true,1,karate,api,44918082472,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.216252,,False
+2|A_quente_1|karate-api,2,A_quente_1,karate-api,true,1,karate,api,44918082472,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.182316,,False
+2|A_quente_1|karate-api,2,A_quente_1,karate-api,true,1,karate,api,44918082472,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,0.961726,,False
+2|A_quente_1|karate-api,2,A_quente_1,karate-api,true,1,karate,api,44918082472,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.319461,,False
+2|A_quente_1|karate-api,2,A_quente_1,karate-api,true,1,karate,api,44918082472,1,features.api.user.verify-login,Login válido,passou,0.635429,,False
+2|A_quente_1|karate-api,2,A_quente_1,karate-api,true,1,karate,api,44918082472,1,features.api.user.verify-login,Senha incorreta,passou,0.321234,,False
+2|A_quente_1|karate-api,2,A_quente_1,karate-api,true,1,karate,api,44918082472,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.305328,,False
+2|A_quente_1|karate-api,2,A_quente_1,karate-api,true,1,karate,api,44918082472,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.309834,,False
+2|B_frio_1|cypress,2,B_frio_1,cypress,false,1,cypress,ui,44918134809,1,página de produtos lista itens,UI - Produtos página de produtos lista itens,passou,1.639,,False
+2|B_frio_1|cypress,2,B_frio_1,cypress,false,1,cypress,ui,44918134809,1,"buscar produto por ""top""","UI - Produtos buscar produto por ""top""",passou,2.103,,False
+2|B_frio_1|cypress,2,B_frio_1,cypress,false,1,cypress,ui,44918134809,1,"buscar produto por ""jean""","UI - Produtos buscar produto por ""jean""",passou,1.716,,False
+2|B_frio_1|cypress,2,B_frio_1,cypress,false,1,cypress,ui,44918134809,1,"buscar produto por ""dress""","UI - Produtos buscar produto por ""dress""",passou,1.954,,False
+2|B_frio_1|cypress,2,B_frio_1,cypress,false,1,cypress,ui,44918134809,1,login com credenciais válidas,UI - Login login com credenciais válidas,passou,7.079,,False
+2|B_frio_1|cypress,2,B_frio_1,cypress,false,1,cypress,ui,44918134809,1,login inválido - usuário inexistente,UI - Login login inválido - usuário inexistente,passou,1.424,,False
+2|B_frio_1|cypress,2,B_frio_1,cypress,false,1,cypress,ui,44918134809,1,login inválido - senha qualquer,UI - Login login inválido - senha qualquer,passou,1.31,,False
+2|B_frio_1|cypress,2,B_frio_1,cypress,false,1,cypress,ui,44918134809,1,cadastro completo com sucesso,UI - Cadastro de usuário cadastro completo com sucesso,passou,7.949,,False
+2|B_frio_1|cypress,2,B_frio_1,cypress,false,1,cypress,ui,44918134809,1,cadastro com email já existente,UI - Cadastro de usuário cadastro com email já existente,passou,1.314,,False
+2|B_frio_1|cypress,2,B_frio_1,cypress,false,1,cypress,ui,44918134809,1,carrega com título e produtos em destaque,UI - Home page carrega com título e produtos em destaque,passou,1.904,,False
+2|B_frio_1|karate-ui,2,B_frio_1,karate-ui,false,1,karate,ui,44918323767,1,features.ui.auth.login,Login com credenciais válidas,passou,12.080653,,False
+2|B_frio_1|karate-ui,2,B_frio_1,karate-ui,false,1,karate,ui,44918323767,1,features.ui.auth.login,Login inválido - usuario inexistente,passou,3.719708,,False
+2|B_frio_1|karate-ui,2,B_frio_1,karate-ui,false,1,karate,ui,44918323767,1,features.ui.auth.login,Login inválido - senha qualquer,passou,5.204961,,False
+2|B_frio_1|karate-ui,2,B_frio_1,karate-ui,false,1,karate,ui,44918323767,1,features.ui.auth.signup,Cadastro completo com sucesso,passou,8.53014,,False
+2|B_frio_1|karate-ui,2,B_frio_1,karate-ui,false,1,karate,ui,44918323767,1,features.ui.auth.signup,Cadastro com email já existente,passou,6.324635,,False
+2|B_frio_1|karate-ui,2,B_frio_1,karate-ui,false,1,karate,ui,44918323767,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,3.146025,,False
+2|B_frio_1|karate-ui,2,B_frio_1,karate-ui,false,1,karate,ui,44918323767,1,features.ui.products.products,Página de produtos lista itens,passou,2.792912,,False
+2|B_frio_1|karate-ui,2,B_frio_1,karate-ui,false,1,karate,ui,44918323767,1,features.ui.products.products,"Buscar produto por ""top""",passou,3.253615,,False
+2|B_frio_1|karate-ui,2,B_frio_1,karate-ui,false,1,karate,ui,44918323767,1,features.ui.products.products,"Buscar produto por ""jean""",passou,3.080618,,False
+2|B_frio_1|karate-ui,2,B_frio_1,karate-ui,false,1,karate,ui,44918323767,1,features.ui.products.products,"Buscar produto por ""dress""",passou,5.014323,,False
+2|B_frio_1|restassured,2,B_frio_1,restassured,false,1,restassured,api,44918443982,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,0.163,,False
+2|B_frio_1|restassured,2,B_frio_1,restassured,false,1,restassured,api,44918443982,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.373,,False
+2|B_frio_1|restassured,2,B_frio_1,restassured,false,1,restassured,api,44918443982,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,3.333,,False
+2|B_frio_1|restassured,2,B_frio_1,restassured,false,1,restassured,api,44918443982,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.414,,False
+2|B_frio_1|restassured,2,B_frio_1,restassured,false,1,restassured,api,44918443982,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,0.19,,False
+2|B_frio_1|restassured,2,B_frio_1,restassured,false,1,restassured,api,44918443982,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.44,,False
+2|B_frio_1|restassured,2,B_frio_1,restassured,false,1,restassured,api,44918443982,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.188,,False
+2|B_frio_1|restassured,2,B_frio_1,restassured,false,1,restassured,api,44918443982,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.326,,False
+2|B_frio_1|restassured,2,B_frio_1,restassured,false,1,restassured,api,44918443982,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,0.522,,False
+2|B_frio_1|restassured,2,B_frio_1,restassured,false,1,restassured,api,44918443982,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,1.445,,False
+2|B_frio_1|restassured,2,B_frio_1,restassured,false,1,restassured,api,44918443982,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,0.979,,False
+2|B_frio_1|restassured,2,B_frio_1,restassured,false,1,restassured,api,44918443982,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,0.479,,False
+2|B_frio_1|restassured,2,B_frio_1,restassured,false,1,restassured,api,44918443982,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,1.04,,False
+2|B_frio_1|restassured,2,B_frio_1,restassured,false,1,restassured,api,44918443982,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.476,,False
+2|B_frio_1|karate-api,2,B_frio_1,karate-api,false,1,karate,api,44918543826,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,1.168408,,False
+2|B_frio_1|karate-api,2,B_frio_1,karate-api,false,1,karate,api,44918543826,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.419585,,False
+2|B_frio_1|karate-api,2,B_frio_1,karate-api,false,1,karate,api,44918543826,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,0.952771,,False
+2|B_frio_1|karate-api,2,B_frio_1,karate-api,false,1,karate,api,44918543826,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.365581,,False
+2|B_frio_1|karate-api,2,B_frio_1,karate-api,false,1,karate,api,44918543826,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.239654,,False
+2|B_frio_1|karate-api,2,B_frio_1,karate-api,false,1,karate,api,44918543826,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.127389,,False
+2|B_frio_1|karate-api,2,B_frio_1,karate-api,false,1,karate,api,44918543826,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.245094,,False
+2|B_frio_1|karate-api,2,B_frio_1,karate-api,false,1,karate,api,44918543826,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.114576,,False
+2|B_frio_1|karate-api,2,B_frio_1,karate-api,false,1,karate,api,44918543826,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,1.043265,,False
+2|B_frio_1|karate-api,2,B_frio_1,karate-api,false,1,karate,api,44918543826,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.380334,,False
+2|B_frio_1|karate-api,2,B_frio_1,karate-api,false,1,karate,api,44918543826,1,features.api.user.verify-login,Login válido,passou,0.395945,,False
+2|B_frio_1|karate-api,2,B_frio_1,karate-api,false,1,karate,api,44918543826,1,features.api.user.verify-login,Senha incorreta,passou,0.250803,,False
+2|B_frio_1|karate-api,2,B_frio_1,karate-api,false,1,karate,api,44918543826,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.242513,,False
+2|B_frio_1|karate-api,2,B_frio_1,karate-api,false,1,karate,api,44918543826,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.227914,,False
+2|C_quente_4|restassured,2,C_quente_4,restassured,true,4,restassured,api,44918620575,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.269,,False
+2|C_quente_4|restassured,2,C_quente_4,restassured,true,4,restassured,api,44918620575,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,2.355,,False
+2|C_quente_4|restassured,2,C_quente_4,restassured,true,4,restassured,api,44918620575,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,2.36,,False
+2|C_quente_4|restassured,2,C_quente_4,restassured,true,4,restassured,api,44918620575,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,2.394,,False
+2|C_quente_4|restassured,2,C_quente_4,restassured,true,4,restassured,api,44918620575,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.219,,False
+2|C_quente_4|restassured,2,C_quente_4,restassured,true,4,restassured,api,44918620575,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,1.99,,False
+2|C_quente_4|restassured,2,C_quente_4,restassured,true,4,restassured,api,44918620575,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,2.849,,False
+2|C_quente_4|restassured,2,C_quente_4,restassured,true,4,restassured,api,44918620575,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.405,,False
+2|C_quente_4|restassured,2,C_quente_4,restassured,true,4,restassured,api,44918620575,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.165,,False
+2|C_quente_4|restassured,2,C_quente_4,restassured,true,4,restassured,api,44918620575,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.172,,False
+2|C_quente_4|restassured,2,C_quente_4,restassured,true,4,restassured,api,44918620575,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,0.462,,False
+2|C_quente_4|restassured,2,C_quente_4,restassured,true,4,restassured,api,44918620575,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,1.059,,False
+2|C_quente_4|restassured,2,C_quente_4,restassured,true,4,restassured,api,44918620575,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,1.954,,False
+2|C_quente_4|restassured,2,C_quente_4,restassured,true,4,restassured,api,44918620575,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.965,,False
+2|C_quente_4|karate-api,2,C_quente_4,karate-api,true,4,karate,api,44918702566,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.82033,,False
+2|C_quente_4|karate-api,2,C_quente_4,karate-api,true,4,karate,api,44918702566,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.609278,,False
+2|C_quente_4|karate-api,2,C_quente_4,karate-api,true,4,karate,api,44918702566,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,0.875736,,False
+2|C_quente_4|karate-api,2,C_quente_4,karate-api,true,4,karate,api,44918702566,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.612084,,False
+2|C_quente_4|karate-api,2,C_quente_4,karate-api,true,4,karate,api,44918702566,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.299424,,False
+2|C_quente_4|karate-api,2,C_quente_4,karate-api,true,4,karate,api,44918702566,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.24808,,False
+2|C_quente_4|karate-api,2,C_quente_4,karate-api,true,4,karate,api,44918702566,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.45442,,False
+2|C_quente_4|karate-api,2,C_quente_4,karate-api,true,4,karate,api,44918702566,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.137262,,False
+2|C_quente_4|karate-api,2,C_quente_4,karate-api,true,4,karate,api,44918702566,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,2.318218,,False
+2|C_quente_4|karate-api,2,C_quente_4,karate-api,true,4,karate,api,44918702566,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,1.054526,,False
+2|C_quente_4|karate-api,2,C_quente_4,karate-api,true,4,karate,api,44918702566,1,features.api.user.verify-login,Login válido,passou,0.815493,,False
+2|C_quente_4|karate-api,2,C_quente_4,karate-api,true,4,karate,api,44918702566,1,features.api.user.verify-login,Senha incorreta,passou,0.70715,,False
+2|C_quente_4|karate-api,2,C_quente_4,karate-api,true,4,karate,api,44918702566,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.819784,,False
+2|C_quente_4|karate-api,2,C_quente_4,karate-api,true,4,karate,api,44918702566,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.63968,,False
+3|A_quente_1|karate-api,3,A_quente_1,karate-api,true,1,karate,api,44918780247,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.488072,,False
+3|A_quente_1|karate-api,3,A_quente_1,karate-api,true,1,karate,api,44918780247,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.166659,,False
+3|A_quente_1|karate-api,3,A_quente_1,karate-api,true,1,karate,api,44918780247,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,0.518213,,False
+3|A_quente_1|karate-api,3,A_quente_1,karate-api,true,1,karate,api,44918780247,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.163441,,False
+3|A_quente_1|karate-api,3,A_quente_1,karate-api,true,1,karate,api,44918780247,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.240812,,False
+3|A_quente_1|karate-api,3,A_quente_1,karate-api,true,1,karate,api,44918780247,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.191144,,False
+3|A_quente_1|karate-api,3,A_quente_1,karate-api,true,1,karate,api,44918780247,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.182422,,False
+3|A_quente_1|karate-api,3,A_quente_1,karate-api,true,1,karate,api,44918780247,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.235432,,False
+3|A_quente_1|karate-api,3,A_quente_1,karate-api,true,1,karate,api,44918780247,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,1.041257,,False
+3|A_quente_1|karate-api,3,A_quente_1,karate-api,true,1,karate,api,44918780247,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.374097,,False
+3|A_quente_1|karate-api,3,A_quente_1,karate-api,true,1,karate,api,44918780247,1,features.api.user.verify-login,Login válido,passou,0.348549,,False
+3|A_quente_1|karate-api,3,A_quente_1,karate-api,true,1,karate,api,44918780247,1,features.api.user.verify-login,Senha incorreta,passou,0.309503,,False
+3|A_quente_1|karate-api,3,A_quente_1,karate-api,true,1,karate,api,44918780247,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.292945,,False
+3|A_quente_1|karate-api,3,A_quente_1,karate-api,true,1,karate,api,44918780247,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.324235,,False
+3|A_quente_1|restassured,3,A_quente_1,restassured,true,1,restassured,api,44918834958,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,0.147,,False
+3|A_quente_1|restassured,3,A_quente_1,restassured,true,1,restassured,api,44918834958,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.149,,False
+3|A_quente_1|restassured,3,A_quente_1,restassured,true,1,restassured,api,44918834958,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,3.787,,False
+3|A_quente_1|restassured,3,A_quente_1,restassured,true,1,restassured,api,44918834958,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.211,,False
+3|A_quente_1|restassured,3,A_quente_1,restassured,true,1,restassured,api,44918834958,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,0.207,,False
+3|A_quente_1|restassured,3,A_quente_1,restassured,true,1,restassured,api,44918834958,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.431,,False
+3|A_quente_1|restassured,3,A_quente_1,restassured,true,1,restassured,api,44918834958,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.176,,False
+3|A_quente_1|restassured,3,A_quente_1,restassured,true,1,restassured,api,44918834958,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.157,,False
+3|A_quente_1|restassured,3,A_quente_1,restassured,true,1,restassured,api,44918834958,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,0.63,,False
+3|A_quente_1|restassured,3,A_quente_1,restassured,true,1,restassured,api,44918834958,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,1.02,,False
+3|A_quente_1|restassured,3,A_quente_1,restassured,true,1,restassured,api,44918834958,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,0.871,,False
+3|A_quente_1|restassured,3,A_quente_1,restassured,true,1,restassured,api,44918834958,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,0.752,,False
+3|A_quente_1|restassured,3,A_quente_1,restassured,true,1,restassured,api,44918834958,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,0.464,,False
+3|A_quente_1|restassured,3,A_quente_1,restassured,true,1,restassured,api,44918834958,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.633,,False
+3|A_quente_1|karate-ui,3,A_quente_1,karate-ui,true,1,karate,ui,44918933126,1,features.ui.auth.login,Login com credenciais válidas,passou,59.962826,,False
+3|A_quente_1|karate-ui,3,A_quente_1,karate-ui,true,1,karate,ui,44918933126,1,features.ui.auth.login,Login inválido - usuario inexistente,passou,3.873622,,False
+3|A_quente_1|karate-ui,3,A_quente_1,karate-ui,true,1,karate,ui,44918933126,1,features.ui.auth.login,Login inválido - senha qualquer,passou,4.938867,,False
+3|A_quente_1|karate-ui,3,A_quente_1,karate-ui,true,1,karate,ui,44918933126,1,features.ui.auth.signup,Cadastro completo com sucesso,passou,7.371855,,False
+3|A_quente_1|karate-ui,3,A_quente_1,karate-ui,true,1,karate,ui,44918933126,1,features.ui.auth.signup,Cadastro com email já existente,passou,5.795018,,False
+3|A_quente_1|karate-ui,3,A_quente_1,karate-ui,true,1,karate,ui,44918933126,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,2.989175,,False
+3|A_quente_1|karate-ui,3,A_quente_1,karate-ui,true,1,karate,ui,44918933126,1,features.ui.products.products,Página de produtos lista itens,passou,3.162871,,False
+3|A_quente_1|karate-ui,3,A_quente_1,karate-ui,true,1,karate,ui,44918933126,1,features.ui.products.products,"Buscar produto por ""top""",passou,4.713328,,False
+3|A_quente_1|karate-ui,3,A_quente_1,karate-ui,true,1,karate,ui,44918933126,1,features.ui.products.products,"Buscar produto por ""jean""",passou,4.395517,,False
+3|A_quente_1|karate-ui,3,A_quente_1,karate-ui,true,1,karate,ui,44918933126,1,features.ui.products.products,"Buscar produto por ""dress""",passou,3.662966,,False
+3|A_quente_1|cypress,3,A_quente_1,cypress,true,1,cypress,ui,44919124721,1,carrega com título e produtos em destaque,UI - Home page carrega com título e produtos em destaque,passou,1.157,,False
+3|A_quente_1|cypress,3,A_quente_1,cypress,true,1,cypress,ui,44919124721,1,login com credenciais válidas,UI - Login login com credenciais válidas,passou,4.047,,False
+3|A_quente_1|cypress,3,A_quente_1,cypress,true,1,cypress,ui,44919124721,1,login inválido - usuário inexistente,UI - Login login inválido - usuário inexistente,passou,0.994,,False
+3|A_quente_1|cypress,3,A_quente_1,cypress,true,1,cypress,ui,44919124721,1,login inválido - senha qualquer,UI - Login login inválido - senha qualquer,passou,1.01,,False
+3|A_quente_1|cypress,3,A_quente_1,cypress,true,1,cypress,ui,44919124721,1,página de produtos lista itens,UI - Produtos página de produtos lista itens,passou,0.943,,False
+3|A_quente_1|cypress,3,A_quente_1,cypress,true,1,cypress,ui,44919124721,1,"buscar produto por ""top""","UI - Produtos buscar produto por ""top""",passou,1.48,,False
+3|A_quente_1|cypress,3,A_quente_1,cypress,true,1,cypress,ui,44919124721,1,"buscar produto por ""jean""","UI - Produtos buscar produto por ""jean""",passou,1.428,,False
+3|A_quente_1|cypress,3,A_quente_1,cypress,true,1,cypress,ui,44919124721,1,"buscar produto por ""dress""","UI - Produtos buscar produto por ""dress""",passou,1.36,,False
+3|A_quente_1|cypress,3,A_quente_1,cypress,true,1,cypress,ui,44919124721,1,cadastro completo com sucesso,UI - Cadastro de usuário cadastro completo com sucesso,passou,7.387,,False
+3|A_quente_1|cypress,3,A_quente_1,cypress,true,1,cypress,ui,44919124721,1,cadastro com email já existente,UI - Cadastro de usuário cadastro com email já existente,passou,1.318,,False
+3|B_frio_1|karate-api,3,B_frio_1,karate-api,false,1,karate,api,44919306855,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.587616,,False
+3|B_frio_1|karate-api,3,B_frio_1,karate-api,false,1,karate,api,44919306855,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.397095,,False
+3|B_frio_1|karate-api,3,B_frio_1,karate-api,false,1,karate,api,44919306855,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,0.227722,,False
+3|B_frio_1|karate-api,3,B_frio_1,karate-api,false,1,karate,api,44919306855,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.134383,,False
+3|B_frio_1|karate-api,3,B_frio_1,karate-api,false,1,karate,api,44919306855,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.314038,,False
+3|B_frio_1|karate-api,3,B_frio_1,karate-api,false,1,karate,api,44919306855,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.150137,,False
+3|B_frio_1|karate-api,3,B_frio_1,karate-api,false,1,karate,api,44919306855,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.140472,,False
+3|B_frio_1|karate-api,3,B_frio_1,karate-api,false,1,karate,api,44919306855,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.119788,,False
+3|B_frio_1|karate-api,3,B_frio_1,karate-api,false,1,karate,api,44919306855,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,0.92175,,False
+3|B_frio_1|karate-api,3,B_frio_1,karate-api,false,1,karate,api,44919306855,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.318249,,False
+3|B_frio_1|karate-api,3,B_frio_1,karate-api,false,1,karate,api,44919306855,1,features.api.user.verify-login,Login válido,passou,0.306439,,False
+3|B_frio_1|karate-api,3,B_frio_1,karate-api,false,1,karate,api,44919306855,1,features.api.user.verify-login,Senha incorreta,passou,0.315813,,False
+3|B_frio_1|karate-api,3,B_frio_1,karate-api,false,1,karate,api,44919306855,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.276227,,False
+3|B_frio_1|karate-api,3,B_frio_1,karate-api,false,1,karate,api,44919306855,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.280406,,False
+3|B_frio_1|restassured,3,B_frio_1,restassured,false,1,restassured,api,44919354989,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,0.15,,False
+3|B_frio_1|restassured,3,B_frio_1,restassured,false,1,restassured,api,44919354989,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.164,,False
+3|B_frio_1|restassured,3,B_frio_1,restassured,false,1,restassured,api,44919354989,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,2.342,,False
+3|B_frio_1|restassured,3,B_frio_1,restassured,false,1,restassured,api,44919354989,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.278,,False
+3|B_frio_1|restassured,3,B_frio_1,restassured,false,1,restassured,api,44919354989,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,0.197,,False
+3|B_frio_1|restassured,3,B_frio_1,restassured,false,1,restassured,api,44919354989,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.259,,False
+3|B_frio_1|restassured,3,B_frio_1,restassured,false,1,restassured,api,44919354989,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.337,,False
+3|B_frio_1|restassured,3,B_frio_1,restassured,false,1,restassured,api,44919354989,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.185,,False
+3|B_frio_1|restassured,3,B_frio_1,restassured,false,1,restassured,api,44919354989,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,0.544,,False
+3|B_frio_1|restassured,3,B_frio_1,restassured,false,1,restassured,api,44919354989,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,1.159,,False
+3|B_frio_1|restassured,3,B_frio_1,restassured,false,1,restassured,api,44919354989,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,0.543,,False
+3|B_frio_1|restassured,3,B_frio_1,restassured,false,1,restassured,api,44919354989,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,0.563,,False
+3|B_frio_1|restassured,3,B_frio_1,restassured,false,1,restassured,api,44919354989,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,0.546,,False
+3|B_frio_1|restassured,3,B_frio_1,restassured,false,1,restassured,api,44919354989,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.469,,False
+3|B_frio_1|karate-ui,3,B_frio_1,karate-ui,false,1,karate,ui,44919426670,1,features.ui.auth.login,Login com credenciais válidas,passou,28.456672,,False
+3|B_frio_1|karate-ui,3,B_frio_1,karate-ui,false,1,karate,ui,44919426670,1,features.ui.auth.login,Login inválido - usuario inexistente,passou,3.779389,,False
+3|B_frio_1|karate-ui,3,B_frio_1,karate-ui,false,1,karate,ui,44919426670,1,features.ui.auth.login,Login inválido - senha qualquer,falhou,23.054821,"js failed: >>>> 01: waitFor(""form[action='/login']"") <<<< org.graalvm.polyglot.PolyglotException: waitUntil (js): failed after 10 retries and 20140 milliseconds - com.intuit.karate.driver.DriverOptions.retry(DriverOptions.java:517) - com.intuit.karate.driver.DevToolsDriver.waitUntil(DevToolsDriver.java:777) - com.intuit.karate.driver.DriverOptions.waitForAny(DriverOptions.java:700) - com.intuit.karate.driver.Driver.waitFor(Driver.java:237) - <js>.:anonymous(Unnamed:1)  classpath:pages/login-page.feature:7 classpath:features/ui/auth/login.feature:6",False
+3|B_frio_1|karate-ui,3,B_frio_1,karate-ui,false,1,karate,ui,44919426670,1,features.ui.auth.signup,Cadastro completo com sucesso,passou,7.921126,,False
+3|B_frio_1|karate-ui,3,B_frio_1,karate-ui,false,1,karate,ui,44919426670,1,features.ui.auth.signup,Cadastro com email já existente,passou,5.617786,,False
+3|B_frio_1|karate-ui,3,B_frio_1,karate-ui,false,1,karate,ui,44919426670,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,3.325478,,False
+3|B_frio_1|karate-ui,3,B_frio_1,karate-ui,false,1,karate,ui,44919426670,1,features.ui.products.products,Página de produtos lista itens,passou,2.91885,,False
+3|B_frio_1|karate-ui,3,B_frio_1,karate-ui,false,1,karate,ui,44919426670,1,features.ui.products.products,"Buscar produto por ""top""",passou,3.887894,,False
+3|B_frio_1|karate-ui,3,B_frio_1,karate-ui,false,1,karate,ui,44919426670,1,features.ui.products.products,"Buscar produto por ""jean""",passou,2.925946,,False
+3|B_frio_1|karate-ui,3,B_frio_1,karate-ui,false,1,karate,ui,44919426670,1,features.ui.products.products,"Buscar produto por ""dress""",passou,2.952847,,False
+3|B_frio_1|cypress,3,B_frio_1,cypress,false,1,cypress,ui,44919627923,1,carrega com título e produtos em destaque,UI - Home page carrega com título e produtos em destaque,passou,2.947,,False
+3|B_frio_1|cypress,3,B_frio_1,cypress,false,1,cypress,ui,44919627923,1,página de produtos lista itens,UI - Produtos página de produtos lista itens,passou,2.903,,False
+3|B_frio_1|cypress,3,B_frio_1,cypress,false,1,cypress,ui,44919627923,1,"buscar produto por ""top""","UI - Produtos buscar produto por ""top""",passou,3.145,,False
+3|B_frio_1|cypress,3,B_frio_1,cypress,false,1,cypress,ui,44919627923,1,"buscar produto por ""jean""","UI - Produtos buscar produto por ""jean""",passou,3.813,,False
+3|B_frio_1|cypress,3,B_frio_1,cypress,false,1,cypress,ui,44919627923,1,"buscar produto por ""dress""","UI - Produtos buscar produto por ""dress""",passou,5.638,,False
+3|B_frio_1|cypress,3,B_frio_1,cypress,false,1,cypress,ui,44919627923,1,cadastro completo com sucesso,UI - Cadastro de usuário cadastro completo com sucesso,passou,7.574,,False
+3|B_frio_1|cypress,3,B_frio_1,cypress,false,1,cypress,ui,44919627923,1,cadastro com email já existente,UI - Cadastro de usuário cadastro com email já existente,passou,1.754,,False
+3|B_frio_1|cypress,3,B_frio_1,cypress,false,1,cypress,ui,44919627923,1,login com credenciais válidas,UI - Login login com credenciais válidas,passou,5.713,,False
+3|B_frio_1|cypress,3,B_frio_1,cypress,false,1,cypress,ui,44919627923,1,login inválido - usuário inexistente,UI - Login login inválido - usuário inexistente,passou,1.025,,False
+3|B_frio_1|cypress,3,B_frio_1,cypress,false,1,cypress,ui,44919627923,1,login inválido - senha qualquer,UI - Login login inválido - senha qualquer,passou,1.346,,False
+3|C_quente_4|karate-api,3,C_quente_4,karate-api,true,4,karate,api,44919779673,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.691983,,False
+3|C_quente_4|karate-api,3,C_quente_4,karate-api,true,4,karate,api,44919779673,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.645924,,False
+3|C_quente_4|karate-api,3,C_quente_4,karate-api,true,4,karate,api,44919779673,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,0.725478,,False
+3|C_quente_4|karate-api,3,C_quente_4,karate-api,true,4,karate,api,44919779673,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.589171,,False
+3|C_quente_4|karate-api,3,C_quente_4,karate-api,true,4,karate,api,44919779673,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.448927,,False
+3|C_quente_4|karate-api,3,C_quente_4,karate-api,true,4,karate,api,44919779673,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.225633,,False
+3|C_quente_4|karate-api,3,C_quente_4,karate-api,true,4,karate,api,44919779673,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.296728,,False
+3|C_quente_4|karate-api,3,C_quente_4,karate-api,true,4,karate,api,44919779673,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.110315,,False
+3|C_quente_4|karate-api,3,C_quente_4,karate-api,true,4,karate,api,44919779673,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,0.857532,,False
+3|C_quente_4|karate-api,3,C_quente_4,karate-api,true,4,karate,api,44919779673,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.299179,,False
+3|C_quente_4|karate-api,3,C_quente_4,karate-api,true,4,karate,api,44919779673,1,features.api.user.verify-login,Login válido,passou,0.285596,,False
+3|C_quente_4|karate-api,3,C_quente_4,karate-api,true,4,karate,api,44919779673,1,features.api.user.verify-login,Senha incorreta,passou,0.285178,,False
+3|C_quente_4|karate-api,3,C_quente_4,karate-api,true,4,karate,api,44919779673,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.264858,,False
+3|C_quente_4|karate-api,3,C_quente_4,karate-api,true,4,karate,api,44919779673,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.214529,,False
+3|C_quente_4|restassured,3,C_quente_4,restassured,true,4,restassured,api,44919856307,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.216,,False
+3|C_quente_4|restassured,3,C_quente_4,restassured,true,4,restassured,api,44919856307,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,3.698,,False
+3|C_quente_4|restassured,3,C_quente_4,restassured,true,4,restassured,api,44919856307,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,3.698,,False
+3|C_quente_4|restassured,3,C_quente_4,restassured,true,4,restassured,api,44919856307,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,3.735,,False
+3|C_quente_4|restassured,3,C_quente_4,restassured,true,4,restassured,api,44919856307,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.196,,False
+3|C_quente_4|restassured,3,C_quente_4,restassured,true,4,restassured,api,44919856307,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,4.339,,False
+3|C_quente_4|restassured,3,C_quente_4,restassured,true,4,restassured,api,44919856307,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,2.905,,False
+3|C_quente_4|restassured,3,C_quente_4,restassured,true,4,restassured,api,44919856307,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.565,,False
+3|C_quente_4|restassured,3,C_quente_4,restassured,true,4,restassured,api,44919856307,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.184,,False
+3|C_quente_4|restassured,3,C_quente_4,restassured,true,4,restassured,api,44919856307,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.443,,False
+3|C_quente_4|restassured,3,C_quente_4,restassured,true,4,restassured,api,44919856307,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,1.002,,False
+3|C_quente_4|restassured,3,C_quente_4,restassured,true,4,restassured,api,44919856307,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,0.995,,False
+3|C_quente_4|restassured,3,C_quente_4,restassured,true,4,restassured,api,44919856307,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,2.34,,False
+3|C_quente_4|restassured,3,C_quente_4,restassured,true,4,restassured,api,44919856307,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.494,,False
+4|A_quente_1|cypress,4,A_quente_1,cypress,true,1,cypress,ui,44919932741,1,página de produtos lista itens,UI - Produtos página de produtos lista itens,passou,1.452,,False
+4|A_quente_1|cypress,4,A_quente_1,cypress,true,1,cypress,ui,44919932741,1,"buscar produto por ""top""","UI - Produtos buscar produto por ""top""",passou,2.342,,False
+4|A_quente_1|cypress,4,A_quente_1,cypress,true,1,cypress,ui,44919932741,1,"buscar produto por ""jean""","UI - Produtos buscar produto por ""jean""",passou,2.145,,False
+4|A_quente_1|cypress,4,A_quente_1,cypress,true,1,cypress,ui,44919932741,1,"buscar produto por ""dress""","UI - Produtos buscar produto por ""dress""",passou,2.328,,False
+4|A_quente_1|cypress,4,A_quente_1,cypress,true,1,cypress,ui,44919932741,1,login com credenciais válidas,UI - Login login com credenciais válidas,passou,4.89,,False
+4|A_quente_1|cypress,4,A_quente_1,cypress,true,1,cypress,ui,44919932741,1,login inválido - usuário inexistente,UI - Login login inválido - usuário inexistente,passou,1.375,,False
+4|A_quente_1|cypress,4,A_quente_1,cypress,true,1,cypress,ui,44919932741,1,login inválido - senha qualquer,UI - Login login inválido - senha qualquer,passou,1.058,,False
+4|A_quente_1|cypress,4,A_quente_1,cypress,true,1,cypress,ui,44919932741,1,carrega com título e produtos em destaque,UI - Home page carrega com título e produtos em destaque,passou,1.833,,False
+4|A_quente_1|cypress,4,A_quente_1,cypress,true,1,cypress,ui,44919932741,1,cadastro completo com sucesso,UI - Cadastro de usuário cadastro completo com sucesso,passou,7.641,,False
+4|A_quente_1|cypress,4,A_quente_1,cypress,true,1,cypress,ui,44919932741,1,cadastro com email já existente,UI - Cadastro de usuário cadastro com email já existente,passou,1.297,,False
+4|A_quente_1|karate-ui,4,A_quente_1,karate-ui,true,1,karate,ui,44920085232,1,features.ui.auth.login,Login com credenciais válidas,passou,13.752143,,False
+4|A_quente_1|karate-ui,4,A_quente_1,karate-ui,true,1,karate,ui,44920085232,1,features.ui.auth.login,Login inválido - usuario inexistente,passou,5.326447,,False
+4|A_quente_1|karate-ui,4,A_quente_1,karate-ui,true,1,karate,ui,44920085232,1,features.ui.auth.login,Login inválido - senha qualquer,passou,3.285531,,False
+4|A_quente_1|karate-ui,4,A_quente_1,karate-ui,true,1,karate,ui,44920085232,1,features.ui.auth.signup,Cadastro completo com sucesso,passou,5.816788,,False
+4|A_quente_1|karate-ui,4,A_quente_1,karate-ui,true,1,karate,ui,44920085232,1,features.ui.auth.signup,Cadastro com email já existente,passou,3.783367,,False
+4|A_quente_1|karate-ui,4,A_quente_1,karate-ui,true,1,karate,ui,44920085232,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,2.978993,,False
+4|A_quente_1|karate-ui,4,A_quente_1,karate-ui,true,1,karate,ui,44920085232,1,features.ui.products.products,Página de produtos lista itens,passou,2.685142,,False
+4|A_quente_1|karate-ui,4,A_quente_1,karate-ui,true,1,karate,ui,44920085232,1,features.ui.products.products,"Buscar produto por ""top""",passou,3.362329,,False
+4|A_quente_1|karate-ui,4,A_quente_1,karate-ui,true,1,karate,ui,44920085232,1,features.ui.products.products,"Buscar produto por ""jean""",passou,3.924126,,False
+4|A_quente_1|karate-ui,4,A_quente_1,karate-ui,true,1,karate,ui,44920085232,1,features.ui.products.products,"Buscar produto por ""dress""",passou,3.043884,,False
+4|A_quente_1|restassured,4,A_quente_1,restassured,true,1,restassured,api,44920225148,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,0.265,,False
+4|A_quente_1|restassured,4,A_quente_1,restassured,true,1,restassured,api,44920225148,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.223,,False
+4|A_quente_1|restassured,4,A_quente_1,restassured,true,1,restassured,api,44920225148,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,4.05,,False
+4|A_quente_1|restassured,4,A_quente_1,restassured,true,1,restassured,api,44920225148,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.243,,False
+4|A_quente_1|restassured,4,A_quente_1,restassured,true,1,restassured,api,44920225148,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,0.485,,False
+4|A_quente_1|restassured,4,A_quente_1,restassured,true,1,restassured,api,44920225148,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.693,,False
+4|A_quente_1|restassured,4,A_quente_1,restassured,true,1,restassured,api,44920225148,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.423,,False
+4|A_quente_1|restassured,4,A_quente_1,restassured,true,1,restassured,api,44920225148,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.483,,False
+4|A_quente_1|restassured,4,A_quente_1,restassured,true,1,restassured,api,44920225148,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,1.362,,False
+4|A_quente_1|restassured,4,A_quente_1,restassured,true,1,restassured,api,44920225148,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,3.293,,False
+4|A_quente_1|restassured,4,A_quente_1,restassured,true,1,restassured,api,44920225148,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,1.305,,False
+4|A_quente_1|restassured,4,A_quente_1,restassured,true,1,restassured,api,44920225148,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,0.808,,False
+4|A_quente_1|restassured,4,A_quente_1,restassured,true,1,restassured,api,44920225148,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,1.561,,False
+4|A_quente_1|restassured,4,A_quente_1,restassured,true,1,restassured,api,44920225148,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.606,,False
+4|A_quente_1|karate-api,4,A_quente_1,karate-api,true,1,karate,api,44920319017,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.695327,,False
+4|A_quente_1|karate-api,4,A_quente_1,karate-api,true,1,karate,api,44920319017,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.331271,,False
+4|A_quente_1|karate-api,4,A_quente_1,karate-api,true,1,karate,api,44920319017,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,1.185189,,False
+4|A_quente_1|karate-api,4,A_quente_1,karate-api,true,1,karate,api,44920319017,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.678204,,False
+4|A_quente_1|karate-api,4,A_quente_1,karate-api,true,1,karate,api,44920319017,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,1.234064,,False
+4|A_quente_1|karate-api,4,A_quente_1,karate-api,true,1,karate,api,44920319017,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.778189,,False
+4|A_quente_1|karate-api,4,A_quente_1,karate-api,true,1,karate,api,44920319017,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.567555,,False
+4|A_quente_1|karate-api,4,A_quente_1,karate-api,true,1,karate,api,44920319017,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.628371,,False
+4|A_quente_1|karate-api,4,A_quente_1,karate-api,true,1,karate,api,44920319017,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,2.416095,,False
+4|A_quente_1|karate-api,4,A_quente_1,karate-api,true,1,karate,api,44920319017,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.438839,,False
+4|A_quente_1|karate-api,4,A_quente_1,karate-api,true,1,karate,api,44920319017,1,features.api.user.verify-login,Login válido,passou,0.321908,,False
+4|A_quente_1|karate-api,4,A_quente_1,karate-api,true,1,karate,api,44920319017,1,features.api.user.verify-login,Senha incorreta,passou,0.604536,,False
+4|A_quente_1|karate-api,4,A_quente_1,karate-api,true,1,karate,api,44920319017,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.286531,,False
+4|A_quente_1|karate-api,4,A_quente_1,karate-api,true,1,karate,api,44920319017,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.314191,,False
+4|B_frio_1|cypress,4,B_frio_1,cypress,false,1,cypress,ui,44920391907,1,login com credenciais válidas,UI - Login login com credenciais válidas,passou,4.502,,False
+4|B_frio_1|cypress,4,B_frio_1,cypress,false,1,cypress,ui,44920391907,1,login inválido - usuário inexistente,UI - Login login inválido - usuário inexistente,passou,1.077,,False
+4|B_frio_1|cypress,4,B_frio_1,cypress,false,1,cypress,ui,44920391907,1,login inválido - senha qualquer,UI - Login login inválido - senha qualquer,passou,0.995,,False
+4|B_frio_1|cypress,4,B_frio_1,cypress,false,1,cypress,ui,44920391907,1,carrega com título e produtos em destaque,UI - Home page carrega com título e produtos em destaque,passou,1.288,,False
+4|B_frio_1|cypress,4,B_frio_1,cypress,false,1,cypress,ui,44920391907,1,página de produtos lista itens,UI - Produtos página de produtos lista itens,passou,1.28,,False
+4|B_frio_1|cypress,4,B_frio_1,cypress,false,1,cypress,ui,44920391907,1,"buscar produto por ""top""","UI - Produtos buscar produto por ""top""",passou,2.476,,False
+4|B_frio_1|cypress,4,B_frio_1,cypress,false,1,cypress,ui,44920391907,1,"buscar produto por ""jean""","UI - Produtos buscar produto por ""jean""",passou,1.855,,False
+4|B_frio_1|cypress,4,B_frio_1,cypress,false,1,cypress,ui,44920391907,1,"buscar produto por ""dress""","UI - Produtos buscar produto por ""dress""",passou,3.54,,False
+4|B_frio_1|cypress,4,B_frio_1,cypress,false,1,cypress,ui,44920391907,1,cadastro completo com sucesso,UI - Cadastro de usuário cadastro completo com sucesso,passou,6.596,,False
+4|B_frio_1|cypress,4,B_frio_1,cypress,false,1,cypress,ui,44920391907,1,cadastro com email já existente,UI - Cadastro de usuário cadastro com email já existente,passou,1.516,,False
+4|B_frio_1|karate-ui,4,B_frio_1,karate-ui,false,1,karate,ui,44920559519,1,features.ui.auth.login,Login com credenciais válidas,passou,7.314647,,False
+4|B_frio_1|karate-ui,4,B_frio_1,karate-ui,false,1,karate,ui,44920559519,1,features.ui.auth.login,Login inválido - usuario inexistente,passou,3.739979,,False
+4|B_frio_1|karate-ui,4,B_frio_1,karate-ui,false,1,karate,ui,44920559519,1,features.ui.auth.login,Login inválido - senha qualquer,passou,5.770763,,False
+4|B_frio_1|karate-ui,4,B_frio_1,karate-ui,false,1,karate,ui,44920559519,1,features.ui.auth.signup,Cadastro completo com sucesso,passou,7.176257,,False
+4|B_frio_1|karate-ui,4,B_frio_1,karate-ui,false,1,karate,ui,44920559519,1,features.ui.auth.signup,Cadastro com email já existente,passou,3.225702,,False
+4|B_frio_1|karate-ui,4,B_frio_1,karate-ui,false,1,karate,ui,44920559519,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,2.861984,,False
+4|B_frio_1|karate-ui,4,B_frio_1,karate-ui,false,1,karate,ui,44920559519,1,features.ui.products.products,Página de produtos lista itens,passou,2.598768,,False
+4|B_frio_1|karate-ui,4,B_frio_1,karate-ui,false,1,karate,ui,44920559519,1,features.ui.products.products,"Buscar produto por ""top""",passou,2.824859,,False
+4|B_frio_1|karate-ui,4,B_frio_1,karate-ui,false,1,karate,ui,44920559519,1,features.ui.products.products,"Buscar produto por ""jean""",passou,2.952547,,False
+4|B_frio_1|karate-ui,4,B_frio_1,karate-ui,false,1,karate,ui,44920559519,1,features.ui.products.products,"Buscar produto por ""dress""",passou,2.946414,,False
+4|B_frio_1|restassured,4,B_frio_1,restassured,false,1,restassured,api,44920705301,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,0.12,,False
+4|B_frio_1|restassured,4,B_frio_1,restassured,false,1,restassured,api,44920705301,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.137,,False
+4|B_frio_1|restassured,4,B_frio_1,restassured,false,1,restassured,api,44920705301,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,2.61,,False
+4|B_frio_1|restassured,4,B_frio_1,restassured,false,1,restassured,api,44920705301,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.159,,False
+4|B_frio_1|restassured,4,B_frio_1,restassured,false,1,restassured,api,44920705301,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,0.168,,False
+4|B_frio_1|restassured,4,B_frio_1,restassured,false,1,restassured,api,44920705301,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.303,,False
+4|B_frio_1|restassured,4,B_frio_1,restassured,false,1,restassured,api,44920705301,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.39,,False
+4|B_frio_1|restassured,4,B_frio_1,restassured,false,1,restassured,api,44920705301,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.141,,False
+4|B_frio_1|restassured,4,B_frio_1,restassured,false,1,restassured,api,44920705301,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,0.519,,False
+4|B_frio_1|restassured,4,B_frio_1,restassured,false,1,restassured,api,44920705301,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,1.07,,False
+4|B_frio_1|restassured,4,B_frio_1,restassured,false,1,restassured,api,44920705301,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,0.748,,False
+4|B_frio_1|restassured,4,B_frio_1,restassured,false,1,restassured,api,44920705301,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,0.366,,False
+4|B_frio_1|restassured,4,B_frio_1,restassured,false,1,restassured,api,44920705301,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,0.373,,False
+4|B_frio_1|restassured,4,B_frio_1,restassured,false,1,restassured,api,44920705301,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.439,,False
+4|B_frio_1|karate-api,4,B_frio_1,karate-api,false,1,karate,api,44920779570,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.548894,,False
+4|B_frio_1|karate-api,4,B_frio_1,karate-api,false,1,karate,api,44920779570,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.395624,,False
+4|B_frio_1|karate-api,4,B_frio_1,karate-api,false,1,karate,api,44920779570,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,0.192881,,False
+4|B_frio_1|karate-api,4,B_frio_1,karate-api,false,1,karate,api,44920779570,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.428294,,False
+4|B_frio_1|karate-api,4,B_frio_1,karate-api,false,1,karate,api,44920779570,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.259275,,False
+4|B_frio_1|karate-api,4,B_frio_1,karate-api,false,1,karate,api,44920779570,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.159535,,False
+4|B_frio_1|karate-api,4,B_frio_1,karate-api,false,1,karate,api,44920779570,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.438759,,False
+4|B_frio_1|karate-api,4,B_frio_1,karate-api,false,1,karate,api,44920779570,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.150202,,False
+4|B_frio_1|karate-api,4,B_frio_1,karate-api,false,1,karate,api,44920779570,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,1.392281,,False
+4|B_frio_1|karate-api,4,B_frio_1,karate-api,false,1,karate,api,44920779570,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.789415,,False
+4|B_frio_1|karate-api,4,B_frio_1,karate-api,false,1,karate,api,44920779570,1,features.api.user.verify-login,Login válido,passou,0.549161,,False
+4|B_frio_1|karate-api,4,B_frio_1,karate-api,false,1,karate,api,44920779570,1,features.api.user.verify-login,Senha incorreta,passou,0.282366,,False
+4|B_frio_1|karate-api,4,B_frio_1,karate-api,false,1,karate,api,44920779570,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.332716,,False
+4|B_frio_1|karate-api,4,B_frio_1,karate-api,false,1,karate,api,44920779570,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.304352,,False
+4|C_quente_4|restassured,4,C_quente_4,restassured,true,4,restassured,api,44920855736,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.183,,False
+4|C_quente_4|restassured,4,C_quente_4,restassured,true,4,restassured,api,44920855736,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.276,,False
+4|C_quente_4|restassured,4,C_quente_4,restassured,true,4,restassured,api,44920855736,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,3.704,,False
+4|C_quente_4|restassured,4,C_quente_4,restassured,true,4,restassured,api,44920855736,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,3.707,,False
+4|C_quente_4|restassured,4,C_quente_4,restassured,true,4,restassured,api,44920855736,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,3.759,,False
+4|C_quente_4|restassured,4,C_quente_4,restassured,true,4,restassured,api,44920855736,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.143,,False
+4|C_quente_4|restassured,4,C_quente_4,restassured,true,4,restassured,api,44920855736,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,4.177,,False
+4|C_quente_4|restassured,4,C_quente_4,restassured,true,4,restassured,api,44920855736,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,2.666,,False
+4|C_quente_4|restassured,4,C_quente_4,restassured,true,4,restassured,api,44920855736,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.137,,False
+4|C_quente_4|restassured,4,C_quente_4,restassured,true,4,restassured,api,44920855736,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.154,,False
+4|C_quente_4|restassured,4,C_quente_4,restassured,true,4,restassured,api,44920855736,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,0.396,,False
+4|C_quente_4|restassured,4,C_quente_4,restassured,true,4,restassured,api,44920855736,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,0.376,,False
+4|C_quente_4|restassured,4,C_quente_4,restassured,true,4,restassured,api,44920855736,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,0.904,,False
+4|C_quente_4|restassured,4,C_quente_4,restassured,true,4,restassured,api,44920855736,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.349,,False
+4|C_quente_4|karate-api,4,C_quente_4,karate-api,true,4,karate,api,44920954382,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.874296,,False
+4|C_quente_4|karate-api,4,C_quente_4,karate-api,true,4,karate,api,44920954382,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.773244,,False
+4|C_quente_4|karate-api,4,C_quente_4,karate-api,true,4,karate,api,44920954382,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,1.243342,,False
+4|C_quente_4|karate-api,4,C_quente_4,karate-api,true,4,karate,api,44920954382,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.772017,,False
+4|C_quente_4|karate-api,4,C_quente_4,karate-api,true,4,karate,api,44920954382,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.517166,,False
+4|C_quente_4|karate-api,4,C_quente_4,karate-api,true,4,karate,api,44920954382,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.539039,,False
+4|C_quente_4|karate-api,4,C_quente_4,karate-api,true,4,karate,api,44920954382,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.519806,,False
+4|C_quente_4|karate-api,4,C_quente_4,karate-api,true,4,karate,api,44920954382,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.15734,,False
+4|C_quente_4|karate-api,4,C_quente_4,karate-api,true,4,karate,api,44920954382,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,1.799633,,False
+4|C_quente_4|karate-api,4,C_quente_4,karate-api,true,4,karate,api,44920954382,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.865927,,False
+4|C_quente_4|karate-api,4,C_quente_4,karate-api,true,4,karate,api,44920954382,1,features.api.user.verify-login,Login válido,passou,0.786475,,False
+4|C_quente_4|karate-api,4,C_quente_4,karate-api,true,4,karate,api,44920954382,1,features.api.user.verify-login,Senha incorreta,passou,0.69406,,False
+4|C_quente_4|karate-api,4,C_quente_4,karate-api,true,4,karate,api,44920954382,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.477036,,False
+4|C_quente_4|karate-api,4,C_quente_4,karate-api,true,4,karate,api,44920954382,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.484719,,False
+5|A_quente_1|karate-api,5,A_quente_1,karate-api,true,1,karate,api,44921003751,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.942862,,False
+5|A_quente_1|karate-api,5,A_quente_1,karate-api,true,1,karate,api,44921003751,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.535586,,False
+5|A_quente_1|karate-api,5,A_quente_1,karate-api,true,1,karate,api,44921003751,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,0.362475,,False
+5|A_quente_1|karate-api,5,A_quente_1,karate-api,true,1,karate,api,44921003751,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.156352,,False
+5|A_quente_1|karate-api,5,A_quente_1,karate-api,true,1,karate,api,44921003751,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.252326,,False
+5|A_quente_1|karate-api,5,A_quente_1,karate-api,true,1,karate,api,44921003751,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.137899,,False
+5|A_quente_1|karate-api,5,A_quente_1,karate-api,true,1,karate,api,44921003751,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.513186,,False
+5|A_quente_1|karate-api,5,A_quente_1,karate-api,true,1,karate,api,44921003751,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.183698,,False
+5|A_quente_1|karate-api,5,A_quente_1,karate-api,true,1,karate,api,44921003751,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,2.027234,,False
+5|A_quente_1|karate-api,5,A_quente_1,karate-api,true,1,karate,api,44921003751,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.801906,,False
+5|A_quente_1|karate-api,5,A_quente_1,karate-api,true,1,karate,api,44921003751,1,features.api.user.verify-login,Login válido,passou,0.430217,,False
+5|A_quente_1|karate-api,5,A_quente_1,karate-api,true,1,karate,api,44921003751,1,features.api.user.verify-login,Senha incorreta,passou,0.362023,,False
+5|A_quente_1|karate-api,5,A_quente_1,karate-api,true,1,karate,api,44921003751,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.447346,,False
+5|A_quente_1|karate-api,5,A_quente_1,karate-api,true,1,karate,api,44921003751,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.239207,,False
+5|A_quente_1|restassured,5,A_quente_1,restassured,true,1,restassured,api,44921078108,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,0.4,,False
+5|A_quente_1|restassured,5,A_quente_1,restassured,true,1,restassured,api,44921078108,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.147,,False
+5|A_quente_1|restassured,5,A_quente_1,restassured,true,1,restassured,api,44921078108,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,3.429,,False
+5|A_quente_1|restassured,5,A_quente_1,restassured,true,1,restassured,api,44921078108,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.21,,False
+5|A_quente_1|restassured,5,A_quente_1,restassured,true,1,restassured,api,44921078108,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,0.193,,False
+5|A_quente_1|restassured,5,A_quente_1,restassured,true,1,restassured,api,44921078108,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.466,,False
+5|A_quente_1|restassured,5,A_quente_1,restassured,true,1,restassured,api,44921078108,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.179,,False
+5|A_quente_1|restassured,5,A_quente_1,restassured,true,1,restassured,api,44921078108,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.436,,False
+5|A_quente_1|restassured,5,A_quente_1,restassured,true,1,restassured,api,44921078108,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,0.738,,False
+5|A_quente_1|restassured,5,A_quente_1,restassured,true,1,restassured,api,44921078108,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,2.386,,False
+5|A_quente_1|restassured,5,A_quente_1,restassured,true,1,restassured,api,44921078108,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,1.396,,False
+5|A_quente_1|restassured,5,A_quente_1,restassured,true,1,restassured,api,44921078108,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,0.818,,False
+5|A_quente_1|restassured,5,A_quente_1,restassured,true,1,restassured,api,44921078108,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,0.732,,False
+5|A_quente_1|restassured,5,A_quente_1,restassured,true,1,restassured,api,44921078108,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.73,,False
+5|A_quente_1|karate-ui,5,A_quente_1,karate-ui,true,1,karate,ui,44921155447,1,features.ui.auth.login,Login com credenciais válidas,passou,21.605535,,False
+5|A_quente_1|karate-ui,5,A_quente_1,karate-ui,true,1,karate,ui,44921155447,1,features.ui.auth.login,Login inválido - usuario inexistente,passou,6.019916,,False
+5|A_quente_1|karate-ui,5,A_quente_1,karate-ui,true,1,karate,ui,44921155447,1,features.ui.auth.login,Login inválido - senha qualquer,passou,5.396255,,False
+5|A_quente_1|karate-ui,5,A_quente_1,karate-ui,true,1,karate,ui,44921155447,1,features.ui.auth.signup,Cadastro completo com sucesso,passou,5.653273,,False
+5|A_quente_1|karate-ui,5,A_quente_1,karate-ui,true,1,karate,ui,44921155447,1,features.ui.auth.signup,Cadastro com email já existente,passou,3.532454,,False
+5|A_quente_1|karate-ui,5,A_quente_1,karate-ui,true,1,karate,ui,44921155447,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,3.117583,,False
+5|A_quente_1|karate-ui,5,A_quente_1,karate-ui,true,1,karate,ui,44921155447,1,features.ui.products.products,Página de produtos lista itens,passou,2.898122,,False
+5|A_quente_1|karate-ui,5,A_quente_1,karate-ui,true,1,karate,ui,44921155447,1,features.ui.products.products,"Buscar produto por ""top""",passou,2.94152,,False
+5|A_quente_1|karate-ui,5,A_quente_1,karate-ui,true,1,karate,ui,44921155447,1,features.ui.products.products,"Buscar produto por ""jean""",passou,3.283784,,False
+5|A_quente_1|karate-ui,5,A_quente_1,karate-ui,true,1,karate,ui,44921155447,1,features.ui.products.products,"Buscar produto por ""dress""",passou,2.896934,,False
+5|A_quente_1|cypress,5,A_quente_1,cypress,true,1,cypress,ui,44921322722,1,cadastro completo com sucesso,UI - Cadastro de usuário cadastro completo com sucesso,passou,8.114,,False
+5|A_quente_1|cypress,5,A_quente_1,cypress,true,1,cypress,ui,44921322722,1,cadastro com email já existente,UI - Cadastro de usuário cadastro com email já existente,passou,1.504,,False
+5|A_quente_1|cypress,5,A_quente_1,cypress,true,1,cypress,ui,44921322722,1,login com credenciais válidas,UI - Login login com credenciais válidas,passou,4.337,,False
+5|A_quente_1|cypress,5,A_quente_1,cypress,true,1,cypress,ui,44921322722,1,login inválido - usuário inexistente,UI - Login login inválido - usuário inexistente,passou,1.084,,False
+5|A_quente_1|cypress,5,A_quente_1,cypress,true,1,cypress,ui,44921322722,1,login inválido - senha qualquer,UI - Login login inválido - senha qualquer,passou,0.967,,False
+5|A_quente_1|cypress,5,A_quente_1,cypress,true,1,cypress,ui,44921322722,1,página de produtos lista itens,UI - Produtos página de produtos lista itens,passou,4.337,,False
+5|A_quente_1|cypress,5,A_quente_1,cypress,true,1,cypress,ui,44921322722,1,"buscar produto por ""top""","UI - Produtos buscar produto por ""top""",passou,4.168,,False
+5|A_quente_1|cypress,5,A_quente_1,cypress,true,1,cypress,ui,44921322722,1,"buscar produto por ""jean""","UI - Produtos buscar produto por ""jean""",passou,1.8,,False
+5|A_quente_1|cypress,5,A_quente_1,cypress,true,1,cypress,ui,44921322722,1,"buscar produto por ""dress""","UI - Produtos buscar produto por ""dress""",passou,1.997,,False
+5|A_quente_1|cypress,5,A_quente_1,cypress,true,1,cypress,ui,44921322722,1,carrega com título e produtos em destaque,UI - Home page carrega com título e produtos em destaque,passou,1.29,,False
+5|B_frio_1|karate-api,5,B_frio_1,karate-api,false,1,karate,api,44921467482,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.964834,,False
+5|B_frio_1|karate-api,5,B_frio_1,karate-api,false,1,karate,api,44921467482,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.322209,,False
+5|B_frio_1|karate-api,5,B_frio_1,karate-api,false,1,karate,api,44921467482,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,0.150789,,False
+5|B_frio_1|karate-api,5,B_frio_1,karate-api,false,1,karate,api,44921467482,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.224178,,False
+5|B_frio_1|karate-api,5,B_frio_1,karate-api,false,1,karate,api,44921467482,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.304561,,False
+5|B_frio_1|karate-api,5,B_frio_1,karate-api,false,1,karate,api,44921467482,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.112768,,False
+5|B_frio_1|karate-api,5,B_frio_1,karate-api,false,1,karate,api,44921467482,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.205624,,False
+5|B_frio_1|karate-api,5,B_frio_1,karate-api,false,1,karate,api,44921467482,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.227964,,False
+5|B_frio_1|karate-api,5,B_frio_1,karate-api,false,1,karate,api,44921467482,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,2.061574,,False
+5|B_frio_1|karate-api,5,B_frio_1,karate-api,false,1,karate,api,44921467482,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.193412,,False
+5|B_frio_1|karate-api,5,B_frio_1,karate-api,false,1,karate,api,44921467482,1,features.api.user.verify-login,Login válido,passou,0.309599,,False
+5|B_frio_1|karate-api,5,B_frio_1,karate-api,false,1,karate,api,44921467482,1,features.api.user.verify-login,Senha incorreta,passou,0.241872,,False
+5|B_frio_1|karate-api,5,B_frio_1,karate-api,false,1,karate,api,44921467482,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.197951,,False
+5|B_frio_1|karate-api,5,B_frio_1,karate-api,false,1,karate,api,44921467482,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.207907,,False
+5|B_frio_1|restassured,5,B_frio_1,restassured,false,1,restassured,api,44921540415,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,0.355,,False
+5|B_frio_1|restassured,5,B_frio_1,restassured,false,1,restassured,api,44921540415,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.165,,False
+5|B_frio_1|restassured,5,B_frio_1,restassured,false,1,restassured,api,44921540415,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,2.361,,False
+5|B_frio_1|restassured,5,B_frio_1,restassured,false,1,restassured,api,44921540415,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.386,,False
+5|B_frio_1|restassured,5,B_frio_1,restassured,false,1,restassured,api,44921540415,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,0.34,,False
+5|B_frio_1|restassured,5,B_frio_1,restassured,false,1,restassured,api,44921540415,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.229,,False
+5|B_frio_1|restassured,5,B_frio_1,restassured,false,1,restassured,api,44921540415,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.354,,False
+5|B_frio_1|restassured,5,B_frio_1,restassured,false,1,restassured,api,44921540415,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.325,,False
+5|B_frio_1|restassured,5,B_frio_1,restassured,false,1,restassured,api,44921540415,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,0.796,,False
+5|B_frio_1|restassured,5,B_frio_1,restassured,false,1,restassured,api,44921540415,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,1.28,,False
+5|B_frio_1|restassured,5,B_frio_1,restassured,false,1,restassured,api,44921540415,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,0.852,,False
+5|B_frio_1|restassured,5,B_frio_1,restassured,false,1,restassured,api,44921540415,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,0.647,,False
+5|B_frio_1|restassured,5,B_frio_1,restassured,false,1,restassured,api,44921540415,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,0.857,,False
+5|B_frio_1|restassured,5,B_frio_1,restassured,false,1,restassured,api,44921540415,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.638,,False
+5|B_frio_1|karate-ui,5,B_frio_1,karate-ui,false,1,karate,ui,44921612412,1,features.ui.auth.login,Login com credenciais válidas,passou,6.439934,,False
+5|B_frio_1|karate-ui,5,B_frio_1,karate-ui,false,1,karate,ui,44921612412,1,features.ui.auth.login,Login inválido - usuario inexistente,passou,6.519741,,False
+5|B_frio_1|karate-ui,5,B_frio_1,karate-ui,false,1,karate,ui,44921612412,1,features.ui.auth.login,Login inválido - senha qualquer,passou,4.827841,,False
+5|B_frio_1|karate-ui,5,B_frio_1,karate-ui,false,1,karate,ui,44921612412,1,features.ui.auth.signup,Cadastro completo com sucesso,passou,7.676374,,False
+5|B_frio_1|karate-ui,5,B_frio_1,karate-ui,false,1,karate,ui,44921612412,1,features.ui.auth.signup,Cadastro com email já existente,passou,5.815002,,False
+5|B_frio_1|karate-ui,5,B_frio_1,karate-ui,false,1,karate,ui,44921612412,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,2.834776,,False
+5|B_frio_1|karate-ui,5,B_frio_1,karate-ui,false,1,karate,ui,44921612412,1,features.ui.products.products,Página de produtos lista itens,passou,3.216802,,False
+5|B_frio_1|karate-ui,5,B_frio_1,karate-ui,false,1,karate,ui,44921612412,1,features.ui.products.products,"Buscar produto por ""top""",passou,2.983168,,False
+5|B_frio_1|karate-ui,5,B_frio_1,karate-ui,false,1,karate,ui,44921612412,1,features.ui.products.products,"Buscar produto por ""jean""",passou,3.213865,,False
+5|B_frio_1|karate-ui,5,B_frio_1,karate-ui,false,1,karate,ui,44921612412,1,features.ui.products.products,"Buscar produto por ""dress""",passou,3.290837,,False
+5|B_frio_1|cypress,5,B_frio_1,cypress,false,1,cypress,ui,44921750592,1,cadastro completo com sucesso,UI - Cadastro de usuário cadastro completo com sucesso,passou,9.368,,False
+5|B_frio_1|cypress,5,B_frio_1,cypress,false,1,cypress,ui,44921750592,1,cadastro com email já existente,UI - Cadastro de usuário cadastro com email já existente,passou,1.236,,False
+5|B_frio_1|cypress,5,B_frio_1,cypress,false,1,cypress,ui,44921750592,1,login com credenciais válidas,UI - Login login com credenciais válidas,passou,5.4,,False
+5|B_frio_1|cypress,5,B_frio_1,cypress,false,1,cypress,ui,44921750592,1,login inválido - usuário inexistente,UI - Login login inválido - usuário inexistente,passou,0.98,,False
+5|B_frio_1|cypress,5,B_frio_1,cypress,false,1,cypress,ui,44921750592,1,login inválido - senha qualquer,UI - Login login inválido - senha qualquer,passou,1.033,,False
+5|B_frio_1|cypress,5,B_frio_1,cypress,false,1,cypress,ui,44921750592,1,página de produtos lista itens,UI - Produtos página de produtos lista itens,passou,0.912,,False
+5|B_frio_1|cypress,5,B_frio_1,cypress,false,1,cypress,ui,44921750592,1,"buscar produto por ""top""","UI - Produtos buscar produto por ""top""",passou,1.764,,False
+5|B_frio_1|cypress,5,B_frio_1,cypress,false,1,cypress,ui,44921750592,1,"buscar produto por ""jean""","UI - Produtos buscar produto por ""jean""",passou,1.412,,False
+5|B_frio_1|cypress,5,B_frio_1,cypress,false,1,cypress,ui,44921750592,1,"buscar produto por ""dress""","UI - Produtos buscar produto por ""dress""",passou,1.65,,False
+5|B_frio_1|cypress,5,B_frio_1,cypress,false,1,cypress,ui,44921750592,1,carrega com título e produtos em destaque,UI - Home page carrega com título e produtos em destaque,passou,0.989,,False
+5|C_quente_4|karate-api,5,C_quente_4,karate-api,true,4,karate,api,44921889906,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,1.605686,,False
+5|C_quente_4|karate-api,5,C_quente_4,karate-api,true,4,karate,api,44921889906,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,1.505751,,False
+5|C_quente_4|karate-api,5,C_quente_4,karate-api,true,4,karate,api,44921889906,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,1.90109,,False
+5|C_quente_4|karate-api,5,C_quente_4,karate-api,true,4,karate,api,44921889906,1,features.api.products.products-list,POST /productsList não é suportado,passou,1.509194,,False
+5|C_quente_4|karate-api,5,C_quente_4,karate-api,true,4,karate,api,44921889906,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,1.556276,,False
+5|C_quente_4|karate-api,5,C_quente_4,karate-api,true,4,karate,api,44921889906,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,1.32941,,False
+5|C_quente_4|karate-api,5,C_quente_4,karate-api,true,4,karate,api,44921889906,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.97288,,False
+5|C_quente_4|karate-api,5,C_quente_4,karate-api,true,4,karate,api,44921889906,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.947763,,False
+5|C_quente_4|karate-api,5,C_quente_4,karate-api,true,4,karate,api,44921889906,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,2.832542,,False
+5|C_quente_4|karate-api,5,C_quente_4,karate-api,true,4,karate,api,44921889906,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,1.27966,,False
+5|C_quente_4|karate-api,5,C_quente_4,karate-api,true,4,karate,api,44921889906,1,features.api.user.verify-login,Login válido,passou,1.261356,,False
+5|C_quente_4|karate-api,5,C_quente_4,karate-api,true,4,karate,api,44921889906,1,features.api.user.verify-login,Senha incorreta,passou,1.098137,,False
+5|C_quente_4|karate-api,5,C_quente_4,karate-api,true,4,karate,api,44921889906,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.956057,,False
+5|C_quente_4|karate-api,5,C_quente_4,karate-api,true,4,karate,api,44921889906,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.906648,,False
+5|C_quente_4|restassured,5,C_quente_4,restassured,true,4,restassured,api,44921961028,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldRejectSearchWithoutParameter,passou,2.108,,False
+5|C_quente_4|restassured,5,C_quente_4,restassured,true,4,restassured,api,44921961028,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldRejectPutOnBrandsList,passou,2.194,,False
+5|C_quente_4|restassured,5,C_quente_4,restassured,true,4,restassured,api,44921961028,1,com.automationexercise.api.tests.brands.BrandsApiTest,shouldListAllBrands,passou,0.19,,False
+5|C_quente_4|restassured,5,C_quente_4,restassured,true,4,restassured,api,44921961028,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldListAllProducts,passou,2.337,,False
+5|C_quente_4|restassured,5,C_quente_4,restassured,true,4,restassured,api,44921961028,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[1],passou,0.235,,False
+5|C_quente_4|restassured,5,C_quente_4,restassured,true,4,restassured,api,44921961028,1,com.automationexercise.api.tests.products.ProductsApiTest,shouldRejectPostOnProductsList,passou,0.55,,False
+5|C_quente_4|restassured,5,C_quente_4,restassured,true,4,restassured,api,44921961028,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldRejectDuplicateEmail,passou,3.004,,False
+5|C_quente_4|restassured,5,C_quente_4,restassured,true,4,restassured,api,44921961028,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectDeleteOnVerifyLogin,passou,2.344,,False
+5|C_quente_4|restassured,5,C_quente_4,restassured,true,4,restassured,api,44921961028,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[2],passou,0.678,,False
+5|C_quente_4|restassured,5,C_quente_4,restassured,true,4,restassured,api,44921961028,1,com.automationexercise.api.tests.products.SearchProductApiTest,shouldReturnProductsForSearchTerm(String)[3],passou,0.174,,False
+5|C_quente_4|restassured,5,C_quente_4,restassured,true,4,restassured,api,44921961028,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldVerifyValidLogin,passou,0.429,,False
+5|C_quente_4|restassured,5,C_quente_4,restassured,true,4,restassured,api,44921961028,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectWrongPassword,passou,0.402,,False
+5|C_quente_4|restassured,5,C_quente_4,restassured,true,4,restassured,api,44921961028,1,com.automationexercise.api.tests.user.UserLifecycleApiTest,shouldReadUpdateAndDeleteUser,passou,1.011,,False
+5|C_quente_4|restassured,5,C_quente_4,restassured,true,4,restassured,api,44921961028,1,com.automationexercise.api.tests.user.VerifyLoginApiTest,shouldRejectMissingEmail,passou,0.396,,False
+1|A_quente_1|cypress|a2,1,A_quente_1,cypress,true,1,cypress,ui,44923996623,1,página de produtos lista itens,UI - Produtos página de produtos lista itens,passou,1.253,,False
+1|A_quente_1|cypress|a2,1,A_quente_1,cypress,true,1,cypress,ui,44923996623,1,"buscar produto por ""top""","UI - Produtos buscar produto por ""top""",passou,1.545,,False
+1|A_quente_1|cypress|a2,1,A_quente_1,cypress,true,1,cypress,ui,44923996623,1,"buscar produto por ""jean""","UI - Produtos buscar produto por ""jean""",passou,1.334,,False
+1|A_quente_1|cypress|a2,1,A_quente_1,cypress,true,1,cypress,ui,44923996623,1,"buscar produto por ""dress""","UI - Produtos buscar produto por ""dress""",passou,2.036,,False
+1|A_quente_1|cypress|a2,1,A_quente_1,cypress,true,1,cypress,ui,44923996623,1,login com credenciais válidas,UI - Login login com credenciais válidas,passou,6.26,,False
+1|A_quente_1|cypress|a2,1,A_quente_1,cypress,true,1,cypress,ui,44923996623,1,login inválido - usuário inexistente,UI - Login login inválido - usuário inexistente,passou,1.026,,False
+1|A_quente_1|cypress|a2,1,A_quente_1,cypress,true,1,cypress,ui,44923996623,1,login inválido - senha qualquer,UI - Login login inválido - senha qualquer,passou,0.865,,False
+1|A_quente_1|cypress|a2,1,A_quente_1,cypress,true,1,cypress,ui,44923996623,1,carrega com título e produtos em destaque,UI - Home page carrega com título e produtos em destaque,passou,1.16,,False
+1|A_quente_1|cypress|a2,1,A_quente_1,cypress,true,1,cypress,ui,44923996623,1,cadastro completo com sucesso,UI - Cadastro de usuário cadastro completo com sucesso,passou,6.384,,False
+1|A_quente_1|cypress|a2,1,A_quente_1,cypress,true,1,cypress,ui,44923996623,1,cadastro com email já existente,UI - Cadastro de usuário cadastro com email já existente,passou,1.367,,False
+2|B_frio_1|karate-ui|a2,2,B_frio_1,karate-ui,false,1,karate,ui,44924129380,1,features.ui.auth.login,Login com credenciais válidas,passou,13.828766,,False
+2|B_frio_1|karate-ui|a2,2,B_frio_1,karate-ui,false,1,karate,ui,44924129380,1,features.ui.auth.login,Login inválido - usuario inexistente,passou,3.587079,,False
+2|B_frio_1|karate-ui|a2,2,B_frio_1,karate-ui,false,1,karate,ui,44924129380,1,features.ui.auth.login,Login inválido - senha qualquer,passou,3.479248,,False
+2|B_frio_1|karate-ui|a2,2,B_frio_1,karate-ui,false,1,karate,ui,44924129380,1,features.ui.auth.signup,Cadastro completo com sucesso,passou,6.974937,,False
+2|B_frio_1|karate-ui|a2,2,B_frio_1,karate-ui,false,1,karate,ui,44924129380,1,features.ui.auth.signup,Cadastro com email já existente,passou,5.167538,,False
+2|B_frio_1|karate-ui|a2,2,B_frio_1,karate-ui,false,1,karate,ui,44924129380,1,features.ui.home.home,Home carrega com título e produtos em destaque,passou,2.865485,,False
+2|B_frio_1|karate-ui|a2,2,B_frio_1,karate-ui,false,1,karate,ui,44924129380,1,features.ui.products.products,Página de produtos lista itens,passou,3.055429,,False
+2|B_frio_1|karate-ui|a2,2,B_frio_1,karate-ui,false,1,karate,ui,44924129380,1,features.ui.products.products,"Buscar produto por ""top""",passou,2.733524,,False
+2|B_frio_1|karate-ui|a2,2,B_frio_1,karate-ui,false,1,karate,ui,44924129380,1,features.ui.products.products,"Buscar produto por ""jean""",passou,3.140295,,False
+2|B_frio_1|karate-ui|a2,2,B_frio_1,karate-ui,false,1,karate,ui,44924129380,1,features.ui.products.products,"Buscar produto por ""dress""",passou,3.59522,,False
+2|B_frio_1|karate-api|a2,2,B_frio_1,karate-api,false,1,karate,api,44924257868,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.641611,,False
+2|B_frio_1|karate-api|a2,2,B_frio_1,karate-api,false,1,karate,api,44924257868,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.13816,,False
+2|B_frio_1|karate-api|a2,2,B_frio_1,karate-api,false,1,karate,api,44924257868,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,0.230401,,False
+2|B_frio_1|karate-api|a2,2,B_frio_1,karate-api,false,1,karate,api,44924257868,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.139009,,False
+2|B_frio_1|karate-api|a2,2,B_frio_1,karate-api,false,1,karate,api,44924257868,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.41714,,False
+2|B_frio_1|karate-api|a2,2,B_frio_1,karate-api,false,1,karate,api,44924257868,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.154934,,False
+2|B_frio_1|karate-api|a2,2,B_frio_1,karate-api,false,1,karate,api,44924257868,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.304017,,False
+2|B_frio_1|karate-api|a2,2,B_frio_1,karate-api,false,1,karate,api,44924257868,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.297807,,False
+2|B_frio_1|karate-api|a2,2,B_frio_1,karate-api,false,1,karate,api,44924257868,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,1.310985,,False
+2|B_frio_1|karate-api|a2,2,B_frio_1,karate-api,false,1,karate,api,44924257868,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.314447,,False
+2|B_frio_1|karate-api|a2,2,B_frio_1,karate-api,false,1,karate,api,44924257868,1,features.api.user.verify-login,Login válido,passou,0.453718,,False
+2|B_frio_1|karate-api|a2,2,B_frio_1,karate-api,false,1,karate,api,44924257868,1,features.api.user.verify-login,Senha incorreta,passou,0.486535,,False
+2|B_frio_1|karate-api|a2,2,B_frio_1,karate-api,false,1,karate,api,44924257868,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.905777,,False
+2|B_frio_1|karate-api|a2,2,B_frio_1,karate-api,false,1,karate,api,44924257868,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.276999,,False
+5|C_quente_4|karate-api|a2,5,C_quente_4,karate-api,true,4,karate,api,44924337061,1,features.api.brands.brands-list,GET /brandsList retorna todas as marcas,passou,0.661845,,False
+5|C_quente_4|karate-api|a2,5,C_quente_4,karate-api,true,4,karate,api,44924337061,1,features.api.brands.brands-list,PUT /brandsList não é suportado,passou,0.838585,,False
+5|C_quente_4|karate-api|a2,5,C_quente_4,karate-api,true,4,karate,api,44924337061,1,features.api.products.products-list,GET /productsList retorna todos os produtos,passou,0.911354,,False
+5|C_quente_4|karate-api|a2,5,C_quente_4,karate-api,true,4,karate,api,44924337061,1,features.api.products.products-list,POST /productsList não é suportado,passou,0.857403,,False
+5|C_quente_4|karate-api|a2,5,C_quente_4,karate-api,true,4,karate,api,44924337061,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""top""",passou,0.460373,,False
+5|C_quente_4|karate-api|a2,5,C_quente_4,karate-api,true,4,karate,api,44924337061,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""tshirt""",passou,0.176526,,False
+5|C_quente_4|karate-api|a2,5,C_quente_4,karate-api,true,4,karate,api,44924337061,1,features.api.products.search-product,"POST /searchProduct retorna resultados para ""jean""",passou,0.394474,,False
+5|C_quente_4|karate-api|a2,5,C_quente_4,karate-api,true,4,karate,api,44924337061,1,features.api.products.search-product,POST /searchProduct sem o parâmetro obrigatório,passou,0.162829,,False
+5|C_quente_4|karate-api|a2,5,C_quente_4,karate-api,true,4,karate,api,44924337061,1,features.api.user.user-lifecycle,"Criar, consultar, atualizar e deletar usuário",passou,1.515433,,False
+5|C_quente_4|karate-api|a2,5,C_quente_4,karate-api,true,4,karate,api,44924337061,1,features.api.user.user-lifecycle,Não permite criar usuário com email já cadastrado,passou,0.378696,,False
+5|C_quente_4|karate-api|a2,5,C_quente_4,karate-api,true,4,karate,api,44924337061,1,features.api.user.verify-login,Login válido,passou,0.328627,,False
+5|C_quente_4|karate-api|a2,5,C_quente_4,karate-api,true,4,karate,api,44924337061,1,features.api.user.verify-login,Senha incorreta,passou,0.636511,,False
+5|C_quente_4|karate-api|a2,5,C_quente_4,karate-api,true,4,karate,api,44924337061,1,features.api.user.verify-login,Parâmetro email ausente,passou,0.296286,,False
+5|C_quente_4|karate-api|a2,5,C_quente_4,karate-api,true,4,karate,api,44924337061,1,features.api.user.verify-login,DELETE /verifyLogin não é suportado,passou,0.857288,,False

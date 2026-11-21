@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "projeto": "karate",
+  "camada": "ui",
+  "comando": "mvn -B test -Dtest=UiTest -Dci=true -Dui.threads=1",
+  "codigo_saida": 0,
+  "inicio_utc": "2026-11-21T16:21:44.154949+00:00",
+  "duracao_s": 55.813,
+  "cache": "false",
+  "threads": "1",
+  "recursos": {
+    "intervalo_s": 1.0,
+    "amostras": 55,
+    "mem_baseline_mb": 971.7,
+    "mem_pico_mb": 1803.4,
+    "mem_pico_delta_mb": 831.7,
+    "cpu_media_pct": 34.3,
+    "cpu_pico_pct": 81.8
+  },
+  "testes": {
+    "total": 10,
+    "passou": 10,
+    "falhou": 0,
+    "ignorado": 0,
+    "tempo_soma_s": 48.428
+  },
+  "site": {
+    "url": "https://automationexercise.com/api/productsList",
+    "antes": {
+      "http_code": "200",
+      "tempo_s": 0.648,
+      "ok": true,
+      "trecho": "",
+      "pagina_http": "200",
+      "pagina_ok": true
+    },
+    "depois": {
+      "http_code": "200",
+      "tempo_s": 0.193,
+      "ok": true,
+      "trecho": "",
+      "pagina_http": "200",
+      "pagina_ok": true
+    },
+    "durante": {
+      "n": 9,
+      "falhas": 0,
+      "primeira_falha_s": null
+    }
+  },
+  "rede": {
+    "org": "AS8075 Microsoft Corporation"
+  },
+  "testes_esperados": 10,
+  "contagem_confere": true,
+  "arquivos_junit": 4,
+  "ambiente": {
+    "image_os": "ubuntu22",
+    "image_version": "20261116.365.1",
+    "runner_os": "Linux",
+    "runner_arch": "X64",
+    "runner_name": "GitHub Actions 1000000213",
+    "cpu_modelo": "AMD EPYC 9V74 80-Core Processor",
+    "cpu_n": 4,
+    "mem_total_mb": 15988.7
+  },
+  "github": {
+    "repositorio": "lipesilvapr/Karate-Automation-Exercise",
+    "run_id": "44924129380",
+    "run_attempt": "1",
+    "run_number": "69",
+    "evento": "workflow_dispatch",
+    "workflow": "Karate Tests",
+    "job": "ui",
+    "commit": "740a6b4f658ce5be5e10d65eb2f942d8ff822177",
+    "ref": "estudo-v3"
+  }
+}

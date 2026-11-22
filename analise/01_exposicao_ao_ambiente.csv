@@ -1,0 +1,5 @@
+ferramenta,execucoes,afetadas_por_sonda_ou_mensagem,afetadas_por_revisao_manual,afetadas_total,percentual
+karate-api,17,2,0,2,12%
+restassured,15,0,0,0,0%
+karate-ui,11,1,1,2,18%
+cypress,11,1,0,1,9%

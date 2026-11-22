@@ -1,0 +1,3 @@
+ferramenta,n_1thread,n_4threads,mediana_1thread_s,mediana_4threads_s,ganho_x,ic95_baixo,ic95_alto
+karate-api,5,5,16.22,8.59,1.89,1.17,2.27
+restassured,5,5,17.01,10.66,1.6,1.24,2.55

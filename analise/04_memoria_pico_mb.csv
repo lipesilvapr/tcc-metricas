@@ -1,0 +1,11 @@
+ferramenta,config,n,mediana,q1,q3,min,max
+karate-api,A_quente_1,5,304.4,300.2,309.7,293.1,396.4
+karate-api,B_frio_1,5,491.3,425.6,499.3,413.1,527.1
+karate-api,C_quente_4,5,386.1,381.0,425.4,335.3,427.6
+restassured,A_quente_1,5,440.7,429.0,466.2,355.1,528.2
+restassured,B_frio_1,5,551.1,537.5,616.6,530.4,617.2
+restassured,C_quente_4,5,498.6,448.3,568.1,371.2,570.9
+karate-ui,A_quente_1,5,842.1,795.3,850.0,682.3,890.4
+karate-ui,B_frio_1,4,810.35,783.27,849.03,766.1,901.0
+cypress,A_quente_1,5,606.4,562.4,677.4,274.1,802.2
+cypress,B_frio_1,5,829.3,734.3,870.0,699.4,938.2

@@ -1,0 +1,15 @@
+item,valor
+execuções da bateria (sem aquecimento),54
+execuções válidas,49
+execuções afetadas pelo ambiente,5
+células (repetição x configuração x ferramenta) com execução válida,49
+revisões manuais aplicadas,2
+"execuções de teste (tests.csv, todas)",716
+rede de saída: AS8075 Microsoft Corporation,58
+imagem do runner: 20261116.365.1,58
+CPU: AMD EPYC 7763 64-Core Processor,28
+CPU: AMD EPYC 9V45 96-Core Processor,8
+CPU: AMD EPYC 9V74 80-Core Processor,12
+CPU: INTEL(R) XEON(R) PLATINUM 8573C,7
+CPU: Intel(R) Xeon(R) 6973P-C,2
+CPU: Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz,1

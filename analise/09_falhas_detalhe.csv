@@ -1,0 +1,2 @@
+ferramenta,execucao,teste,revisao,justificativa,mensagem
+karate-ui,2|A_quente_1|karate-ui,Login com credenciais válidas,terceiros,"Screenshot mostra pop-up de pesquisa do Google (anúncio) sobre a página; o campo de email ficou incompleto. A suíte do Karate não bloqueia terceiros, a do Cypress bloqueia.","js failed: >>>> 01: waitFor(""//a[contains(.,'Logged in as')]"") <<<< org.graalvm.polyglot.PolyglotException: waitUntil (js): failed after 10 retries and 20026 milliseconds - com.intuit.karate.driver.Dr"

@@ -1,0 +1,3 @@
+key,classificacao,justificativa
+3|B_frio_1|karate-ui,ambiente,"Screenshot do relatório do Karate mostra a página 'This website is under heavy load (queue full)'. A sonda do site (a cada 5 s) não detectou."
+2|A_quente_1|karate-ui,terceiros,"Screenshot mostra pop-up de pesquisa do Google (anúncio) sobre a página; o campo de email ficou incompleto. A suíte do Karate não bloqueia terceiros, a do Cypress bloqueia."

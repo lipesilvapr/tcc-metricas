@@ -131,3 +131,21 @@ python scripts/battery.py fill --reps 5 --max-attempts 3
 Para cada célula (repetição, configuração, ferramenta) que ainda não tem uma execução válida, dispara uma nova tentativa (até 3 no total,
 contando a primeira), uma de cada vez. Células que continuarem sem execução válida são listadas no final. As tentativas ficam no
 `dispatch_log.csv` com o sufixo `|a2`, `|a3` na chave.
+
+## Análise dos dados (`scripts/analyze.py`)
+
+```
+pip install matplotlib        # só para os gráficos (opcional)
+python scripts/analyze.py     # lê data/ e grava em analise/
+```
+
+Entradas: `data/consolidado/measurements.csv` e `tests.csv`, `data/revisao_manual.csv` (revisão manual de falhas, com a justificativa)
+e, opcionalmente, `data/estaticas-v3/loc_summary.csv` (baixe o artefato `static-metrics` da execução das métricas estáticas na `estudo-v3`).
+
+Regras: a repetição 0 (aquecimento) fica de fora; uma execução é **válida** se `execucao_valida = True` e não foi reclassificada como
+`ambiente` na revisão manual. Falhas revisadas como `terceiros` (por exemplo, anúncio) permanecem contadas.
+
+Saídas em `analise/`: qualidade dos dados, exposição ao ambiente, tempo/CPU/memória por ferramenta e configuração, comparações
+(razão de medianas com IC 95% por bootstrap e teste de Mann-Whitney exato), ganho com threads, falhas por ferramenta (IC de Wilson,
+Fisher exato), métricas estáticas por camada com três critérios de alocação dos arquivos compartilhados e gráficos em `figuras/`.
+A semente do bootstrap é fixa (2026): rodar de novo dá os mesmos números.

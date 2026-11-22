@@ -1,0 +1,5 @@
+projeto,camada,loc_exclusivo,loc_proporcional,loc_com_compartilhado,cenarios,loc_por_cenario_exclusivo,loc_por_cenario_proporcional,loc_por_cenario_compartilhado
+karate,api,177,367.6,474,14,12.6,26.3,33.9
+karate,ui,137,243.4,434,10,13.7,24.3,43.4
+restassured,api,800,800.0,800,14,57.1,57.1,57.1
+cypress,ui,424,424.0,424,10,42.4,42.4,42.4
